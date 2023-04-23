@@ -1,0 +1,55 @@
+.home-text {
+  display: inline-block;
+  color: #fff;
+  width: 800px;
+  height: 500px;
+  margin: 200px 250px;
+  .h-text-1 {
+    font-family: "Courier Prime", monospace;
+    //font-family: "IBM Plex Mono", monospace;
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .h-text-2 {
+    background-color: #111;
+    font-family: "Yuji Syuku", serif;
+    font-weight: 600;
+    font-size: 60px;
+    padding-left: 20px;
+  }
+  .h-text-3 {
+    font-family: "Courier Prime", monospace;
+    font-size: 22px;
+  }
+}
+.about-me-container {
+  // background: linear-gradient(177deg, #690606 0% 5%, #a00e0e 5% 10%),
+  //linear-gradient(177deg, #a00e0e, #fff);
+  background-color: #fff;
+  transform: rotate(3deg);
+  width: 110%;
+  height: 800px;
+  margin-left: -25px;
+  margin-top: 150px;
+}
+
+.about-text-container {
+  position: relative;
+  text-align: center;
+  transform: rotate(-3deg);
+
+  width: 800px;
+  height: 600px;
+  top: 100px;
+  left: 100px;
+  h2 {
+    font-family: "Yuji Syuku", serif;
+    font-weight: 600;
+
+    font-size: 40px;
+  }
+  p {
+    font-size: 22px;
+    font-family: "Courier Prime", monospace;
+  }
+}

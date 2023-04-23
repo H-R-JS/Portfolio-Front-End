@@ -1,0 +1,52 @@
+@import "./index.scss";
+@import "./Home.scss";
+@import "./Portfolio.scss";
+@import "./Skills&Tools.scss";
+@import "./Contact.scss";
+
+header {
+  position: fixed;
+  background-color: $color-main;
+  display: inline-block;
+  width: 90%;
+  height: 80px;
+  z-index: 5;
+}
+
+.ul-menu {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  width: 87%;
+  margin-left: 80px;
+  margin-top: 10px;
+}
+
+li {
+  list-style: none;
+}
+.link-menu {
+  background: linear-gradient(to right, black 50%, #a00e0e 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  font-size: 40px;
+  font-family: "Yuji Syuku", serif;
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+.link-menu::before {
+  position: absolute;
+  content: " ";
+  color: #000;
+  background-color: black;
+  width: 5px;
+  height: 58px;
+  margin-left: -15px;
+}
+
+.link-menu:hover {
+  background-position: left bottom;
+}

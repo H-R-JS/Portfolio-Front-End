@@ -1,0 +1,75 @@
+$color-main: #a00e0e;
+
+$font-main: "Yuji Syuku", serif;
+$font-second: "Courier Prime", monospace;
+
+body {
+  margin: 0;
+  //background: linear-gradient(#ff0000, #111);
+  background-color: #111;
+}
+.all-out-page {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  width: 100px;
+  height: 4700px;
+}
+.out-page {
+  position: relative;
+  font-size: 12px;
+  color: #fff;
+  font-family: $font-second;
+  left: 25px;
+}
+.out-page::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 20px;
+  height: 1px;
+  bottom: 8px;
+  left: 48px;
+}
+.App {
+  width: 90%;
+  height: 4700px;
+  margin-left: 100px;
+  background-color: $color-main;
+  overflow: hidden;
+}
+//////
+.header-folder {
+  position: absolute;
+  color: #fff;
+  font-size: 10px;
+  font-family: $font-main;
+  left: 4px;
+  cursor: not-allowed;
+}
+//////////////////////////////
+
+/*font-family
+ Zeyada
+Rubik Wet Paint
+Covered By Your Grace
+Nanum Brush Script
+Annie Use Your Telescope
+Libre Barcode 39 Text
+Jockey One
+Mansalva
+Chelsea Market
+Major Mono Display
+Just Me Again Down Here
+Nabla
+Libre Barcode 128 Text
+Long Cang
+Splash
+Lacquer
+Rubik Glitch
+Flow Circular
+Redacted Script
+Yuji Boku
+Kolker Brush
+Flow Block*/

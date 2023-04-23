@@ -1,0 +1,88 @@
+.skills-tools {
+  display: flex;
+}
+
+.skill-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  margin-top: 100px;
+  h2 {
+    color: #fff;
+    font-size: 40px;
+    font-family: $font-main;
+
+    font-weight: 600;
+  }
+}
+
+.skill-box {
+  width: 370px;
+  height: 100px;
+  margin: 20px;
+  .span-title {
+    color: #fff;
+    font-size: 26px;
+    font-family: $font-second;
+    border-bottom: 2px dashed #fff;
+  }
+}
+
+.skill-bar {
+  background-color: #fff;
+  width: 300px;
+  height: 25px;
+  margin-top: 10px;
+}
+.skill-per {
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  height: 40px;
+  font-size: 42px;
+  font-family: "Redacted Script", cursive;
+  padding-left: 8px;
+  bottom: 12px;
+  left: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.percentage {
+  float: right;
+  color: #fff;
+  font-size: 26px;
+  font-family: $font-second;
+  margin-top: -25px;
+}
+
+.tools-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 600px;
+  margin: 100px 100px;
+  h2 {
+    color: #fff;
+    font-size: 40px;
+    font-family: $font-main;
+  }
+}
+
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 300px;
+  height: 500px;
+  margin: 50px 130px;
+}
+
+.tools-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+  margin-left: 50px;
+}

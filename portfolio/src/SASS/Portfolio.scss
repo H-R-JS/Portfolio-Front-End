@@ -1,0 +1,128 @@
+.portf-section {
+  display: flex;
+  background-color: #fff;
+  transform: rotate(-3deg);
+  width: 110%;
+  height: 800px;
+  margin-left: -40px;
+  h2 {
+    transform: rotate(3deg);
+    color: #fff;
+    font-family: "Courier Prime", monospace;
+    // font-family: "Bebas Neue", cursive;
+    font-size: 40px;
+    position: absolute;
+    top: 30px;
+    left: 320px;
+    z-index: 3;
+  }
+}
+.portf-container {
+  position: relative;
+  display: flex;
+  transform: rotate(3deg);
+  width: 900px;
+  height: 620px;
+  top: 125px;
+  left: 160px;
+}
+.portf-container-box::before {
+  content: "";
+  background-color: rgba(1, 1, 1, 0.7);
+  position: absolute;
+  width: 300px;
+  height: 80px;
+  top: -80px;
+  left: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.portf-container-box {
+  background-color: rgba(1, 1, 1, 0.5);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  height: 600px;
+  margin: 10px;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+}
+.portf-box {
+  position: relative;
+  min-width: 600px;
+  height: 450px;
+  margin: 0px 100px;
+}
+.portf-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 345px;
+}
+.portf-text {
+  color: #fff;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  width: 400px;
+  height: 300px;
+  span {
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+}
+
+.arrow {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 250px 20px;
+  z-index: 3;
+  transform: scale(1);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.arrow:hover {
+  transform: scale(1.2);
+}
+
+.descrip-container {
+  text-align: center;
+  width: 500px;
+  height: 200px;
+  transform: rotate(3deg);
+  margin: 300px 250px;
+  p {
+    font-size: 26px;
+    font-family: "Courier Prime", monospace;
+  }
+}
+.cv-link {
+  color: #111;
+  text-decoration: none;
+  font-family: "Courier Prime", monospace;
+  font-weight: 600;
+  font-size: 30px;
+}
+.cv-link::after {
+  content: "";
+  position: absolute;
+  width: 66%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 72px;
+  left: 80px;
+  background-color: #111;
+  transform-origin: right;
+  transition: transform 0.25s ease-out;
+  border-radius: 20px;
+}
+
+.cv-link:hover::after {
+  transform: scale(1);
+  transform-origin: left;
+}
