@@ -8,7 +8,6 @@ export const Tools = () => {
       <h2>Outils</h2>
       <div className="tools-container">
         {ToolsArray.map((item, index) => {
-          console.log(item);
           return (
             <div
               key={index}

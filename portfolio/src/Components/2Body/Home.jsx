@@ -27,18 +27,21 @@ export class Home extends React.Component {
         <div className="home-box">
           <div className="home-text">
             <p className="h-text-1">Bonjour, je suis </p>
-            <ThemedText>
-              Jordy Rocacher <br />
-              Developpeur Front End
-            </ThemedText>
+            <div className="h-text-square">
+              <ThemedText>
+                Jordy Rocacher <br />
+                Developpeur Front End
+              </ThemedText>
+            </div>
             <p className="h-text-3">
               en autodidacte, j'ai appris le développement web seul, sans
               formation ni diplôme, uniquement avec ma motivation et l'envie de
               concevoir et créer à travers les langages de programmation
             </p>
           </div>
-          <AboutMe />
+          <div className="black-square" />
         </div>
+        <AboutMe />
       </ThemeContext.Provider>
     );
   }
