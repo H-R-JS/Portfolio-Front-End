@@ -6,7 +6,6 @@ import { PortfArray } from "./Portfolio/PortfArray";
 export const Portfolio = () => {
   return (
     <section className="portf-section">
-      <h2>Portfolio</h2>
       <PortfSlider slides={PortfArray} />
       <PortfDescrip />
     </section>

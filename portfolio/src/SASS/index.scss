@@ -65,11 +65,11 @@ body {
 }
 .icon-params {
   //background-color: aqua;
-  position: relative;
+  position: fixed;
   width: 80px;
   height: 80px;
   top: 0px;
-  left: 1600px;
+  right: 110px;
   transform-origin: center;
   z-index: 6;
 }

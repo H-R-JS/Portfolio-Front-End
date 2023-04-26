@@ -5,17 +5,6 @@
   width: 110%;
   height: 800px;
   margin-left: -40px;
-  h2 {
-    transform: rotate(3deg);
-    color: #fff;
-    font-family: "Courier Prime", monospace;
-    // font-family: "Bebas Neue", cursive;
-    font-size: 40px;
-    position: absolute;
-    top: 30px;
-    left: 320px;
-    z-index: 3;
-  }
 }
 .portf-container {
   position: relative;
@@ -25,6 +14,16 @@
   height: 620px;
   top: 125px;
   left: 160px;
+  h2 {
+    color: #fff;
+    font-family: "Courier Prime", monospace;
+    // font-family: "Bebas Neue", cursive;
+    font-size: 40px;
+    position: absolute;
+    top: -90px;
+    left: 40px;
+    z-index: 3;
+  }
 }
 .portf-container-box::before {
   content: "";
@@ -48,30 +47,51 @@
   margin: 10px;
   border-radius: 20px;
   border-top-left-radius: 0px;
+  transform-style: preserve-3d;
 }
+
+.remove-slide {
+  opacity: 0;
+  transform: translateX(-60px);
+
+  transition: all 0.5s;
+}
+
+.slide.active {
+  transition: all 0.5s;
+  transform: translateZ(60px);
+}
+
 .portf-box {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-width: 600px;
-  height: 450px;
+  height: 490px;
   margin: 0px 100px;
 }
 .portf-img {
   background-size: cover;
   background-repeat: no-repeat;
-  width: 600px;
+  width: 585px;
   height: 345px;
 }
 .portf-text {
+  display: flex;
+  flex-direction: column;
   color: #fff;
   text-align: center;
-  font-family: "Roboto Mono", monospace;
+  font-family: $font-second;
   font-size: 20px;
-  width: 400px;
-  height: 300px;
+  width: 500px;
+
   span {
     font-weight: 600;
+    font-family: $font-main;
     text-transform: uppercase;
-    text-decoration: underline;
+    //text-decoration: underline;
+    margin: 20px;
   }
 }
 

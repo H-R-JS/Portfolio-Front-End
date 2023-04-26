@@ -66,13 +66,16 @@ function App() {
         </span>
       </div>
       <Params />
-      <Header />
-      <TiCog
-        className="icon-params"
-        onClick={() => {
-          controlApp.start("showParam");
-        }}
-      />
+      <div>
+        <Header />
+        <TiCog
+          className="icon-params"
+          onClick={() => {
+            controlApp.start("showParam");
+          }}
+        />
+      </div>
+
       <Body />
     </motion.div>
   );
