@@ -4,14 +4,17 @@
 @import "./Skills&Tools.scss";
 @import "./Contact.scss";
 
+.header-param {
+  position: fixed;
+  z-index: 5;
+}
+
 header {
   position: fixed;
   background-color: $color-main;
   display: inline-block;
   width: 90%;
   height: 80px;
-  z-index: 5;
-  --cursor-color: #0f0;
 }
 
 .ul-menu {

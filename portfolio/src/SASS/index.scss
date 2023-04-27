@@ -2,9 +2,9 @@ $color-main: #a00e0e;
 
 $font-main: "Yuji Syuku", serif;
 $font-second: "Courier Prime", monospace;
-/* {
+* {
   cursor: none;
-}*/
+}
 .cursor {
   position: fixed;
   background-color: #111;
@@ -63,15 +63,16 @@ body {
   left: 4px;
   cursor: not-allowed;
 }
+
 .icon-params {
-  //background-color: aqua;
-  position: fixed;
+  position: relative;
   width: 80px;
   height: 80px;
   top: 0px;
-  right: 110px;
+  left: 1610px;
   transform-origin: center;
   z-index: 6;
+  cursor: pointer;
 }
 
 .params-section {
@@ -82,6 +83,7 @@ body {
   top: 0px;
   right: 90px;
   z-index: -1;
+  pointer-events: none;
 }
 //////////////////////////////
 

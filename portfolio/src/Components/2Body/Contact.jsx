@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export class Contact extends React.Component {
   render() {
     return (
-      <section className="contact-container">
+      <section className="contact-container" id="contact">
         <h2>Contact</h2>
         <div className="back-link">
           <Link className="contact-link ">jprogpro7@outlook.com</Link>

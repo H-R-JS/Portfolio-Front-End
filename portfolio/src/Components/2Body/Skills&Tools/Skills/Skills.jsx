@@ -5,7 +5,7 @@ import { Tools } from "../Tools/Tools";
 export class Skills extends React.Component {
   render() {
     return (
-      <section className="skills-tools">
+      <section className="skills-tools" id="skills">
         <div className="skill-section">
           <h2>Compétences</h2>
           <div>

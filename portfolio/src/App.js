@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./SASS/Header.scss";
 import { Header } from "./Components/1Head/Header";
 import { Body } from "./Components/2Body/BodyRouter";
 import { Params } from "./Components/OutPage/Params/Params";
 import { motion, useAnimation } from "framer-motion";
-import { TiCog } from "react-icons/ti";
+import { TiCog, TiArrowLeftThick } from "react-icons/ti";
 
 function App() {
   const [mousePosition, setMousePosition] = useState({
@@ -12,7 +12,63 @@ function App() {
     y: 0,
   });
 
+  const paramToggle = useAnimation();
+
+  const [cursorVariant, setCursorVariant] = useState("default");
+
+  const variants = {
+    default: {
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+    },
+
+    text: {
+      height: 150,
+      width: 150,
+      x: mousePosition.x - 75,
+      y: mousePosition.y - 75,
+      backgroundColor: "yellow",
+      mixBlendMode: "difference",
+    },
+  };
+
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
+
+  const variParam = {
+    hiddenParam: {
+      marginLeft: "100px",
+    },
+    showParam: {
+      marginLeft: "-100px",
+    },
+  };
+
+  const IconCog = (
+    <TiCog
+      className="icon-params"
+      onClick={() => {
+        console.log("fgsfsfsf");
+        paramToggle.start("showParam");
+        setIcon(IconArrow);
+      }}
+    />
+  );
+
+  const IconArrow = (
+    <TiArrowLeftThick
+      className="icon-params"
+      onClick={() => {
+        console.log("fgsfsfsf");
+        paramToggle.start("hiddenParam");
+        setIcon(IconCog);
+      }}
+    />
+  );
+  const [icon, setIcon] = useState(IconCog);
+
   useEffect(() => {
+    paramToggle.start("hiddenParam");
     const mouseMove = (e) => {
       setMousePosition({
         x: e.clientX,
@@ -27,35 +83,13 @@ function App() {
     };
   }, []);
 
-  const variants = {
-    default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
-    },
-  };
-
-  const controlApp = useAnimation();
-
-  const variApp = {
-    hiddenParam: {
-      marginLeft: "100px",
-    },
-    showParam: {
-      marginLeft: "-100px",
-    },
-  };
-
-  useEffect(() => {
-    controlApp.start("hiddenParam");
-  }, []);
-
   return (
-    <motion.div variants={variApp} animate={controlApp} className="App">
+    <motion.div variants={variParam} animate={paramToggle} className="App">
       <motion.div
         key={"setuplayout_motion"}
         className="cursor"
         variants={variants}
-        animate="default"
+        animate={cursorVariant}
       />
 
       <div className="header-folder">
@@ -66,14 +100,16 @@ function App() {
         </span>
       </div>
       <Params />
-      <div>
+      <div className="header-param">
+        <span
+          style={{ fontWeight: 600, fontSize: "150px" }}
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
+        >
+          LOOOOOOL
+        </span>
         <Header />
-        <TiCog
-          className="icon-params"
-          onClick={() => {
-            controlApp.start("showParam");
-          }}
-        />
+        <div>{icon}</div>
       </div>
 
       <Body />

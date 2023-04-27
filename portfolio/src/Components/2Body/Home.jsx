@@ -24,7 +24,7 @@ export class Home extends React.Component {
   render() {
     return (
       <ThemeContext.Provider /*value={theme.black}*/>
-        <div className="home-box">
+        <div className="home-box" id="home">
           <div className="home-text">
             <p className="h-text-1">Bonjour, je suis </p>
             <div className="h-text-square">
