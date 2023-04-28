@@ -1,21 +1,53 @@
-import React from "react";
-import AnimatedCursor from "react-animated-cursor";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export const AnimCursor = () => {
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0,
+  });
+  const [cursorVariant, setCursorVariant] = useState("default");
+
+  const variants = {
+    default: {
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+    },
+
+    text: {
+      height: 150,
+      width: 150,
+      x: mousePosition.x - 75,
+      y: mousePosition.y - 75,
+      backgroundColor: "#a00e0e",
+      mixBlendMode: "difference",
+    },
+  };
+
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
+
+  useEffect(() => {
+    const mouseMove = (e) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+
+    window.addEventListener("mousemove", mouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", mouseMove);
+    };
+  }, []);
+
   return (
-    <AnimatedCursor
-      innerSize={8}
-      outerSize={8}
-      color="1, 1, 1"
-      outerAlpha={0.2}
-      innerScale={0.7}
-      outerScale={5}
-      outerStyle={{
-        border: "3px solid var(--cursor-color)",
-      }}
-      innerStyle={{
-        backgroundColor: "var(--cursor-color)",
-      }}
+    <motion.div
+      key={"setuplayout_motion"}
+      className="cursor"
+      variants={variants}
+      animate={cursorVariant}
     />
   );
 };

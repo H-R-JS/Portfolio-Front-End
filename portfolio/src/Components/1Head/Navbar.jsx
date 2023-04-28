@@ -1,6 +1,7 @@
 import React from "react";
 import { NavItems } from "./NavItems";
 import { Link } from "react-scroll";
+import { RevealFadeHeader } from "../Motion/Fade";
 
 export const Navbar = () => {
   return (
@@ -10,17 +11,19 @@ export const Navbar = () => {
           return (
             <li key={index}>
               <div className="background-li" />
-              <Link
-                to={item.path}
-                spy={true}
-                smooth={true}
-                hashSpy={true}
-                offset={50}
-                duration={500}
-                className="link-menu"
-              >
-                {item.title}
-              </Link>
+              <RevealFadeHeader>
+                <Link
+                  to={item.path}
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
+                  offset={50}
+                  duration={500}
+                  className="link-menu"
+                >
+                  {item.title}
+                </Link>
+              </RevealFadeHeader>
             </li>
           );
         })}

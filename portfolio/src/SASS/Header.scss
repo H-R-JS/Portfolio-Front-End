@@ -28,27 +28,31 @@ header {
 
 li {
   list-style: none;
+  overflow: hidden;
+
+  width: 250px;
 }
 .link-menu {
   background: linear-gradient(to right, black 50%, #a00e0e 50%);
-  background-size: 200% 100%;
+  background-size: 210% 100%;
   background-position: right bottom;
+  overflow: hidden;
   font-size: 40px;
   font-family: "Yuji Syuku", serif;
   color: white;
   text-decoration: none;
   padding: 0 15px;
-  cursor: pointer;
   transition: all 0.5s ease-out;
 }
-.link-menu::before {
+li::before {
   position: absolute;
   content: " ";
   color: #000;
   background-color: black;
   width: 5px;
   height: 58px;
-  margin-left: -15px;
+  margin-left: 0px;
+  z-index: 6;
 }
 
 .link-menu:hover {

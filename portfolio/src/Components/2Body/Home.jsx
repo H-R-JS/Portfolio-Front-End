@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { RevealFadeLeft, RevealFadeRight, RevealFadeTop } from "../Motion/Fade";
 
 const theme = {
   red: {
@@ -25,21 +26,25 @@ export class Home extends React.Component {
     return (
       <ThemeContext.Provider /*value={theme.black}*/>
         <div className="home-box" id="home">
-          <div className="home-text">
-            <p className="h-text-1">Bonjour, je suis </p>
-            <div className="h-text-square">
-              <ThemedText>
-                Jordy Rocacher <br />
-                Developpeur Front End
-              </ThemedText>
+          <RevealFadeLeft>
+            <div className="home-text">
+              <p className="h-text-1">Bonjour, je suis </p>
+              <div className="h-text-square">
+                <ThemedText>
+                  Jordy Rocacher <br />
+                  Developpeur Front End
+                </ThemedText>
+              </div>
+              <p className="h-text-3">
+                en autodidacte, j'ai appris le développement web seul, sans
+                formation ni diplôme, uniquement avec ma motivation et l'envie
+                de concevoir et créer à travers les langages de programmation
+              </p>
             </div>
-            <p className="h-text-3">
-              en autodidacte, j'ai appris le développement web seul, sans
-              formation ni diplôme, uniquement avec ma motivation et l'envie de
-              concevoir et créer à travers les langages de programmation
-            </p>
-          </div>
-          <div className="black-square" />
+          </RevealFadeLeft>
+          <RevealFadeRight>
+            <div className="black-square" />
+          </RevealFadeRight>
         </div>
         <AboutMe />
       </ThemeContext.Provider>
@@ -70,6 +75,7 @@ const AboutMe = () => {
           dans tous les sens.
         </p>
       </div>
+
       <div className="about-design-presentation"></div>
     </div>
   );
