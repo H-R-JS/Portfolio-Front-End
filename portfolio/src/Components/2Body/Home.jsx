@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { RevealFadeLeft, RevealFadeRight, RevealFadeTop } from "../Motion/Fade";
 
 const theme = {
@@ -53,6 +53,17 @@ export class Home extends React.Component {
 }
 
 const AboutMe = () => {
+  const [imgVisible, setImgVisible] = useState(false);
+
+  const imgVisibleToggle = () => {
+    if (window.scrollY >= 1400) {
+      setImgVisible(true);
+    } else {
+      setImgVisible(false);
+    }
+  };
+
+  window.addEventListener("scroll", imgVisibleToggle);
   return (
     <div className="about-me-container">
       <div className="about-text-container">
@@ -75,8 +86,14 @@ const AboutMe = () => {
           dans tous les sens.
         </p>
       </div>
-
-      <div className="about-design-presentation"></div>
+      <div
+        style={imgVisible ? { backgroundColor: "red" } : null}
+        className="about-img-container"
+      >
+        <div className={imgVisible ? "about-img-hidden" : "about-img one"} />
+        <div className={imgVisible ? "about-img two" : "about-img-hidden"} />
+        <span>AAnomEE</span>
+      </div>
     </div>
   );
 };

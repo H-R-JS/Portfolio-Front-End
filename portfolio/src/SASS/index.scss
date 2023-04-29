@@ -28,7 +28,6 @@ body {
 .all-out-page {
   display: flex;
   flex-direction: column;
-
   position: absolute;
   width: 100px;
   height: 4700px;
@@ -54,6 +53,7 @@ body {
   height: 4700px;
   background-color: $color-main;
   overflow: hidden;
+  margin-left: 100px;
 }
 //////
 .header-folder {
@@ -78,8 +78,8 @@ body {
 .params-section {
   position: fixed;
   background-color: #fff;
-  width: 200px;
-  height: 100vh;
+  width: 90%;
+  height: 80px;
   top: 0px;
   right: 90px;
   z-index: -1;

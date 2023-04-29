@@ -13,10 +13,10 @@ function App() {
 
   const variParam = {
     hiddenParam: {
-      marginLeft: "100px",
+      marginTop: "0px",
     },
     showParam: {
-      marginLeft: "-100px",
+      marginTop: "80px",
     },
   };
 
@@ -48,9 +48,8 @@ function App() {
   }, []);
 
   return (
-    <motion.div variants={variParam} animate={paramToggle} className="App">
+    <div className="App">
       <AnimCursor />
-
       <div className="header-folder">
         <span>
           Dossier n°175-40
@@ -58,14 +57,16 @@ function App() {
           Sujet 027 Z18
         </span>
       </div>
-      <Params />
       <div className="header-param">
-        <Header />
+        <motion.div variants={variParam} animate={paramToggle}>
+          <Header />
+        </motion.div>
         <div>{icon}</div>
+        <Params />
       </div>
 
       <Body />
-    </motion.div>
+    </div>
   );
 }
 
