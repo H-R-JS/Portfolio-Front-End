@@ -1,7 +1,7 @@
 import React from "react";
 import { NavItems } from "./NavItems";
 import { Link } from "react-scroll";
-import { RevealFadeHeader } from "../Motion/Fade";
+import { RevealFadeHeader } from "../../../Motion/Fade";
 
 export const Navbar = () => {
   return (

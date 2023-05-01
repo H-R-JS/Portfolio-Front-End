@@ -88,8 +88,8 @@ export const RevealFadeRight = ({ children }) => {
   const controlFade = useAnimation();
 
   const variFade = {
-    hidden: { display: "flex", x: 200 },
-    show: { x: 0, transition: { duration: 0.4, delay: 0.2 } },
+    hidden: { opacity: 0, display: "flex", x: 200 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.4, delay: 0.2 } },
   };
 
   useEffect(() => {

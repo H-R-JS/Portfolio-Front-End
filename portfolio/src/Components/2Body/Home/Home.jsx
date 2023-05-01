@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
-import { RevealFadeLeft, RevealFadeRight, RevealFadeTop } from "../Motion/Fade";
+import { RevealFadeLeft, RevealFadeRight } from "../../Motion/Fade";
+import { motion } from "framer-motion";
 
 const theme = {
   red: {
@@ -21,36 +22,42 @@ function ThemedText({ children }) {
   );
 }
 
-export class Home extends React.Component {
-  render() {
-    return (
-      <ThemeContext.Provider /*value={theme.black}*/>
-        <div className="home-box" id="home">
-          <RevealFadeLeft>
-            <div className="home-text">
-              <p className="h-text-1">Bonjour, je suis </p>
-              <div className="h-text-square">
-                <ThemedText>
-                  Jordy Rocacher <br />
-                  Developpeur Front End
-                </ThemedText>
-              </div>
-              <p className="h-text-3">
-                en autodidacte, j'ai appris le développement web seul, sans
-                formation ni diplôme, uniquement avec ma motivation et l'envie
-                de concevoir et créer à travers les langages de programmation
-              </p>
+export const Home = ({ setCursorVariant }) => {
+  return (
+    <ThemeContext.Provider value={theme.black}>
+      <div className="home-box" id="home">
+        <RevealFadeLeft>
+          <div className="home-text">
+            <p className="h-text-1">Bonjour, je suis </p>
+            <div
+              className="h-text-square"
+              onMouseEnter={() => setCursorVariant("body")}
+              onMouseLeave={() => setCursorVariant("app")}
+            >
+              <ThemedText>
+                Jordy Rocacher <br />
+                Developpeur Front End
+              </ThemedText>
             </div>
-          </RevealFadeLeft>
-          <RevealFadeRight>
-            <div className="black-square" />
-          </RevealFadeRight>
-        </div>
-        <AboutMe />
-      </ThemeContext.Provider>
-    );
-  }
-}
+            <p className="h-text-3">
+              en autodidacte, j'ai appris le développement web seul, sans
+              formation ni diplôme, uniquement avec ma motivation et l'envie de
+              concevoir et créer à travers les langages de programmation
+            </p>
+          </div>
+        </RevealFadeLeft>
+        <RevealFadeRight>
+          <div
+            className="black-square"
+            onMouseEnter={() => setCursorVariant("body")}
+            onMouseLeave={() => setCursorVariant("app")}
+          />
+        </RevealFadeRight>
+      </div>
+      <AboutMe />
+    </ThemeContext.Provider>
+  );
+};
 
 const AboutMe = () => {
   const [imgVisible, setImgVisible] = useState(false);
@@ -86,14 +93,16 @@ const AboutMe = () => {
           dans tous les sens.
         </p>
       </div>
-      <div
-        style={imgVisible ? { backgroundColor: "red" } : null}
-        className="about-img-container"
-      >
-        <div className={imgVisible ? "about-img-hidden" : "about-img one"} />
-        <div className={imgVisible ? "about-img two" : "about-img-hidden"} />
-        <span>AAnomEE</span>
-      </div>
+      <RevealFadeRight>
+        <div
+          style={imgVisible ? { backgroundColor: "red" } : null}
+          className="about-img-container"
+        >
+          <div className={imgVisible ? "about-img-hidden" : "about-img one"} />
+          <div className={imgVisible ? "about-img two" : "about-img-hidden"} />
+          <span>AAnomEE</span>
+        </div>
+      </RevealFadeRight>
     </div>
   );
 };

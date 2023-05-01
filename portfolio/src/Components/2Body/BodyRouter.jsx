@@ -1,12 +1,26 @@
 import React from "react";
-import { AnimatePresence } from "framer-motion";
-import { Routes, Route, useLocation } from "react-router-dom";
-import { Home } from "./Home";
+import { Home } from "./Home/Home";
 import { Skills } from "./Skills&Tools/Skills/Skills";
 import { Portfolio } from "./Portfolio";
 import { Contact } from "./Contact";
 
-export const BodyRouter = () => {
+export const Body = ({ setCursorVariant }) => {
+  return (
+    <div>
+      <Home setCursorVariant={setCursorVariant} />
+      <Skills />
+      <Portfolio />
+      <Contact />
+    </div>
+  );
+};
+
+/**
+ * 
+   import { AnimatePresence } from "framer-motion";
+   import { Routes, Route, useLocation } from "react-router-dom";  
+ * 
+ * export const BodyRouter = () => {
   const location = useLocation();
   return (
     <AnimatePresence>
@@ -18,15 +32,4 @@ export const BodyRouter = () => {
       </Routes>
     </AnimatePresence>
   );
-};
-
-export const Body = () => {
-  return (
-    <div>
-      <Home />
-      <Skills />
-      <Portfolio />
-      <Contact />
-    </div>
-  );
-};
+}; */

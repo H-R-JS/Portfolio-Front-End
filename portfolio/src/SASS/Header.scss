@@ -3,6 +3,7 @@
 @import "./Portfolio.scss";
 @import "./Skills&Tools.scss";
 @import "./Contact.scss";
+@import "./Param.scss";
 
 .header-param {
   position: fixed;
@@ -53,6 +54,8 @@ li::before {
   height: 58px;
   margin-left: 0px;
   z-index: 6;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .link-menu:hover {

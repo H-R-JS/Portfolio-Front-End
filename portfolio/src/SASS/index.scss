@@ -8,8 +8,8 @@ $font-second: "Courier Prime", monospace;
 .cursor {
   background-color: #111;
   position: fixed;
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   top: 0;
   left: 0;
   border-radius: 50%;
@@ -64,26 +64,6 @@ body {
   left: 4px;
 }
 
-.icon-params {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  top: 0px;
-  left: 1610px;
-  transform-origin: center;
-  z-index: 6;
-  cursor: pointer;
-}
-
-.params-section {
-  position: fixed;
-  background-color: #fff;
-  width: 90%;
-  height: 80px;
-  top: 0px;
-  right: 90px;
-  z-index: -1;
-}
 //////////////////////////////
 
 /*font-family
