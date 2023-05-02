@@ -6,16 +6,18 @@ export class Contact extends React.Component {
     return (
       <section className="contact-container" id="contact">
         <h2>Contact</h2>
-        <div className="back-link">
-          <Link className="contact-link ">jprogpro7@outlook.com</Link>
+        <div className="contact-content">
+          <div className="back-link ins">
+            <Link className="contact-link">Instagram</Link>
+          </div>
+          <div className="back-link">
+            <Link className="contact-link ">jprogpro7@outlook.com</Link>
+          </div>
+          <div className="back-link lin">
+            <Link className="contact-link">LinkedIn</Link>
+          </div>
+          <div className="validation" />
         </div>
-        <div className="back-link ins">
-          <Link className="contact-link">Instagram</Link>
-        </div>
-        <div className="back-link lin">
-          <Link className="contact-link">LinkedIn</Link>
-        </div>
-        <div className="validation" />
       </section>
     );
   }

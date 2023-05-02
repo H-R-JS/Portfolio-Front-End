@@ -80,18 +80,19 @@
 .portf-text {
   display: flex;
   flex-direction: column;
+  align-items: center;
   color: #fff;
   text-align: center;
   font-family: $font-second;
   font-size: 20px;
   width: 500px;
-
   span {
     font-weight: 600;
     font-family: $font-main;
     text-transform: uppercase;
     //text-decoration: underline;
     margin: 20px;
+    width: 210px;
   }
 }
 
@@ -102,12 +103,11 @@
   margin: 250px 20px;
   z-index: 3;
   transform: scale(1);
-  cursor: pointer;
   transition: all 0.2s ease-out;
 }
 
 .arrow:hover {
-  transform: scale(1.2);
+  transform: scale(1.4);
 }
 
 .descrip-container {

@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { TiCog, TiArrowLeftThick } from "react-icons/ti";
 
-export const Params = () => {
+export const Params = ({ setThemeSwitch, themeSwitch }) => {
+  /*const switchTheme = () => {
+    if (!themeSwitch) {
+      setThemeSwitch(true);
+    } else {
+      setThemeSwitch(false);
+    }
+  };*/
   return (
     <div className="params-section">
       <div className="input-container">
         <span className="label-input">Inversez les couleurs</span>
-        <label class="switch">
+        <label class="switch" onClick={() => setThemeSwitch(false)}>
           <input type="checkbox" />
           <span class="slider round"></span>
         </label>
@@ -18,7 +25,7 @@ export const Params = () => {
   );
 };
 
-export const IconParam = ({ paramToggle }) => {
+export const IconParam = ({ paramToggle, appVariant, textVariant }) => {
   const IconCog = (
     <TiCog
       className="icon-params"
@@ -41,5 +48,9 @@ export const IconParam = ({ paramToggle }) => {
 
   const [icon, setIcon] = useState(IconCog);
 
-  return <div>{icon}</div>;
+  return (
+    <div onMouseEnter={textVariant} onMouseLeave={appVariant}>
+      {icon}
+    </div>
+  );
 };

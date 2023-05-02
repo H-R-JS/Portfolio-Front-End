@@ -3,7 +3,7 @@ import { NavItems } from "./NavItems";
 import { Link } from "react-scroll";
 import { RevealFadeHeader } from "../../../Motion/Fade";
 
-export const Navbar = () => {
+export const Navbar = ({ appVariant, textVariant }) => {
   return (
     <nav>
       <ul className="ul-menu">
@@ -20,6 +20,8 @@ export const Navbar = () => {
                   offset={50}
                   duration={500}
                   className="link-menu"
+                  onMouseEnter={textVariant}
+                  onMouseLeave={appVariant}
                 >
                   {item.title}
                 </Link>

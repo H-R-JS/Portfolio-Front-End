@@ -4,7 +4,13 @@ import { PortfArray } from "./PortfArray";
 import Tilt from "react-parallax-tilt";
 import { motion, useAnimation } from "framer-motion";
 
-export const PortfSlider = ({ slides }) => {
+export const PortfSlider = ({
+  slides,
+  appVariant,
+  bodyVariant,
+  textVariant,
+  imgVariant,
+}) => {
   const controlSlide = useAnimation();
   const [show, setShow] = useState(true);
   const classSlide = !show ? "remove-slide" : "slide active";
@@ -46,7 +52,12 @@ export const PortfSlider = ({ slides }) => {
 
   return (
     <section className="portf-container">
-      <FaArrowAltCircleLeft className="arrow left" onClick={prevSlide} />
+      <FaArrowAltCircleLeft
+        className="arrow left"
+        onClick={prevSlide}
+        onMouseEnter={bodyVariant}
+        onMouseLeave={appVariant}
+      />
       <Tilt perspective={1200} className="portf-container-box">
         <h2>Portfolio</h2>
         {PortfArray.map((item, index) => {
@@ -66,9 +77,13 @@ export const PortfSlider = ({ slides }) => {
                     variants={slideChild}
                     className="portf-img"
                     style={{ backgroundImage: `url(${item.img})` }}
+                    onMouseEnter={textVariant}
+                    onMouseLeave={appVariant}
                   />
                   <motion.p variants={slideChild} className="portf-text">
-                    <span>{item.title}</span>
+                    <span onMouseEnter={textVariant} onMouseLeave={appVariant}>
+                      {item.title}
+                    </span>
                     {item.text}
                   </motion.p>
                 </motion.div>
@@ -78,7 +93,12 @@ export const PortfSlider = ({ slides }) => {
         })}
       </Tilt>
 
-      <FaArrowAltCircleRight className="arrow right" onClick={nextSlide} />
+      <FaArrowAltCircleRight
+        className="arrow right"
+        onClick={nextSlide}
+        onMouseEnter={bodyVariant}
+        onMouseLeave={appVariant}
+      />
     </section>
   );
 };

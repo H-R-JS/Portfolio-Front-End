@@ -21,20 +21,20 @@ export const AnimCursor = ({ cursorVariant, setCursorVariant }) => {
     },
 
     text: {
-      height: 150,
-      width: 150,
-      x: mousePosition.x - 75,
-      y: mousePosition.y - 75,
-      backgroundColor: "#a00e0e",
-      mixBlendMode: "difference",
-    },
-
-    click: {
       height: 32,
       width: 32,
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
       backgroundColor: "#a00e0e",
+      mixBlendMode: "difference",
+    },
+
+    img: {
+      height: 32,
+      width: 32,
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+      backgroundColor: "#fff",
     },
   };
 

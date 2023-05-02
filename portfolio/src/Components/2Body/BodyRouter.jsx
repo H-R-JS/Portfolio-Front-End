@@ -1,15 +1,15 @@
 import React from "react";
 import { Home } from "./Home/Home";
 import { Skills } from "./Skills&Tools/Skills/Skills";
-import { Portfolio } from "./Portfolio";
+import { Portfolio } from "./Portfolio/Portfolio";
 import { Contact } from "./Contact";
 
-export const Body = ({ setCursorVariant }) => {
+export const Body = ({ appVariant, bodyVariant, textVariant, imgVariant }) => {
   return (
     <div>
-      <Home setCursorVariant={setCursorVariant} />
+      <Home {...{ appVariant, bodyVariant, textVariant, imgVariant }} />
       <Skills />
-      <Portfolio />
+      <Portfolio {...{ appVariant, bodyVariant, textVariant, imgVariant }} />
       <Contact />
     </div>
   );

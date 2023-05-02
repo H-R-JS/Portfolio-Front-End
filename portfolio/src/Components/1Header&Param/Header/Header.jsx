@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Navbar } from "./Navbar/Navbar";
-import { motion, useAnimation } from "framer-motion";
 
-export const Header = () => {
+export const Header = ({ appVariant, textVariant }) => {
   return (
     <header>
-      <Navbar />
+      <Navbar {...{ appVariant, textVariant }} />
     </header>
   );
 };

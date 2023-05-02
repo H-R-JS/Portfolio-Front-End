@@ -3,7 +3,12 @@ import { Header } from "./Header/Header";
 import { Params, IconParam } from "./Params/Params";
 import { motion, useAnimation } from "framer-motion";
 
-export const HeaderParam = () => {
+export const HeaderParam = ({
+  appVariant,
+  textVariant,
+  setThemeSwitch,
+  themeSwitch,
+}) => {
   const paramToggle = useAnimation();
 
   const variParam = {
@@ -22,10 +27,10 @@ export const HeaderParam = () => {
   return (
     <div className="header-param">
       <motion.div variants={variParam} animate={paramToggle}>
-        <Header />
+        <Header {...{ appVariant, textVariant }} />
       </motion.div>
-      <IconParam paramToggle={paramToggle} />
-      <Params />
+      <IconParam paramToggle={paramToggle} {...{ appVariant, textVariant }} />
+      <Params {...{ setThemeSwitch, themeSwitch }} />
     </div>
   );
 };

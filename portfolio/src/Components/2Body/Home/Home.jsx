@@ -1,43 +1,20 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { RevealFadeLeft, RevealFadeRight } from "../../Motion/Fade";
 import { motion } from "framer-motion";
+import { ThemeText } from "../../../App";
 
-const theme = {
-  red: {
-    backgroundColor: "red",
-  },
-  green: {
-    backgroundColor: "green",
-  },
-};
-
-const ThemeContext = React.createContext(theme);
-
-function ThemedText({ children }) {
-  const value = useContext(ThemeContext);
+export const Home = ({ appVariant, bodyVariant, textVariant, imgVariant }) => {
   return (
-    <p style={value} className="h-text-2">
-      {children}
-    </p>
-  );
-}
-
-export const Home = ({ setCursorVariant }) => {
-  return (
-    <ThemeContext.Provider value={theme.black}>
+    <div>
       <div className="home-box" id="home">
         <RevealFadeLeft>
           <div className="home-text">
             <p className="h-text-1">Bonjour, je suis </p>
-            <div
-              className="h-text-square"
-              onMouseEnter={() => setCursorVariant("body")}
-              onMouseLeave={() => setCursorVariant("app")}
-            >
-              <ThemedText>
+            <div className="h-text-square">
+              <ThemeText {...{ appVariant, bodyVariant }}>
                 Jordy Rocacher <br />
                 Developpeur Front End
-              </ThemedText>
+              </ThemeText>
             </div>
             <p className="h-text-3">
               en autodidacte, j'ai appris le développement web seul, sans
@@ -49,17 +26,17 @@ export const Home = ({ setCursorVariant }) => {
         <RevealFadeRight>
           <div
             className="black-square"
-            onMouseEnter={() => setCursorVariant("body")}
-            onMouseLeave={() => setCursorVariant("app")}
+            onMouseEnter={bodyVariant}
+            onMouseLeave={appVariant}
           />
         </RevealFadeRight>
       </div>
-      <AboutMe />
-    </ThemeContext.Provider>
+      <AboutMe {...{ appVariant, bodyVariant, imgVariant }} />
+    </div>
   );
 };
 
-const AboutMe = () => {
+const AboutMe = ({ appVariant, bodyVariant, imgVariant }) => {
   const [imgVisible, setImgVisible] = useState(false);
 
   const imgVisibleToggle = () => {
@@ -97,6 +74,8 @@ const AboutMe = () => {
         <div
           style={imgVisible ? { backgroundColor: "red" } : null}
           className="about-img-container"
+          onMouseEnter={imgVariant}
+          onMouseLeave={appVariant}
         >
           <div className={imgVisible ? "about-img-hidden" : "about-img one"} />
           <div className={imgVisible ? "about-img two" : "about-img-hidden"} />
