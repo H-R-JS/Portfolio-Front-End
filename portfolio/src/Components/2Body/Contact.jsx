@@ -11,7 +11,9 @@ export class Contact extends React.Component {
             <Link className="contact-link">Instagram</Link>
           </div>
           <div className="back-link">
-            <Link className="contact-link ">jprogpro7@outlook.com</Link>
+            <Link to="mailto:jprogpro7@outlook.com" className="contact-link ">
+              jprogpro7@outlook.com
+            </Link>
           </div>
           <div className="back-link lin">
             <Link className="contact-link">LinkedIn</Link>

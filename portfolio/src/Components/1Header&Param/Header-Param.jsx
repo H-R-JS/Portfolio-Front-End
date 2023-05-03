@@ -6,8 +6,8 @@ import { motion, useAnimation } from "framer-motion";
 export const HeaderParam = ({
   appVariant,
   textVariant,
-  setThemeSwitch,
-  themeSwitch,
+  toggleTheme,
+  theme,
 }) => {
   const paramToggle = useAnimation();
 
@@ -30,7 +30,7 @@ export const HeaderParam = ({
         <Header {...{ appVariant, textVariant }} />
       </motion.div>
       <IconParam paramToggle={paramToggle} {...{ appVariant, textVariant }} />
-      <Params {...{ setThemeSwitch, themeSwitch }} />
+      <Params {...{ toggleTheme, theme }} />
     </div>
   );
 };

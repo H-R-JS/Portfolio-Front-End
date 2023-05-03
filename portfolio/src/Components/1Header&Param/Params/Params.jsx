@@ -1,19 +1,12 @@
 import React, { useState } from "react";
 import { TiCog, TiArrowLeftThick } from "react-icons/ti";
 
-export const Params = ({ setThemeSwitch, themeSwitch }) => {
-  /*const switchTheme = () => {
-    if (!themeSwitch) {
-      setThemeSwitch(true);
-    } else {
-      setThemeSwitch(false);
-    }
-  };*/
+export const Params = ({ toggleTheme, theme }) => {
   return (
     <div className="params-section">
       <div className="input-container">
         <span className="label-input">Inversez les couleurs</span>
-        <label class="switch" onClick={() => setThemeSwitch(false)}>
+        <label class="switch" onChange={toggleTheme} checked={theme === "dark"}>
           <input type="checkbox" />
           <span class="slider round"></span>
         </label>

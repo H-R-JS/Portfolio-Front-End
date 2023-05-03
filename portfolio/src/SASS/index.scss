@@ -2,6 +2,7 @@ $color-main: #a00e0e;
 
 $font-main: "Yuji Syuku", serif;
 $font-second: "Courier Prime", monospace;
+
 * {
   // cursor: none;
 }
@@ -51,9 +52,11 @@ body {
 .App {
   width: 90%;
   height: 4000px;
-  background-color: $color-main;
   overflow: hidden;
   margin-left: 100px;
+}
+#dark.App {
+  background-color: $color-main;
 }
 //////
 .header-folder {

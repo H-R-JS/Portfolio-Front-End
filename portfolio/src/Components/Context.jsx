@@ -1,11 +1,23 @@
 export const theme = {
   red: {
-    backgroundColor: "red",
+    backgroundColor: "$color-main",
   },
-  green: {
-    backgroundColor: "green",
+  white: {
+    backgroundColor: "white",
   },
   black: {
-    backgroundColor: "black",
+    backgroundColor: "#111",
+  },
+};
+
+export const themeInvert = {
+  red: {
+    backgroundColor: "white",
+  },
+  white: {
+    backgroundColor: "#111",
+  },
+  black: {
+    backgroundColor: "$color-main",
   },
 };
