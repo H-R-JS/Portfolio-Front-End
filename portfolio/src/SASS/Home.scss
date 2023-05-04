@@ -7,24 +7,36 @@
   color: #fff;
   width: 800px;
   height: 500px;
-  margin: 200px 250px;
-  .h-text-1 {
-    font-family: "Courier Prime", monospace;
-    //font-family: "IBM Plex Mono", monospace;
-    font-size: 25px;
-    font-weight: 600;
-  }
-  .h-text-2 {
-    background-color: #111;
-    font-family: "Yuji Syuku", serif;
-    font-weight: 600;
-    font-size: 60px;
-    padding-left: 20px;
-  }
-  .h-text-3 {
-    font-family: "Courier Prime", monospace;
-    font-size: 22px;
-  }
+  margin: 250px 250px;
+}
+
+.h-text-1 {
+  font-family: "Courier Prime", monospace;
+  //font-family: "IBM Plex Mono", monospace;
+  font-size: 25px;
+  font-weight: 600;
+}
+.h-text-2 {
+  display: flex;
+  flex-direction: column;
+  background-color: #111;
+  font-family: "Yuji Syuku", serif;
+  font-weight: 600;
+  font-size: 60px;
+  padding-left: 20px;
+}
+
+.h-span-container {
+  overflow: hidden;
+}
+
+.h-span {
+  position: relative;
+}
+
+.h-text-3 {
+  font-family: "Courier Prime", monospace;
+  font-size: 22px;
 }
 
 .black-square {

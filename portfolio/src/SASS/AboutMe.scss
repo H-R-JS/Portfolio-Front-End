@@ -29,6 +29,14 @@
   font-family: "Courier Prime", monospace;
 }
 
+.about-box-hidden {
+  position: absolute;
+  background-color: #fff;
+  width: 800px;
+  height: 400px;
+  transform-origin: bottom;
+}
+
 .about-img-container {
   transform: rotate(-3deg);
   position: relative;

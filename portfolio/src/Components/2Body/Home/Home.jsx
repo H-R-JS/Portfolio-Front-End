@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import { RevealFadeLeft, RevealFadeRight } from "../../Motion/Fade";
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import { AboutMe } from "./AboutMe/AboutMe";
-import { AboutText } from "./AboutMe/AboutText";
 
-export const Home = ({ appVariant, bodyVariant, textVariant, imgVariant }) => {
+export const Home = ({ appVariant, bodyVariant, imgVariant }) => {
+  const variHText = {
+    hidden: { top: 100 },
+    visible: {
+      top: 0,
+      transition: {
+        duration: 0.6,
+        delay: 0.8,
+        transitionTimingFunction: "easeInOut",
+      },
+    },
+  };
   return (
     <div>
       <div className="home-box" id="home">
@@ -16,8 +26,26 @@ export const Home = ({ appVariant, bodyVariant, textVariant, imgVariant }) => {
               onMouseEnter={bodyVariant}
               onMouseLeave={appVariant}
             >
-              Jordy Rocacher <br />
-              Developpeur Front End
+              <div className="h-span-container">
+                <motion.span
+                  variants={variHText}
+                  initial="hidden"
+                  animate="visible"
+                  className="h-span"
+                >
+                  Jordy Rocacher
+                </motion.span>
+              </div>
+              <div className="h-span-container">
+                <motion.span
+                  variants={variHText}
+                  initial="hidden"
+                  animate="visible"
+                  className="h-span"
+                >
+                  Developpeur Front End
+                </motion.span>
+              </div>
             </div>
             <p className="h-text-3">
               en autodidacte, j'ai appris le développement web seul, sans

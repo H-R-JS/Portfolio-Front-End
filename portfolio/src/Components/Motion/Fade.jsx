@@ -89,7 +89,34 @@ export const RevealFadeRight = ({ children }) => {
 
   const variFade = {
     hidden: { opacity: 0, display: "flex", x: 200 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.4, delay: 0.2 } },
+    show: { opacity: 1, x: 0, transition: { duration: 0.4, delay: 0.5 } },
+  };
+
+  useEffect(() => {
+    if (isInView) {
+      controlFade.start("show");
+    }
+  }, [isInView]);
+  return (
+    <motion.div
+      ref={refFade}
+      variants={variFade}
+      initial="hidden"
+      animate={controlFade}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export const RevealFadeRightPortf = ({ children }) => {
+  const refFade = useRef();
+  const isInView = useInView(refFade, { once: true });
+  const controlFade = useAnimation();
+
+  const variFade = {
+    hidden: { opacity: 0, display: "flex", x: 200 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 0.2 } },
   };
 
   useEffect(() => {

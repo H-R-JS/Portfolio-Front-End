@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { TiCog, TiArrowLeftThick } from "react-icons/ti";
+import { motion } from "framer-motion";
 
 export const Params = ({ toggleTheme, theme }) => {
   return (
@@ -41,9 +42,20 @@ export const IconParam = ({ paramToggle, appVariant, textVariant }) => {
 
   const [icon, setIcon] = useState(IconCog);
 
+  const variParamReveal = {
+    hidden: { y: -110 },
+    visible: { y: 0, transition: { duration: 0.5, delay: 0.2 } },
+  };
+
   return (
-    <div onMouseEnter={textVariant} onMouseLeave={appVariant}>
+    <motion.div
+      variants={variParamReveal}
+      initial="hidden"
+      animate="visible"
+      onMouseEnter={textVariant}
+      onMouseLeave={appVariant}
+    >
       {icon}
-    </div>
+    </motion.div>
   );
 };

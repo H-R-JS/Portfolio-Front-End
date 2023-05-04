@@ -30,7 +30,17 @@
   }
 }
 
+.skill-box-hidden {
+  position: absolute;
+  background-color: #fff;
+  width: 300px;
+  height: 25px;
+  transform-origin: right;
+  z-index: 5;
+}
+
 .skill-bar {
+  overflow: hidden;
   background-color: #fff;
   width: 300px;
   height: 25px;

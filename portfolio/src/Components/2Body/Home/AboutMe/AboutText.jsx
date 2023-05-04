@@ -1,38 +1,49 @@
-import { motion } from "framer-motion";
+import React, { useRef, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 export const AboutText = () => {
+  const refFade = useRef();
+  const isInView = useInView(refFade, { once: true });
+  const controlFade = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controlFade.start("visible");
+    }
+  }, [isInView]);
+
+  const variSkillPer = {
+    hidden: { transform: "scaleY(1)" },
+    visible: {
+      transform: "scaleY(0)",
+      transition: {
+        duration: 1,
+        delay: 0.5,
+        transitionTimingFunction: "ease-out",
+      },
+    },
+  };
   return (
     <div className="about-text">
-      <div className="text-box">
-        <AnimatedText
-          text="Après observation, le sujet est un developpeur junior en autodiacte, 
-        il est fortement attiré par la programmation depuis quelques années, il passe une parti de sa journée à crée et apprendre,
-        malgré les problèmes et obstacles le sujet persiste dans le domaine, il arrive à se frayer un chemin à
-        travers tout le contenu d'apprentissage que peut offrir internet."
-        />
-      </div>
-      <div className="text-box">
-        <AnimatedText text="Je suis créatif en effet" />
-      </div>
-      <div className="text-box">
-        <AnimatedText text="Je suis créatif en effet" />
-      </div>
+      <motion.div
+        ref={refFade}
+        variants={variSkillPer}
+        initial="hidden"
+        animate={controlFade}
+        className="about-box-hidden"
+      />
+      <p>
+        Après observation, le sujet est un developpeur junior en autodiacte, il
+        est fortement attiré par la programmation depuis quelques années, il
+        passe une parti de sa journée à crée et apprendre, malgré les problèmes
+        et obstacles le sujet persiste dans le domaine, il arrive à se frayer un
+        chemin à travers tout le contenu d'apprentissage que peut offrir
+        internet. <br />
+        <br /> Très créatif, les idées ont tendances à germées de manière plutôt
+        hasardeuse, l'apprentissage des langages de programmation lui à permis
+        de gagner en organisation.
+      </p>
     </div>
-  );
-};
-
-const AnimatedText = ({ text }) => {
-  const words = text.split(" ");
-  return (
-    <motion.div>
-      {words.map((word, index) => {
-        return (
-          <motion.span key={index} style={{ marginRight: "7px" }}>
-            {word}
-          </motion.span>
-        );
-      })}
-    </motion.div>
   );
 };
 

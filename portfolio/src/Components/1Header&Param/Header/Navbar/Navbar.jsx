@@ -2,10 +2,16 @@ import React from "react";
 import { NavItems } from "./NavItems";
 import { Link } from "react-scroll";
 import { RevealFadeHeader } from "../../../Motion/Fade";
+import { motion } from "framer-motion";
 
 export const Navbar = ({ appVariant, textVariant }) => {
+  const variNavReveal = {
+    hidden: { y: -80 },
+    visible: { y: 0, transition: { duration: 0.3, delay: 0.2 } },
+  };
+
   return (
-    <nav>
+    <motion.nav variants={variNavReveal} initial="hidden" animate="visible">
       <ul className="ul-menu">
         {NavItems.map((item, index) => {
           return (
@@ -30,6 +36,6 @@ export const Navbar = ({ appVariant, textVariant }) => {
           );
         })}
       </ul>
-    </nav>
+    </motion.nav>
   );
 };
