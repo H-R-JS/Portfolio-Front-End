@@ -1,31 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export class Contact extends React.Component {
-  render() {
-    return (
-      <section className="contact-container" id="contact">
-        <h2>Contact</h2>
+export const Contact = ({ theme }) => {
+  return (
+    <section id="contact">
+      <div className="contact-container" id={theme}>
+        <h2 className="contact-title" id={theme}>
+          Contact
+        </h2>
         <div className="contact-content">
-          <div className="back-link ins">
-            <Link
-              to="https://www.instagram.com/jordy.rocacher/"
-              className="contact-link"
-            >
-              Instagram
-            </Link>
-          </div>
-          <div className="back-link">
-            <Link to="mailto:jprogpro7@outlook.com" className="contact-link ">
-              jprogpro7@outlook.com
-            </Link>
-          </div>
-          <div className="back-link lin">
-            <Link className="contact-link">LinkedIn</Link>
-          </div>
+          <Link
+            to="https://www.instagram.com/jordy.rocacher/"
+            className="contact-link"
+            id={theme}
+          >
+            Instagram
+          </Link>
+
+          <Link
+            to="mailto:jprogpro7@outlook.com"
+            className="contact-link "
+            id={theme}
+          >
+            jprogpro7@outlook.com
+          </Link>
+
+          <Link className="contact-link" id={theme}>
+            LinkedIn
+          </Link>
+
           <div className="validation" />
         </div>
-      </section>
-    );
-  }
-}
+      </div>
+    </section>
+  );
+};

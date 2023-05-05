@@ -4,7 +4,7 @@ import { Tools } from "../Tools/Tools";
 import { RevealFadeTop } from "../../../Motion/Fade";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-export const Skills = () => {
+export const Skills = ({ theme }) => {
   const refFade = useRef();
   const isInView = useInView(refFade, { once: true });
   const controlFade = useAnimation();
@@ -31,13 +31,17 @@ export const Skills = () => {
     <section className="skills-tools" id="skills">
       <RevealFadeTop>
         <div className="skill-section">
-          <h2>Compétences</h2>
+          <h2 className="skill-title" id={theme}>
+            Compétences
+          </h2>
           <div>
             {SkillsArray.map((item, index) => {
               return (
                 <div key={index} className="skill-box">
-                  <span className="span-title">{item.title}</span>
-                  <div className="skill-bar">
+                  <span className="span-title" id={theme}>
+                    {item.title}
+                  </span>
+                  <div className="skill-bar" id={theme}>
                     <motion.div
                       ref={refFade}
                       variants={variSkillPer}
@@ -45,18 +49,24 @@ export const Skills = () => {
                       animate={controlFade}
                       className="skill-box-hidden"
                     />
-                    <div className="skill-per" style={{ width: `${item.per}` }}>
+                    <div
+                      className="skill-per"
+                      style={{ width: `${item.per}` }}
+                      id={theme}
+                    >
                       ABEDFABEDGGGOODD
                     </div>
                   </div>
-                  <span className="percentage">{item.per}</span>
+                  <span className="percentage" id={theme}>
+                    {item.per}
+                  </span>
                 </div>
               );
             })}
             <div className="skill-img"></div>
           </div>
         </div>
-        <Tools />
+        <Tools {...{ theme }} />
       </RevealFadeTop>
     </section>
   );

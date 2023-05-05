@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 import { RevealFadeHeader } from "../../../Motion/Fade";
 import { motion } from "framer-motion";
 
-export const Navbar = ({ appVariant, textVariant }) => {
+export const Navbar = ({ appVariant, textVariant, theme }) => {
   const variNavReveal = {
     hidden: { y: -80 },
     visible: { y: 0, transition: { duration: 0.3, delay: 0.2 } },
@@ -15,7 +15,7 @@ export const Navbar = ({ appVariant, textVariant }) => {
       <ul className="ul-menu">
         {NavItems.map((item, index) => {
           return (
-            <li key={index}>
+            <li key={index} id={theme}>
               <div className="background-li" />
               <RevealFadeHeader>
                 <Link
@@ -26,6 +26,7 @@ export const Navbar = ({ appVariant, textVariant }) => {
                   offset={50}
                   duration={500}
                   className="link-menu"
+                  id={theme}
                   onMouseEnter={textVariant}
                   onMouseLeave={appVariant}
                 >

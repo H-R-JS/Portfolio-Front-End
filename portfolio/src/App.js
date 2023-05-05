@@ -52,7 +52,9 @@ function App() {
             theme,
           }}
         />
-        <Body {...{ appVariant, bodyVariant, textVariant, imgVariant }} />
+        <Body
+          {...{ appVariant, bodyVariant, textVariant, imgVariant, theme }}
+        />
       </div>
     </ThemeContext.Provider>
   );

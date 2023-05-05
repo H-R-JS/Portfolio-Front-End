@@ -1,59 +1,112 @@
-import React, { useState } from "react";
-import { RevealFadeLeft, RevealFadeRight } from "../../Motion/Fade";
-import { easeInOut, motion } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
+import { RevealFadeLeftHome, RevealFadeRight } from "../../Motion/Fade";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { AboutMe } from "./AboutMe/AboutMe";
 
-export const Home = ({ appVariant, bodyVariant, imgVariant }) => {
-  const variHText = {
+export const Home = ({ appVariant, bodyVariant, imgVariant, theme }) => {
+  const refFade = useRef();
+  const isInView = useInView(refFade, { once: true });
+  const controlFade = useAnimation();
+
+  const variHText1 = {
     hidden: { top: 100 },
     visible: {
       top: 0,
       transition: {
         duration: 0.6,
-        delay: 0.8,
+        delay: 1,
         transitionTimingFunction: "easeInOut",
       },
     },
   };
+
+  const variHText2 = {
+    hidden: { top: 100 },
+    visible: {
+      top: 0,
+      transition: {
+        duration: 0.6,
+        delay: 1.2,
+        transitionTimingFunction: "easeInOut",
+      },
+    },
+  };
+
+  const variHText3 = {
+    hidden: { bottom: 150 },
+    visible: {
+      top: 0,
+      transition: {
+        duration: 0.6,
+        delay: 1.2,
+        transitionTimingFunction: "easeInOut",
+      },
+    },
+  };
+
+  useEffect(() => {
+    if (isInView) {
+      controlFade.start("visible");
+    }
+  }, [isInView]);
+
   return (
     <div>
       <div className="home-box" id="home">
-        <RevealFadeLeft>
-          <div className="home-text">
-            <p className="h-text-1">Bonjour, je suis </p>
+        <RevealFadeLeftHome>
+          <div ref={refFade} className="home-text" id={theme}>
+            <div className="h-container text-1">
+              <motion.span
+                variants={variHText1}
+                initial="hidden"
+                animate={controlFade}
+                className="h-text-1"
+              >
+                Identité du sujet :
+              </motion.span>
+            </div>
+
             <div
               className="h-text-2"
               onMouseEnter={bodyVariant}
               onMouseLeave={appVariant}
+              id={theme}
             >
-              <div className="h-span-container">
+              <div className="h-container">
                 <motion.span
-                  variants={variHText}
+                  variants={variHText2}
                   initial="hidden"
-                  animate="visible"
+                  animate={controlFade}
                   className="h-span"
                 >
                   Jordy Rocacher
                 </motion.span>
               </div>
-              <div className="h-span-container">
+              <div className="h-container">
                 <motion.span
-                  variants={variHText}
+                  variants={variHText2}
                   initial="hidden"
-                  animate="visible"
+                  animate={controlFade}
                   className="h-span"
                 >
                   Developpeur Front End
                 </motion.span>
               </div>
             </div>
-            <p className="h-text-3">
-              en autodidacte, j'ai appris le développement web seul, sans
-              formation ni diplôme, uniquement avec ma motivation et l'envie de
-              concevoir et créer à travers les langages de programmation
-            </p>
+            <div className="h-container text-3">
+              <motion.p
+                variants={variHText3}
+                initial="hidden"
+                animate={controlFade}
+                className="h-text-3"
+              >
+                en autodidacte, j'ai appris le développement web seul, sans
+                formation ni diplôme, uniquement avec ma motivation et l'envie
+                de concevoir et créer à travers les langages de programmation
+              </motion.p>
+            </div>
           </div>
-        </RevealFadeLeft>
+        </RevealFadeLeftHome>
         <RevealFadeRight>
           <div
             className="black-square"
@@ -62,7 +115,7 @@ export const Home = ({ appVariant, bodyVariant, imgVariant }) => {
           />
         </RevealFadeRight>
       </div>
-      <AboutMe {...{ appVariant, bodyVariant, imgVariant }} />
+      <AboutMe {...{ appVariant, bodyVariant, imgVariant, theme }} />
     </div>
   );
 };

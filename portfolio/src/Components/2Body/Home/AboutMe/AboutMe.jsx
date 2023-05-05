@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { RevealFadeRight } from "../../../Motion/Fade";
+import { RevealFadeRightPortf } from "../../../Motion/Fade";
 import { AboutText } from "./AboutText";
 
-export const AboutMe = ({ appVariant, bodyVariant, imgVariant }) => {
+export const AboutMe = ({ appVariant, imgVariant, theme }) => {
   const [imgVisible, setImgVisible] = useState(false);
 
   const imgVisibleToggle = () => {
@@ -16,12 +16,12 @@ export const AboutMe = ({ appVariant, bodyVariant, imgVariant }) => {
   window.addEventListener("scroll", imgVisibleToggle);
 
   return (
-    <div className="about-me-container">
+    <div className="about-me-container" id={theme}>
       <div className="about-text-container">
         <h2>À propos du sujet </h2>
         <AboutText />
       </div>
-      <RevealFadeRight>
+      <RevealFadeRightPortf>
         <div
           style={imgVisible ? { backgroundColor: "red" } : null}
           className="about-img-container"
@@ -30,9 +30,9 @@ export const AboutMe = ({ appVariant, bodyVariant, imgVariant }) => {
         >
           <div className={imgVisible ? "about-img-hidden" : "about-img one"} />
           <div className={imgVisible ? "about-img two" : "about-img-hidden"} />
-          <span>AAnomEE</span>
+          <span id={theme}>AAnomEE</span>
         </div>
-      </RevealFadeRight>
+      </RevealFadeRightPortf>
     </div>
   );
 };

@@ -6,6 +6,11 @@
   height: 800px;
   margin-left: -40px;
 }
+
+#light.portf-section {
+  background-color: $color-main;
+}
+
 .portf-container {
   position: relative;
   display: flex;
@@ -25,6 +30,9 @@
     z-index: 3;
   }
 }
+#light h2 {
+  color: #fff;
+}
 .portf-container-box::before {
   content: "";
   background-color: rgba(1, 1, 1, 0.7);
@@ -36,6 +44,7 @@
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+
 .portf-container-box {
   background-color: rgba(1, 1, 1, 0.5);
   position: relative;
@@ -53,7 +62,6 @@
 .remove-slide {
   opacity: 0;
   transform: translateX(-60px);
-
   transition: all 0.5s;
 }
 
@@ -121,6 +129,11 @@
     font-family: "Courier Prime", monospace;
   }
 }
+
+#light.descrip-container {
+  color: #fff;
+}
+
 .cv-link {
   color: #111;
   text-decoration: none;
@@ -128,6 +141,7 @@
   font-weight: 600;
   font-size: 30px;
 }
+
 .cv-link::after {
   content: "";
   position: absolute;
@@ -140,6 +154,10 @@
   transform-origin: right;
   transition: transform 0.25s ease-out;
   border-radius: 20px;
+}
+
+#light.cv-link {
+  color: #fff;
 }
 
 .cv-link:hover::after {

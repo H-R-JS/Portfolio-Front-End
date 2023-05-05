@@ -51,12 +51,16 @@ body {
 }
 .App {
   width: 90%;
-  height: 3880px;
+  height: 3980px;
   overflow: hidden;
   margin-left: 100px;
 }
 #dark.App {
   background-color: $color-main;
+}
+
+#light.App {
+  background-color: #fff;
 }
 //////
 .header-folder {

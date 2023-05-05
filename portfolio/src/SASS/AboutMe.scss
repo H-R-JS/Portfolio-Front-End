@@ -8,6 +8,11 @@
   margin-top: 150px;
 }
 
+#light.about-me-container {
+  color: #fff;
+  background-color: $color-main;
+}
+
 .about-text-container {
   position: relative;
   text-align: center;
@@ -19,7 +24,6 @@
   h2 {
     font-family: "Yuji Syuku", serif;
     font-weight: 600;
-
     font-size: 40px;
   }
 }
@@ -54,6 +58,10 @@
     top: 195px;
     left: 100px;
   }
+}
+
+.about-img-hidden {
+  color: #111;
 }
 
 .about-img {

@@ -1,10 +1,10 @@
 import React from "react";
 import { Navbar } from "./Navbar/Navbar";
 
-export const Header = ({ appVariant, textVariant }) => {
+export const Header = ({ appVariant, textVariant, theme }) => {
   return (
-    <header>
-      <Navbar {...{ appVariant, textVariant }} />
+    <header id={theme}>
+      <Navbar {...{ appVariant, textVariant, theme }} />
     </header>
   );
 };

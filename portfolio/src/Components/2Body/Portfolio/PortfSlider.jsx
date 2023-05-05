@@ -9,7 +9,7 @@ export const PortfSlider = ({
   appVariant,
   bodyVariant,
   textVariant,
-  imgVariant,
+  theme,
 }) => {
   const controlSlide = useAnimation();
   const [show, setShow] = useState(true);
@@ -58,7 +58,7 @@ export const PortfSlider = ({
         onMouseEnter={bodyVariant}
         onMouseLeave={appVariant}
       />
-      <Tilt perspective={1200} className="portf-container-box">
+      <Tilt perspective={1200} className="portf-container-box" id={theme}>
         <h2>Portfolio</h2>
         {PortfArray.map((item, index) => {
           return (

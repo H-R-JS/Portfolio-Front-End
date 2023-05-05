@@ -9,18 +9,21 @@ export const Portfolio = ({
   bodyVariant,
   textVariant,
   imgVariant,
+  theme,
 }) => {
   return (
-    <section className="portf-section" id="portfolio">
-      <RevealFadeLeft>
-        <PortfSlider
-          slides={PortfArray}
-          {...{ appVariant, bodyVariant, textVariant, imgVariant }}
-        />
-      </RevealFadeLeft>
-      <RevealFadeRightPortf>
-        <PortfDescrip />
-      </RevealFadeRightPortf>
+    <section id="portfolio">
+      <div className="portf-section" id={theme}>
+        <RevealFadeLeft>
+          <PortfSlider
+            slides={PortfArray}
+            {...{ appVariant, bodyVariant, textVariant, imgVariant, theme }}
+          />
+        </RevealFadeLeft>
+        <RevealFadeRightPortf>
+          <PortfDescrip {...{ theme }} />
+        </RevealFadeRightPortf>
+      </div>
     </section>
   );
 };

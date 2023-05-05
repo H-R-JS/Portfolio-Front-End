@@ -27,7 +27,7 @@ export const HeaderParam = ({
   return (
     <div className="header-param">
       <motion.div variants={variParam} animate={paramToggle}>
-        <Header {...{ appVariant, textVariant }} />
+        <Header {...{ appVariant, textVariant, theme }} />
       </motion.div>
       <IconParam paramToggle={paramToggle} {...{ appVariant, textVariant }} />
       <Params {...{ toggleTheme, theme }} />

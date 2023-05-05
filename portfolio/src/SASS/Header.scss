@@ -19,6 +19,10 @@ header {
   height: 80px;
 }
 
+#light header {
+  background-color: #fff;
+}
+
 .ul-menu {
   display: flex;
   justify-content: space-around;
@@ -46,6 +50,14 @@ li {
   padding: 0 15px;
   transition: all 0.5s ease-out;
 }
+
+#light.link-menu {
+  background: linear-gradient(to right, #a00e0e 50%, #fff 50%);
+  background-size: 210% 100%;
+  background-position: right bottom;
+  color: #111;
+}
+
 li::before {
   position: absolute;
   content: " ";
@@ -59,7 +71,15 @@ li::before {
   border-top-right-radius: 20px;
 }
 
+#light li::before {
+  background-color: $color-main;
+}
+
 .link-menu:hover {
+  background-position: left bottom;
+}
+
+#light.link-menu:hover {
   background-position: left bottom;
 }
 

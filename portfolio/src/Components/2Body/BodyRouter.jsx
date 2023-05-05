@@ -4,13 +4,21 @@ import { Skills } from "./Skills&Tools/Skills/Skills";
 import { Portfolio } from "./Portfolio/Portfolio";
 import { Contact } from "./Contact";
 
-export const Body = ({ appVariant, bodyVariant, textVariant, imgVariant }) => {
+export const Body = ({
+  appVariant,
+  bodyVariant,
+  textVariant,
+  imgVariant,
+  theme,
+}) => {
   return (
     <div>
-      <Home {...{ appVariant, bodyVariant, textVariant, imgVariant }} />
-      <Skills />
-      <Portfolio {...{ appVariant, bodyVariant, textVariant, imgVariant }} />
-      <Contact />
+      <Home {...{ appVariant, bodyVariant, textVariant, imgVariant, theme }} />
+      <Skills {...{ theme }} />
+      <Portfolio
+        {...{ appVariant, bodyVariant, textVariant, imgVariant, theme }}
+      />
+      <Contact {...{ theme }} />
     </div>
   );
 };
