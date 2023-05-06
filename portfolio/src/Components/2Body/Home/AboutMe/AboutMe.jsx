@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { RevealFadeRightPortf } from "../../../Motion/Fade";
+import { RevealFadeLeft } from "../../../Motion/Fade";
 import { AboutText } from "./AboutText";
 
 export const AboutMe = ({ appVariant, imgVariant, theme }) => {
@@ -17,22 +17,25 @@ export const AboutMe = ({ appVariant, imgVariant, theme }) => {
 
   return (
     <div className="about-me-container" id={theme}>
+      <div
+        style={
+          imgVisible
+            ? { background: "transparent" }
+            : { backgroundColor: "red" }
+        }
+        className="about-img-container"
+        onMouseEnter={imgVariant}
+        onMouseLeave={appVariant}
+      >
+        <div className={imgVisible ? "about-img-hidden" : "about-img one"} />
+        <div className={imgVisible ? "about-img two" : "about-img-hidden"} />
+        <span id={theme}>AAnomEE</span>
+      </div>
+
       <div className="about-text-container">
         <h2>À propos du sujet </h2>
         <AboutText />
       </div>
-      <RevealFadeRightPortf>
-        <div
-          style={imgVisible ? { backgroundColor: "red" } : null}
-          className="about-img-container"
-          onMouseEnter={imgVariant}
-          onMouseLeave={appVariant}
-        >
-          <div className={imgVisible ? "about-img-hidden" : "about-img one"} />
-          <div className={imgVisible ? "about-img two" : "about-img-hidden"} />
-          <span id={theme}>AAnomEE</span>
-        </div>
-      </RevealFadeRightPortf>
     </div>
   );
 };

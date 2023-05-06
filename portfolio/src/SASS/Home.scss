@@ -5,7 +5,7 @@
 .home-text {
   display: inline-block;
   color: #fff;
-  width: 800px;
+  width: 65vw;
   height: 500px;
   margin: 250px 0;
 }
@@ -32,6 +32,7 @@
   font-family: "Yuji Syuku", serif;
   font-weight: 600;
   font-size: 60px;
+  width: 42vw;
   padding-left: 20px;
 }
 
@@ -52,6 +53,7 @@
   position: relative;
   font-family: "Courier Prime", monospace;
   font-size: 22px;
+  width: 42vw;
 }
 
 .black-square {
@@ -59,7 +61,104 @@
   background-color: #111;
   width: 250px;
   height: 250px;
-  top: 280px;
-  left: 540px;
+  top: 260px;
+  left: 100px;
   transform: rotate(45deg);
+}
+
+@media screen and (max-width: 1800px) {
+  .home-text {
+    width: 66.2vw;
+    height: 500px;
+    margin: 250px 0;
+    margin-left: -60px;
+  }
+
+  .h-text-2 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .home-text {
+    width: 65vw;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .home-text {
+    width: 62vw;
+    height: 500px;
+  }
+
+  .h-text-1 {
+    font-size: 20px;
+  }
+
+  .h-text-2 {
+    font-size: 44px;
+  }
+
+  .h-text-3 {
+    font-size: 18px;
+  }
+
+  .black-square {
+    top: 220px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .home-text {
+    width: 58.5vw;
+    height: 500px;
+  }
+
+  .h-text-2 {
+    font-size: 37px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .home-text {
+    width: 53.2vw;
+    height: 500px;
+  }
+
+  .h-text-1 {
+    font-size: 18px;
+  }
+
+  .h-text-2 {
+    font-size: 30px;
+  }
+
+  .h-text-3 {
+    font-size: 16px;
+  }
+
+  .black-square {
+    width: 200px;
+    height: 200px;
+    top: 230px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home-text {
+    width: 53.2vw;
+    height: 500px;
+    margin-left: -100px;
+  }
+
+  .h-text-2 {
+    width: 400px;
+    min-width: 300px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .black-square {
+    display: none;
+  }
 }

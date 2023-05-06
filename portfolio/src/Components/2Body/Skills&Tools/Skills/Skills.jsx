@@ -66,6 +66,8 @@ export const Skills = ({ theme }) => {
             <div className="skill-img"></div>
           </div>
         </div>
+      </RevealFadeTop>
+      <RevealFadeTop>
         <Tools {...{ theme }} />
       </RevealFadeTop>
     </section>

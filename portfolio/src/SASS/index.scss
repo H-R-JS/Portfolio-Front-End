@@ -22,9 +22,7 @@ $font-second: "Courier Prime", monospace;
 body {
   margin: 0;
   overflow-x: hidden;
-  //background: linear-gradient(#ff0000, #111);
   background-color: #111;
-  --cursor-color: #111;
 }
 .all-out-page {
   display: flex;
@@ -50,9 +48,9 @@ body {
   left: 48px;
 }
 .App {
+  overflow: hidden;
   width: 90%;
   height: 3980px;
-  overflow: hidden;
   margin-left: 100px;
 }
 #dark.App {
@@ -69,6 +67,44 @@ body {
   font-size: 10px;
   font-family: $font-main;
   left: 4px;
+}
+@media screen and (max-width: 1400px) {
+  .App {
+    height: 4030px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .App {
+    margin-left: 50px;
+  }
+  .all-out-page {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .App {
+    margin-left: 0px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .App {
+    height: 4600px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .App {
+    height: 5320px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .App {
+    height: 5180px;
+  }
 }
 
 //////////////////////////////
