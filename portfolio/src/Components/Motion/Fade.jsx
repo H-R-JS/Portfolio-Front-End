@@ -28,13 +28,13 @@ export const RevealFadeHeader = ({ children }) => {
   );
 };
 
-export const RevealFadeTop = ({ children }) => {
+export const RevealFadeBottom = ({ children }) => {
   const refFade = useRef();
   const isInView = useInView(refFade, { once: true });
   const controlFade = useAnimation();
 
   const variFade = {
-    hidden: { display: "flex", y: -700 },
+    hidden: { display: "flex", y: 800 },
     show: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.25 } },
   };
 

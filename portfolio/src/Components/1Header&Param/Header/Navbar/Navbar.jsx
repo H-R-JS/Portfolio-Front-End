@@ -1,6 +1,6 @@
 import React from "react";
 import { NavItems } from "./NavItems";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import { RevealFadeHeader } from "../../../Motion/Fade";
 import { motion } from "framer-motion";
 

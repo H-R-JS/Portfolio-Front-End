@@ -1,4 +1,5 @@
-$color-main: #a00e0e;
+$color-main: #03224c;
+$color-second: rgb(114, 49, 5);
 
 $font-main: "Yuji Syuku", serif;
 $font-second: "Courier Prime", monospace;
@@ -22,36 +23,13 @@ $font-second: "Courier Prime", monospace;
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: #111;
 }
-.all-out-page {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  width: 100px;
-  height: 3700px;
-}
-.out-page {
-  position: relative;
-  font-size: 12px;
-  color: #fff;
-  font-family: $font-second;
-  left: 25px;
-}
-.out-page::after {
-  content: "";
-  position: absolute;
-  background-color: #fff;
-  width: 20px;
-  height: 1px;
-  bottom: 8px;
-  left: 48px;
-}
+
 .App {
   overflow: hidden;
-  width: 90%;
-  height: 3980px;
-  margin-left: 100px;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(160deg, #03224c 50%, #021125);
 }
 #dark.App {
   background-color: $color-main;
@@ -59,14 +37,6 @@ body {
 
 #light.App {
   background-color: #fff;
-}
-//////
-.header-folder {
-  position: absolute;
-  color: #fff;
-  font-size: 10px;
-  font-family: $font-main;
-  left: 4px;
 }
 @media screen and (max-width: 1400px) {
   .App {

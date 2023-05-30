@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { SkillsArray } from "./SkillsArray";
 import { Tools } from "../Tools/Tools";
-import { RevealFadeTop } from "../../../Motion/Fade";
+import { RevealFadeBottom } from "../../../Motion/Fade";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 export const Skills = ({ theme }) => {
@@ -29,7 +29,7 @@ export const Skills = ({ theme }) => {
 
   return (
     <section className="skills-tools" id="skills">
-      <RevealFadeTop>
+      <RevealFadeBottom>
         <div className="skill-section">
           <h2 className="skill-title" id={theme}>
             Compétences
@@ -66,10 +66,10 @@ export const Skills = ({ theme }) => {
             <div className="skill-img"></div>
           </div>
         </div>
-      </RevealFadeTop>
-      <RevealFadeTop>
+      </RevealFadeBottom>
+      <RevealFadeBottom>
         <Tools {...{ theme }} />
-      </RevealFadeTop>
+      </RevealFadeBottom>
     </section>
   );
 };

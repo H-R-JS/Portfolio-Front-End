@@ -5,30 +5,30 @@ export const Contact = ({ theme }) => {
   return (
     <section id="contact">
       <div className="contact-container" id={theme}>
-        <h2 className="contact-title" id={theme}>
-          Contact
-        </h2>
         <div className="contact-content">
-          <Link
-            to="https://www.instagram.com/jordy.rocacher/"
-            className="contact-link"
-            id={theme}
-          >
-            Instagram
-          </Link>
-
-          <Link
-            to="mailto:jprogpro7@outlook.com"
-            className="contact-link "
-            id={theme}
-          >
-            jprogpro7@outlook.com
-          </Link>
-
-          <Link className="contact-link" id={theme}>
-            LinkedIn
-          </Link>
-
+          <div className="contact-reseaux-box">
+            <h2>Réseaux</h2>
+            <Link
+              to="https://www.instagram.com/jordy.rocacher/"
+              className="contact-link"
+              id={theme}
+            >
+              Instagram
+            </Link>
+            <Link to="" className="contact-link" id={theme}>
+              LinkdIn
+            </Link>
+          </div>
+          <div className="contact-email-box">
+            <h2>Email</h2>
+            <Link
+              to="mailto:jprogpro7@outlook.com"
+              className="contact-link "
+              id={theme}
+            >
+              jprogpro7@outlook.com
+            </Link>
+          </div>
           <div className="validation" />
         </div>
       </div>

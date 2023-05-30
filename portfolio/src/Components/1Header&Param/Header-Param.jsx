@@ -9,7 +9,13 @@ export const HeaderParam = ({
   toggleTheme,
   theme,
 }) => {
+  const iconShow = useAnimation();
   const paramToggle = useAnimation();
+
+  const variIconShow = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
 
   const variParam = {
     hiddenParam: {
@@ -25,11 +31,23 @@ export const HeaderParam = ({
   }, []);
 
   return (
-    <div className="header-param">
+    <div
+      className="header-param"
+      onMouseEnter={() => iconShow.start("visible")}
+      onMouseLeave={() => iconShow.start("hidden")}
+    >
       <motion.div variants={variParam} animate={paramToggle}>
         <Header {...{ appVariant, textVariant, theme }} />
       </motion.div>
-      <IconParam paramToggle={paramToggle} {...{ appVariant, textVariant }} />
+      <motion.div
+        variants={variIconShow}
+        initial="hidden"
+        animate={iconShow}
+        className="icon-params-container"
+      >
+        <IconParam paramToggle={paramToggle} {...{ appVariant, textVariant }} />
+      </motion.div>
+
       <Params {...{ toggleTheme, theme }} />
     </div>
   );

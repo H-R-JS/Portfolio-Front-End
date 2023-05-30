@@ -1,6 +1,6 @@
 import React, { useState, createContext } from "react";
 import "./SASS/Header.scss";
-import { Body } from "./Components/2Body/BodyRouter";
+import { Body, BodyRouter } from "./Components/2Body/BodyRouter";
 import { AnimCursor } from "./Components/OutPage/AnimCursor";
 import { HeaderParam } from "./Components/1Header&Param/Header-Param";
 
@@ -32,17 +32,7 @@ function App() {
           cursorVariant={cursorVariant}
           setCursorVariant={setCursorVariant}
         />
-        <div
-          className="header-folder"
-          onMouseEnter={bodyVariant}
-          onMouseLeave={appVariant}
-        >
-          <span>
-            Dossier n°175-40
-            <br />
-            Sujet 027 Z18
-          </span>
-        </div>
+
         <HeaderParam
           {...{
             appVariant,
@@ -52,7 +42,7 @@ function App() {
             theme,
           }}
         />
-        <Body
+        <BodyRouter
           {...{ appVariant, bodyVariant, textVariant, imgVariant, theme }}
         />
       </div>

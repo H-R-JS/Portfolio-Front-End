@@ -115,7 +115,8 @@ export const Home = ({ appVariant, bodyVariant, imgVariant, theme }) => {
           />
         </RevealFadeRight>
       </div>
-      <AboutMe {...{ appVariant, bodyVariant, imgVariant, theme }} />
     </div>
   );
 };
+
+/** <AboutMe {...{ appVariant, bodyVariant, imgVariant, theme }} /> */
