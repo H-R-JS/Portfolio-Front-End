@@ -3,7 +3,7 @@ import { Home } from "./Home/Home";
 import { AboutMe } from "./Home/AboutMe/AboutMe";
 import { Skills } from "./Skills&Tools/Skills/Skills";
 import { Portfolio } from "./Portfolio/Portfolio";
-import { Contact } from "./Contact";
+import { Contact } from "./Contact/Contact";
 
 import { AnimatePresence } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";

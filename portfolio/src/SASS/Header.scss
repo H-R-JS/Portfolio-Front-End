@@ -45,7 +45,7 @@ li {
   background-position: right bottom;
   overflow: hidden;
   font-size: 40px;
-  font-family: "Yuji Syuku", serif;
+  font-family: $font-main;
   color: white;
   text-decoration: none;
   padding: 0 15px;
@@ -64,7 +64,7 @@ li::before {
   content: " ";
   background-color: #fff;
   width: 5px;
-  height: 58px;
+  height: 60px;
   margin-left: 0px;
   z-index: 6;
   border-bottom-left-radius: 20px;
