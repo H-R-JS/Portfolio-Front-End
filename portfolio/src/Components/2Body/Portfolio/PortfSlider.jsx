@@ -59,7 +59,6 @@ export const PortfSlider = ({
         onMouseLeave={appVariant}
       />
       <Tilt perspective={1200} className="portf-container-box" id={theme}>
-        <h2>Portfolio</h2>
         {PortfArray.map((item, index) => {
           return (
             <div

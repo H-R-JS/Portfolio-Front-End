@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const PortfDescrip = ({ theme }) => {
+export const CVLink = ({ theme }) => {
   return (
-    <div className="descrip-container" id={theme}>
-      <p>Le dossier est suivit par le cv du sujet en question:</p>
+    <div>
       <Link to="" className="cv-link" id={theme}>
         Curriculum vitae
       </Link>

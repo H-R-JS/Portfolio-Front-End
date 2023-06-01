@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { SkillsArray } from "./SkillsArray";
+import { CVLink } from "../CVLink";
 import { Tools } from "../Tools/Tools";
 import { RevealFadeBottom } from "../../../Motion/Fade";
 import { motion, useAnimation, useInView } from "framer-motion";
@@ -66,8 +67,7 @@ export const Skills = ({ theme }) => {
             <div className="skill-img"></div>
           </div>
         </div>
-      </RevealFadeBottom>
-      <RevealFadeBottom>
+        <CVLink />
         <Tools {...{ theme }} />
       </RevealFadeBottom>
     </section>

@@ -1,7 +1,7 @@
 .portf-section {
   display: flex;
-  transform: rotate(-3deg);
-  width: 110%;
+  justify-content: center;
+  width: 100%;
   height: 800px;
   margin-top: 80px;
 }
@@ -13,53 +13,23 @@
 .portf-container {
   position: relative;
   display: flex;
-  transform: rotate(3deg);
-  width: 900px;
+  width: 1500px;
   height: 620px;
   top: 125px;
-  left: 160px;
-  h2 {
-    color: #fff;
-    font-family: $font-main;
-    font-size: 40px;
-    position: absolute;
-    top: -100px;
-    left: 70px;
-    z-index: 3;
-    transform: translateZ(40px);
-  }
-}
-
-#light h2 {
-  color: #fff;
+  left: 0px;
 }
 
 .portf-container-box {
-  // background-color: rgba(255, 255, 255, 0.7);
+  background-color: #fff;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  width: 600px;
   height: 600px;
   margin: 10px;
-  border: 4px solid #fff;
   border-radius: 20px;
-  border-top-left-radius: 0px;
   transform-style: preserve-3d;
-}
-
-.portf-container-box::before {
-  content: "";
-  //background-color: rgba(255, 255, 255, 0.5);
-  position: absolute;
-  width: 300px;
-  height: 80px;
-  top: -89px;
-  left: -4px;
-  border: 4px solid #fff;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
 }
 
 .remove-slide {
@@ -80,12 +50,11 @@
   align-items: center;
   min-width: 600px;
   height: 490px;
-  margin: 0px 100px;
 }
 .portf-img {
   background-size: cover;
   background-repeat: no-repeat;
-  width: 585px;
+  width: 485px;
   height: 345px;
 }
 .portf-text {
@@ -120,35 +89,6 @@
 
 .arrow:hover {
   transform: scale(1.4);
-}
-
-.descrip-container {
-  text-align: center;
-  width: 500px;
-  height: 200px;
-  transform: rotate(3deg);
-  margin: 300px 250px;
-  p {
-    color: #fff;
-    font-size: 26px;
-    font-family: $font-second;
-  }
-}
-
-#light.descrip-container {
-  color: #fff;
-}
-
-.cv-link {
-  color: #fff;
-  text-decoration: none;
-  font-family: $font-main;
-  font-weight: 600;
-  font-size: 30px;
-}
-
-#light.cv-link {
-  color: #fff;
 }
 
 @media screen and (max-width: 1800px) {
