@@ -1,20 +1,22 @@
 export const PortfArray = [
   {
     img: require("./PortfImg/screen1.png"),
-    class: "port-box one",
+    class: "portf-img one",
     title: "Photogralexphie",
-    text: " un site proposant des services de photographe .",
+    text: " Photographie ",
+    path: "https://photogralexphie.fr/",
   },
   {
     img: require("./PortfImg/screen2.png"),
-    class: "port-box two",
+    class: "portf-img two",
     title: "Meute2Rats",
-    text: " un site d'éleveur de rats, vente de rats et de suivi de portée .",
+    text: " Blog, Suivie de Portée ",
+    path: "https://meute2rats.fr/",
   },
   {
-    img: require("./PortfImg/screen0.png"),
-    class: "port-box three",
+    img: require("./PortfImg/screen1.png"),
+    class: "portf-img three",
     title: "Game",
-    text: " sfhh hhhhhhhhhh hhhhhhhh hhhhhhh hhhh",
+    text: " Boat",
   },
 ];

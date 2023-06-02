@@ -1,9 +1,99 @@
 .portf-section {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  align-items: center;
+  height: 100vh;
+  margin-top: 40px;
+}
+
+.portf-container-box {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
   height: 800px;
-  margin-top: 80px;
+}
+
+.portf-box {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  width: 800px;
+  height: 500px;
+  border-radius: 20px;
+  margin: 0px 50px;
+}
+
+.portf-img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 320px;
+  height: 400px;
+  margin-left: 50px;
+  border-radius: 20px;
+}
+
+.portf-img.two {
+  background-position: 24% 100%;
+}
+
+.portf-box-text {
+  //background-color: red;
+  display: "flex";
+  flex-direction: "column";
+  text-align: center;
+  width: 45%;
+  height: 350px;
+  margin-left: 40px;
+  margin-top: 100px;
+  p {
+    font-family: $font-main;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.box-h3 {
+  background-image: url("../Components/2Body/Portfolio/PortfImg/fondText.jpg");
+  background-position: bottom;
+  background-clip: text;
+  color: transparent;
+  font-family: $font-main;
+  font-size: 35px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.link-web {
+  position: relative;
+  top: 150px;
+  color: $color-main;
+  text-decoration: none;
+  font-family: $font-main;
+}
+
+.link-web::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 158px;
+  height: 2px;
+  background-color: $color-main;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+.link-web:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/*
+.portf-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 #light.portf-section {
@@ -13,19 +103,19 @@
 .portf-container {
   position: relative;
   display: flex;
-  width: 1500px;
   height: 620px;
   top: 125px;
   left: 0px;
 }
 
 .portf-container-box {
-  background-color: #fff;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  width: 600px;
+  overflow-x: hidden;
+  width: 95%;
+  margin-left: 100px;
   height: 600px;
   margin: 10px;
   border-radius: 20px;
@@ -44,13 +134,13 @@
 }
 
 .portf-box {
-  position: relative;
+  background-color: #fff;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  min-width: 600px;
+  min-width: 200px;
   height: 490px;
 }
+
 .portf-img {
   background-size: cover;
   background-repeat: no-repeat;
@@ -85,7 +175,7 @@
   z-index: 3;
   transform: scale(1);
   transition: all 0.2s ease-out;
-}
+}*/
 
 .arrow:hover {
   transform: scale(1.4);
