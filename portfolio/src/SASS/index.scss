@@ -6,6 +6,13 @@ $font-main: "Geologica", sans-serif;
 //
 //  "Yuji Syuku", serif
 $font-second: "Tsukimi Rounded", sans-serif;
+
+@mixin background-image-init {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 //
 * {
   cursor: none;

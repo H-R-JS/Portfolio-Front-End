@@ -13,11 +13,9 @@ export const Portfolio = ({
 }) => {
   return (
     <section id="portfolio">
-      <div className="portf-section" id={theme}>
-        <RevealFadeLeft>
-          <PortfWork />
-        </RevealFadeLeft>
-      </div>
+      <RevealFadeLeft>
+        <PortfWork />
+      </RevealFadeLeft>
     </section>
   );
 };

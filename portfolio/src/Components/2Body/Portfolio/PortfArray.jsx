@@ -1,3 +1,5 @@
+import { InfosBoxsReact, InfosBoxsRFire } from "./PorftInfoBox/InfoBox";
+
 export const PortfArray = [
   {
     img: require("./PortfImg/screen1.png"),
@@ -5,6 +7,7 @@ export const PortfArray = [
     title: "Photogralexphie",
     text: " Photographie ",
     path: "https://photogralexphie.fr/",
+    infoB: <InfosBoxsReact />,
   },
   {
     img: require("./PortfImg/screen2.png"),
@@ -12,6 +15,7 @@ export const PortfArray = [
     title: "Meute2Rats",
     text: " Blog, Suivie de Portée ",
     path: "https://meute2rats.fr/",
+    infoB: <InfosBoxsRFire />,
   },
   {
     img: require("./PortfImg/screen1.png"),
