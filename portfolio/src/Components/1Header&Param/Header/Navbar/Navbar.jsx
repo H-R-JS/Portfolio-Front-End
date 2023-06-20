@@ -20,11 +20,6 @@ export const Navbar = ({ appVariant, textVariant, theme }) => {
               <RevealFadeHeader>
                 <Link
                   to={item.path}
-                  spy={true}
-                  smooth={true}
-                  hashSpy={true}
-                  offset={50}
-                  duration={500}
                   className="link-menu"
                   id={theme}
                   onMouseEnter={textVariant}

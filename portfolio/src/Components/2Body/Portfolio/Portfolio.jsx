@@ -1,26 +1,11 @@
 import React from "react";
-import { PortfSlider } from "./PortfSlider";
-import { PortfArray } from "./PortfArray";
-import { RevealFadeLeft, RevealFadeRightPortf } from "../../Motion/Fade";
+
 import { PortfWork } from "./PortfWork";
 
-export const Portfolio = ({
-  appVariant,
-  bodyVariant,
-  textVariant,
-  imgVariant,
-  theme,
-}) => {
+export const Portfolio = () => {
   return (
     <section id="portfolio">
-      <RevealFadeLeft>
-        <PortfWork />
-      </RevealFadeLeft>
+      <PortfWork />
     </section>
   );
 };
-
-/**<PortfSlider
-            slides={PortfArray}
-            {...{ appVariant, bodyVariant, textVariant, imgVariant, theme }}
-          /> */

@@ -61,7 +61,7 @@
   width: 42vw;
 }
 
-.black-square {
+.white-square {
   position: relative;
   background-color: #fff;
   width: 250px;
@@ -71,8 +71,9 @@
   transform: rotate(45deg);
   transition: left 0.3s;
 }
-.black-square:hover {
-  left: 298px;
+
+.white-square:hover {
+  left: 308px;
 }
 
 .lignes-container {

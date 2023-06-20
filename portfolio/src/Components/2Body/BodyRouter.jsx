@@ -7,13 +7,13 @@ import { Contact } from "./Contact/Contact";
 
 import { AnimatePresence } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";
-export const BodyRouter = () => {
+export const BodyRouter = ({ setSlide }) => {
   const location = useLocation();
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/aboutMe" element={<AboutMe />} />
+        <Route path="/" element={<Home {...{ setSlide }} />} />
+        <Route path="/aboutMe" element={<AboutMe {...{ setSlide }} />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />

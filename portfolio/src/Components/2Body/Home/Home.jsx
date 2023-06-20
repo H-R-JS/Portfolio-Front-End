@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { RevealFadeLeftHome, RevealFadeRight } from "../../Motion/Fade";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { AboutMe } from "./AboutMe/AboutMe";
+import { Link } from "react-router-dom";
 import { Ligne } from "./Ligne";
 
-export const Home = ({ appVariant, bodyVariant, imgVariant, theme }) => {
+export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
   const refFade = useRef();
   const isInView = useInView(refFade, { once: true });
   const controlFade = useAnimation();
@@ -108,11 +108,13 @@ export const Home = ({ appVariant, bodyVariant, imgVariant, theme }) => {
         </div>
       </RevealFadeLeftHome>
       <RevealFadeRight>
-        <div
-          className="black-square"
+        <Link
+          to="/aboutMe"
+          className="white-square"
+          onClick={() => setSlide("right")}
           onMouseEnter={bodyVariant}
           onMouseLeave={appVariant}
-        />
+        ></Link>
       </RevealFadeRight>
       <Ligne />
     </div>

@@ -20,12 +20,15 @@ function App() {
     setTheme((current) => (current === "dark" ? "light" : "dark"));
   };
 
+  const [slide, setSlide] = useState("left");
+
   return (
     <ThemeContext.Provider value={(theme, toggleTheme)}>
       <div
         className="App"
         onMouseEnter={appVariant}
         onMouseLeave={bodyVariant}
+        style={{ backgroundPosition: slide }}
         id={theme}
       >
         <AnimCursor
@@ -43,7 +46,14 @@ function App() {
           }}
         />
         <BodyRouter
-          {...{ appVariant, bodyVariant, textVariant, imgVariant, theme }}
+          {...{
+            appVariant,
+            bodyVariant,
+            textVariant,
+            imgVariant,
+            theme,
+            setSlide,
+          }}
         />
       </div>
     </ThemeContext.Provider>

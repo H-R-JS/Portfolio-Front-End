@@ -1,7 +1,6 @@
 .skills-tools {
   display: flex;
   justify-content: center;
-
   overflow: hidden;
 }
 
@@ -11,7 +10,7 @@
   align-items: center;
   width: 800px;
   margin-top: 180px;
-  margin-left: -40px;
+  margin-left: -70px;
 
   h2 {
     color: #fff;
@@ -97,7 +96,7 @@
   text-align: center;
   width: 600px;
   margin-top: 180px;
-  margin-left: 140px;
+  margin-left: 150px;
   h2 {
     color: #fff;
     font-size: 40px;
@@ -142,11 +141,13 @@
 }
 
 .cv-link {
-  position: relative;
-  top: 450px;
-  left: 40px;
+  position: absolute;
+  bottom: 100px;
+  left: 870px;
   padding: 10px;
-  background-color: #fff;
+  background: linear-gradient(to top, #fff 50%, rgba(0, 0, 0, 0) 50%);
+  background-size: 100% 210%;
+  background-position: bottom;
   color: $color-main;
   text-align: center;
   text-decoration: none;
@@ -154,11 +155,12 @@
   font-weight: 600;
   font-size: 30px;
   border-radius: 50px;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 
 .cv-link:hover {
-  top: 440px;
+  background-position: top;
+  color: #fff;
 }
 
 #light.cv-link {

@@ -23,9 +23,7 @@ export const Contact = ({ theme }) => {
   useEffect(() => {
     const paralMove = (e) => {
       const Move = document.querySelectorAll(".move");
-      console.log(Move);
       Move.forEach((move) => {
-        console.log(move);
         const speed = move.getAttribute("data-speed");
         const x = (window.innerWidth - e.pageX * speed) / 100;
         const y = (window.innerHeight - e.pageY * speed) / 100;

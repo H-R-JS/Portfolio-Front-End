@@ -2,12 +2,11 @@
   display: inline-block;
   position: relative;
   left: 90%;
-}
-.icon-params {
-  width: 80px;
-  height: 80px;
-  color: #fff;
-  z-index: 8;
+  background-color: #fff;
+  width: 20px;
+  height: 50px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .params-section {

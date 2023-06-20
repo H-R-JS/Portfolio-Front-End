@@ -1,11 +1,10 @@
 .about-me-container {
   display: flex;
   background-color: #fff;
-  transform: rotate(3deg);
   width: 110%;
-  height: 800px;
+  height: 100vh;
   margin-left: -25px;
-  margin-top: 150px;
+  margin-top: 0px;
 }
 
 #light.about-me-container {
@@ -16,7 +15,6 @@
 .about-text-container {
   position: relative;
   text-align: center;
-  transform: rotate(-3deg);
   width: 800px;
   height: 600px;
   top: 100px;
@@ -30,7 +28,8 @@
 
 .about-text {
   font-size: 22px;
-  font-family: "Courier Prime", monospace;
+  color: $color-main;
+  font-family: $font-main;
 }
 
 .about-box-hidden {
@@ -41,53 +40,33 @@
   transform-origin: bottom;
 }
 
-.about-img-container {
-  background: tran;
-  background-color: red;
-  transform: rotate(-3deg);
+.about-me-img {
+  object-fit: cover;
   position: relative;
-  width: 498px;
-  height: 598px;
-  top: 100px;
-  left: 200px;
-  box-shadow: 20px 20px 100px inset #fff;
-  transition: background-color 0.5s;
-  span {
-    position: absolute;
-    color: #111;
-    font-family: "Redacted Script", cursive;
-    font-size: 80px;
-    top: 195px;
-    left: 100px;
-  }
-}
-
-.about-img-hidden {
-  color: #111;
-}
-
-.about-img {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  top: 150px;
+  left: 300px;
   width: 500px;
   height: 600px;
-  opacity: 0.7;
-  margin-top: -1px;
-  margin-left: -1px;
+  border-radius: 20px;
 }
 
-.about-img.one {
-  background-image: url("../Components/2Body/Home/face1.jpg");
-}
-.about-img.two {
-  background-image: url("../Components/2Body/Home/face2.jpg");
-  position: relative;
-  top: 0px;
-  opacity: 0.7;
+.blue-square {
+  position: absolute;
+  background: linear-gradient(to right top, #fff 50%, $color-main 50%);
+
+  width: 250px;
+  height: 250px;
+  top: 280px;
+  left: -150px;
+  transform: rotate(45deg);
+  transition: left 0.3s;
 }
 
-.about-img-hidden {
+.blue-square:hover {
+  left: -140px;
+}
+
+.blue-square.none {
   opacity: 0;
 }
 
