@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TiCog, TiArrowLeftThick } from "react-icons/ti";
+import { TiCog, TiArrowUpThick } from "react-icons/ti";
 import { motion } from "framer-motion";
 
 export const Params = ({ toggleTheme, theme }) => {
@@ -9,11 +9,15 @@ export const Params = ({ toggleTheme, theme }) => {
         <span className="label-input">Inversez les couleurs</span>
         <label class="switch" onChange={toggleTheme} checked={theme === "dark"}>
           <input type="checkbox" />
-          <span class="slider round"></span>
+          <span class="slider"></span>
         </label>
       </div>
-      <div className="param-design-text">
-        <span className="design-text">They will find you </span>
+      <div className="input-container">
+        <span className="label-input">Activer Boat Game</span>
+        <label class="switch">
+          <input type="checkbox" />
+          <span class="slider"></span>
+        </label>
       </div>
     </div>
   );
@@ -22,7 +26,7 @@ export const Params = ({ toggleTheme, theme }) => {
 export const IconParam = ({ paramToggle, appVariant, textVariant }) => {
   const IconCog = (
     <TiCog
-      className="icon-params"
+      className="icon-param"
       onClick={() => {
         paramToggle.start("showParam");
         setIcon(IconArrow);
@@ -31,8 +35,8 @@ export const IconParam = ({ paramToggle, appVariant, textVariant }) => {
   );
 
   const IconArrow = (
-    <TiArrowLeftThick
-      className="icon-params"
+    <TiArrowUpThick
+      className="icon-param"
       onClick={() => {
         paramToggle.start("hiddenParam");
         setIcon(IconCog);

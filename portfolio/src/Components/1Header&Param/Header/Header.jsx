@@ -1,7 +1,5 @@
 import React from "react";
 import { Navbar } from "./Navbar/Navbar";
-import { PhoneMenu } from "./PhoneMenu/PhoneMenu";
-import Media from "react-media";
 
 export const Header = ({ appVariant, textVariant, theme }) => {
   return (

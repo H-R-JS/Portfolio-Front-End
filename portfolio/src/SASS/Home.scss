@@ -1,8 +1,9 @@
-.home-box {
+.home-page {
   display: flex;
+  justify-content: center;
 }
 
-.home-text {
+.home-section {
   display: inline-block;
   color: #fff;
   width: 65vw;
@@ -14,71 +15,122 @@
   color: #111;
 }
 
-.h-container.text-1 {
-  position: relative;
-  height: 40px;
-  bottom: 10px;
-}
-
-.h-text-1 {
-  position: relative;
-  font-family: $font-main;
-  font-size: 25px;
-  font-weight: 600;
-}
-
-.h-text-2 {
+.h-title-box {
   display: flex;
   flex-direction: column;
-  // background-color: $color-second;
   font-family: $font-main;
-  font-weight: 600;
-  font-size: 60px;
+  text-align: center;
   width: 42vw;
   padding-left: 20px;
   color: #fff;
-  border: 5px solid #fff;
 }
 
-#light.h-text-2 {
-  color: #fff;
-  background-color: $color-main;
-}
-
-.h-container {
+.h-title {
   overflow: hidden;
+  font-size: 70px;
+  font-weight: 600;
+}
+.h-title-two {
+  overflow: hidden;
+  font-size: 30px;
 }
 
 .h-span {
   position: relative;
 }
 
-.h-text-3 {
+.h3-home {
   position: relative;
-  left: 2px;
-  font-family: $font-second;
-  font-size: 22px;
-  width: 42vw;
+  top: 100px;
+  left: 405px;
+  font-family: $font-main;
+  font-size: 24px;
 }
 
-.white-square {
-  position: relative;
+.ul-sites {
+  display: flex;
+  margin-top: 150px;
+}
+
+.li-sites {
+  margin-left: 50px;
+  padding: 25px;
+  height: 25px;
+  font-family: $font-second;
+  font-size: 20px;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 34px;
+}
+
+.li-sites.one {
+  height: 25px;
+}
+
+.li-sites.two {
+  height: 25px;
+}
+
+.li-sites:before {
+  content: "";
+}
+
+.ul-sites-detail {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  margin-top: 22px;
+}
+
+.li-sites-detail {
+  margin-left: -35px;
+  text-align: center;
+  color: $color-main;
+  font-size: 14px;
+  font-family: $font-second;
+  list-style: none;
+}
+
+.link-sites {
+  padding: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: $color-main;
+}
+
+.white-square-left {
+  position: absolute;
   background-color: #fff;
   width: 250px;
   height: 250px;
-  top: 280px;
-  left: 318px;
+  top: 350px;
+  left: -600px;
   transform: rotate(45deg);
   transition: left 0.3s;
 }
 
-.white-square:hover {
-  left: 308px;
+.white-square-left:hover {
+  left: -590px;
+}
+
+.white-square-right {
+  position: absolute;
+  background-color: #fff;
+  width: 250px;
+  height: 250px;
+  top: 350px;
+  left: 1810px;
+  transform: rotate(45deg);
+  transition: left 0.3s;
+}
+
+.white-square-right:hover {
+  left: 1800px;
 }
 
 .lignes-container {
   position: absolute;
-  bottom: 50px;
+  bottom: 20px;
 
   width: 1200px;
 }

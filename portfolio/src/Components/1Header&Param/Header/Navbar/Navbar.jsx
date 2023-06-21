@@ -15,7 +15,7 @@ export const Navbar = ({ appVariant, textVariant, theme }) => {
       <ul className="ul-menu">
         {NavItems.map((item, index) => {
           return (
-            <li key={index} id={theme}>
+            <li key={index} id={theme} className="li-menu">
               <div className="background-li" />
               <RevealFadeHeader>
                 <Link
