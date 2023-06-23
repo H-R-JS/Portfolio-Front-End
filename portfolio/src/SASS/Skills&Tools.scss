@@ -23,6 +23,54 @@
   color: #111;
 }
 
+.front-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 100px;
+  color: $color-main;
+  font-family: $font-second;
+  font-weight: 600;
+  h3 {
+    font-size: 40px;
+    color: #fff;
+    font-weight: 600;
+    font-family: $font-main;
+  }
+}
+
+.front-tech-container {
+  display: flex;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.front-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.front-img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.back-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 100px;
+  color: #fff;
+  font-family: $font-second;
+  h3 {
+    font-size: 30px;
+  }
+}
+
 .skill-box {
   width: 370px;
   height: 100px;

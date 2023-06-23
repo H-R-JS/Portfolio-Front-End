@@ -22,15 +22,22 @@ const SProgDetails2 = () => {
 };
 
 export const ArraySites = [
-  { title: "Meute2Rats", classN: "li-sites", details: <SProgDetails1 /> },
+  {
+    title: "Meute2Rats",
+    classN: "li-sites",
+    path: "https://Meute2Rats.fr/",
+    details: <SProgDetails1 />,
+  },
   {
     title: "Photogralexphie",
     classN: "li-sites one",
+    path: "https://photogralexphie.fr/",
     details: <SProgDetails2 />,
   },
   {
     title: "Netflix-Clone",
     classN: "li-sites two",
+    path: "https://Meute2Rats.fr/",
     details: <SProgDetails1 />,
   },
 ];

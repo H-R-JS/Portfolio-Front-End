@@ -29,8 +29,56 @@ export const Skills = ({ theme }) => {
   };
 
   return (
-    <section className="skills-tools" id="skills">
-      <RevealFadeBottom>
+    <main className="skills-tools" id="skills">
+      <section>
+        <article className="front-container">
+          <h3> Front End </h3>
+          <figure className="front-tech-container">
+            <figure className="front-img-container">
+              <img
+                src={require("./SkillImg/htmlcss.png")}
+                alt="Technologie Front End"
+                className="front-img"
+              />
+              <figcaption style={{ marginTop: "10px" }}>HTML & CSS</figcaption>
+            </figure>
+            <figure className="front-img-container">
+              <img
+                src={require("./SkillImg/js.png")}
+                alt="Technologie Front End"
+                className="front-img"
+              />
+              <figcaption style={{ marginTop: "10px" }}>Javascript</figcaption>
+            </figure>
+            <figure className="front-img-container">
+              <img
+                src={require("./SkillImg/reactjs.png")}
+                alt="Technologie Front End"
+                className="front-img"
+              />
+              <figcaption style={{ marginTop: "10px" }}>React</figcaption>
+            </figure>
+          </figure>
+        </article>
+        <article className="back-container">
+          <h3> Back end </h3>
+          <figure className="front-img-container">
+            <img
+              src={require("./SkillImg/firebase.png")}
+              alt="Technologie Front End"
+              className="front-img"
+            />
+            <figcaption style={{ marginTop: "10px" }}>Firebase</figcaption>
+          </figure>
+        </article>
+      </section>
+      <CVLink />
+      <Tools {...{ theme }} />
+    </main>
+  );
+};
+
+/** 
         <div className="skill-section">
           <h2 className="skill-title" id={theme}>
             Compétences
@@ -66,10 +114,4 @@ export const Skills = ({ theme }) => {
             })}
             <div className="skill-img"></div>
           </div>
-        </div>
-        <CVLink />
-        <Tools {...{ theme }} />
-      </RevealFadeBottom>
-    </section>
-  );
-};
+        </div> */

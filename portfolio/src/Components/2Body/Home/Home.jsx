@@ -9,6 +9,35 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
   const refFade = useRef();
   const isInView = useInView(refFade, { once: true });
   const controlFade = useAnimation();
+  /// FRAMER MOTION
+  const variMainWave = {
+    noWave: { opacity: 0 },
+    wave: { opacity: 1, transition: { duration: 0.3, staggerChildren: 0.3 } },
+  };
+
+  const variWave = {
+    noWave: { top: 1000 },
+    wave: {
+      top: 765,
+      transition: { duration: 0.4 },
+    },
+  };
+
+  const variWave2 = {
+    noWave: { top: 1000 },
+    wave: {
+      top: 815,
+      transition: { duration: 0.4 },
+    },
+  };
+
+  const variWave3 = {
+    noWave: { top: 1000 },
+    wave: {
+      top: 850,
+      transition: { duration: 0.4 },
+    },
+  };
 
   const variHome = {
     hidden: { opacity: 0 },
@@ -16,7 +45,8 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
       opacity: 1,
       transition: {
         duration: 0.4,
-        staggerChildren: 0.3,
+        delay: 0.2,
+        staggerChildren: 0.4,
       },
     },
   };
@@ -30,7 +60,7 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
     //hidden: { height: "auto" },
     visible: {},
   };
-
+  /////
   useEffect(() => {
     if (isInView) {
       controlFade.start("visible");
@@ -38,7 +68,13 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
   }, [isInView]);
 
   return (
-    <main className="home-page" id="home">
+    <motion.main
+      variants={variMainWave}
+      initial="noWave"
+      animate="wave"
+      className="home-page"
+      id="home"
+    >
       <motion.section
         ref={refFade}
         variants={variHome}
@@ -71,7 +107,9 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
                 key={index}
                 className={item.classN}
               >
-                <Link className="link-sites">{item.title}</Link>
+                <Link to={item.path} className="link-sites">
+                  {item.title}
+                </Link>
                 {item.details}
               </motion.li>
             );
@@ -87,7 +125,6 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
           />
         </motion.aside>
       </motion.section>
-
       <RevealFadeRight>
         <Link
           to="/aboutMe"
@@ -97,21 +134,21 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
           onMouseLeave={appVariant}
         ></Link>
       </RevealFadeRight>
-
-      <svg
+      <motion.svg
+        variants={variWave}
         id="Mode_Isolation"
         data-name="Mode Isolation"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 842.89 338.51"
-        className="wave one"
+        className="wave "
       >
         <path
           class="cls-1"
           d="m674,.5c-42.1,0-42.1,22-84.19,22S547.72.5,505.62.5s-42.09,22-84.19,22S379.34.5,337.25.5s-42.09,22-84.19,22S210.97.5,168.87.5s-42.09,22-84.19,22S42.59.5.5.5v337.51h841.89V.5c-42.1,0-42.1,22-84.19,22S716.1.5,674,.5Z"
         />
-      </svg>
-
-      <svg
+      </motion.svg>
+      <motion.svg
+        variants={variWave2}
         id="Mode_Isolation"
         data-name="Mode Isolation"
         xmlns="http://www.w3.org/2000/svg"
@@ -122,9 +159,9 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
           class="cls-1"
           d="m674,.5c-42.1,0-42.1,22-84.19,22S547.72.5,505.62.5s-42.09,22-84.19,22S379.34.5,337.25.5s-42.09,22-84.19,22S210.97.5,168.87.5s-42.09,22-84.19,22S42.59.5.5.5v337.51h841.89V.5c-42.1,0-42.1,22-84.19,22S716.1.5,674,.5Z"
         />
-      </svg>
-
-      <svg
+      </motion.svg>
+      <motion.svg
+        variants={variWave3}
         id="Mode_Isolation"
         data-name="Mode Isolation"
         xmlns="http://www.w3.org/2000/svg"
@@ -135,8 +172,8 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
           class="cls-1"
           d="m674,.5c-42.1,0-42.1,22-84.19,22S547.72.5,505.62.5s-42.09,22-84.19,22S379.34.5,337.25.5s-42.09,22-84.19,22S210.97.5,168.87.5s-42.09,22-84.19,22S42.59.5.5.5v337.51h841.89V.5c-42.1,0-42.1,22-84.19,22S716.1.5,674,.5Z"
         />
-      </svg>
-    </main>
+      </motion.svg>
+    </motion.main>
   );
 };
 
