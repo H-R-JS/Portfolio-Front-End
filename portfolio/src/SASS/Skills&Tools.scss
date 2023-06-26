@@ -11,7 +11,6 @@
   width: 800px;
   margin-top: 180px;
   margin-left: -70px;
-
   h2 {
     color: #fff;
     font-size: 40px;
@@ -42,6 +41,19 @@
 
 .front-tech-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 600px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.back-container {
+  height: 450px;
+}
+
+.back-tech-container {
+  display: flex;
   background-color: #fff;
   border-radius: 20px;
 }
@@ -57,6 +69,9 @@
   width: 100px;
   height: 100px;
 }
+.front-img.n4 {
+  width: 133px;
+}
 
 .back-container {
   display: flex;
@@ -64,10 +79,12 @@
   align-items: center;
   position: relative;
   top: 100px;
-  color: #fff;
+  color: $color-main;
   font-family: $font-second;
   h3 {
-    font-size: 30px;
+    font-size: 40px;
+    font-family: $font-main;
+    color: #fff;
   }
 }
 
@@ -141,10 +158,17 @@
 .tools-section {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  width: 600px;
-  margin-top: 180px;
+  align-items: center;
   margin-left: 150px;
+}
+
+.tools-article {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 750px;
+  height: 725px;
+  margin-top: 100px;
   h2 {
     color: #fff;
     font-size: 40px;
@@ -156,18 +180,33 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 300px;
-  height: 500px;
+  width: 480px;
+  height: 450px;
   margin: 50px 130px;
+  background-color: #fff;
+  color: $color-main;
+  font-family: $font-second;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.tools-background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  height: 160px;
 }
 
 .tools-img {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  object-fit: cover;
   width: 100px;
   height: 100px;
-  margin-left: 50px;
+  margin: 10px;
+}
+
+.tools-img.n1 {
+  height: 150px;
 }
 
 #light.tools-img {
@@ -189,10 +228,8 @@
 }
 
 .cv-link {
-  position: absolute;
-  bottom: 100px;
-  left: 870px;
   padding: 10px;
+
   background: linear-gradient(to top, #fff 50%, rgba(0, 0, 0, 0) 50%);
   background-size: 100% 210%;
   background-position: bottom;

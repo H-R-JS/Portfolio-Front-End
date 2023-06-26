@@ -1,13 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-export const CVLink = ({ theme }) => {
+export const CVLink = ({ theme, variSTChildren }) => {
   return (
-    <div>
+    <motion.article variants={variSTChildren}>
       <Link to="" className="cv-link" id={theme}>
         Curriculum vitae
       </Link>
-    </div>
+    </motion.article>
   );
 }; /**Le sujet fut preuve de bonne volonté, et décida de partager ses projets
         web. Aucun contenu ne semble problématique, ni ne contredit aucunement la loi,

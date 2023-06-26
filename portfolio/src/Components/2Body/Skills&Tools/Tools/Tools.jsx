@@ -1,25 +1,45 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import { ToolsArray } from "./ToolsArray";
 
-export const Tools = ({ theme }) => {
+export const Tools = ({ theme, variLogo, variSTChildren }) => {
+  const variContainerRight = {
+    hidden: { opacity: 0, x: 300 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.4,
+        delay: 0.2,
+        staggerChildren: 0.2,
+        when: "beforeChildren",
+      },
+    },
+  };
+
   return (
-    <div className="tools-section">
+    <motion.article variants={variSTChildren} className="tools-article">
       <h2>Outils</h2>
-      <div className="tools-container">
+      <motion.figure variants={variContainerRight} className="tools-container">
         {ToolsArray.map((item, index) => {
           return (
-            <div className="tools-background" id={theme}>
-              <div
-                key={index}
-                style={{ backgroundImage: `url(${item})` }}
-                className="tools-img"
+            <motion.figure
+              variants={variLogo}
+              className="tools-background"
+              id={theme}
+              key={index}
+            >
+              <img
+                src={require(`${item.img}`)}
+                className={item.classN}
                 id={theme}
               />
-            </div>
+              <figcaption>{item.descript}</figcaption>
+            </motion.figure>
           );
         })}
-      </div>
-    </div>
+      </motion.figure>
+    </motion.article>
   );
 };

@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import { SkillsArray } from "./SkillsArray";
 import { CVLink } from "../CVLink";
 import { Tools } from "../Tools/Tools";
-import { RevealFadeBottom } from "../../../Motion/Fade";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 export const Skills = ({ theme }) => {
@@ -16,64 +15,121 @@ export const Skills = ({ theme }) => {
     }
   }, [isInView]);
 
-  const variSkillPer = {
-    hidden: { transform: "scaleX(1)" },
+  const variSkillTools = {
+    hidden: { opacity: 0 },
     visible: {
-      transform: "scaleX(0)",
+      opacity: 1,
+      transition: { duration: 0.3, staggerChildren: 0.6 },
+    },
+  };
+
+  const variSTChildren = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.2, when: "beforeChildren" },
+    },
+  };
+
+  const variContainerLeft = {
+    hidden: { opacity: 0, x: -300 },
+    visible: {
+      opacity: 1,
+      x: 0,
       transition: {
-        duration: 2,
-        delay: 1,
-        transitionTimingFunction: "ease-out",
+        duration: 0.4,
+        staggerChildren: 0.3,
+        when: "beforeChildren",
       },
     },
   };
 
+  const variLogo = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.2 } },
+  };
+
   return (
     <main className="skills-tools" id="skills">
-      <section>
-        <article className="front-container">
+      <motion.section
+        variants={variSkillTools}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.article variants={variSTChildren} className="front-container">
           <h3> Front End </h3>
-          <figure className="front-tech-container">
-            <figure className="front-img-container">
+          <motion.figure
+            variants={variContainerLeft}
+            className="front-tech-container"
+          >
+            <motion.figure variants={variLogo} className="front-img-container">
               <img
                 src={require("./SkillImg/htmlcss.png")}
                 alt="Technologie Front End"
                 className="front-img"
               />
               <figcaption style={{ marginTop: "10px" }}>HTML & CSS</figcaption>
-            </figure>
-            <figure className="front-img-container">
+            </motion.figure>
+            <motion.figure variants={variLogo} className="front-img-container">
               <img
                 src={require("./SkillImg/js.png")}
                 alt="Technologie Front End"
                 className="front-img"
               />
               <figcaption style={{ marginTop: "10px" }}>Javascript</figcaption>
-            </figure>
-            <figure className="front-img-container">
+            </motion.figure>
+            <motion.figure variants={variLogo} className="front-img-container">
               <img
                 src={require("./SkillImg/reactjs.png")}
                 alt="Technologie Front End"
                 className="front-img"
               />
               <figcaption style={{ marginTop: "10px" }}>React</figcaption>
-            </figure>
-          </figure>
-        </article>
-        <article className="back-container">
+            </motion.figure>
+            <motion.figure variants={variLogo} className="front-img-container">
+              <img
+                src={require("./SkillImg/sass.png")}
+                alt="Technologie Front End"
+                className="front-img  n4"
+              />
+              <figcaption style={{ marginTop: "10px" }}>Sass</figcaption>
+            </motion.figure>
+            <motion.figure variants={variLogo} className="front-img-container">
+              <img
+                src={require("./SkillImg/bootstrap.png")}
+                alt="Technologie Front End"
+                className="front-img"
+              />
+              <figcaption style={{ marginTop: "10px" }}>Bootstrap</figcaption>
+            </motion.figure>
+          </motion.figure>
+        </motion.article>
+        <motion.article variants={variSTChildren} className="back-container">
           <h3> Back end </h3>
-          <figure className="front-img-container">
-            <img
-              src={require("./SkillImg/firebase.png")}
-              alt="Technologie Front End"
-              className="front-img"
-            />
-            <figcaption style={{ marginTop: "10px" }}>Firebase</figcaption>
-          </figure>
-        </article>
-      </section>
-      <CVLink />
-      <Tools {...{ theme }} />
+          <motion.figure
+            variants={variContainerLeft}
+            className="back-tech-container"
+          >
+            <motion.figure variants={variLogo} className="front-img-container">
+              <img
+                src={require("./SkillImg/firebase.png")}
+                alt="Technologie Front End"
+                className="front-img"
+              />
+              <figcaption style={{ marginTop: "10px" }}>Firebase</figcaption>
+            </motion.figure>
+          </motion.figure>
+        </motion.article>
+      </motion.section>
+      <motion.section
+        variants={variSkillTools}
+        initial="hidden"
+        animate="visible"
+        className="tools-section"
+      >
+        <Tools {...{ theme, variLogo, variSTChildren }} />
+        <CVLink {...{ variSTChildren }} />
+      </motion.section>
     </main>
   );
 };
