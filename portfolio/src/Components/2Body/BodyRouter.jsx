@@ -4,6 +4,7 @@ import { AboutMe } from "./Home/AboutMe/AboutMe";
 import { Skills } from "./Skills&Tools/Skills/Skills";
 import { Portfolio } from "./Portfolio/Portfolio";
 import { Contact } from "./Contact/Contact";
+import { PDFCV } from "./Skills&Tools/Tools/CV/PDFCV";
 
 import { AnimatePresence } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -17,6 +18,7 @@ export const BodyRouter = ({ setSlide }) => {
         <Route path="/skills" element={<Skills />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/pdf" element={<PDFCV />} />
       </Routes>
     </AnimatePresence>
   );

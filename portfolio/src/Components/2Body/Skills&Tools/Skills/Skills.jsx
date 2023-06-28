@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { SkillsArray } from "./SkillsArray";
-import { CVLink } from "../CVLink";
+import { CVLink } from "../Tools/CV/CVLink";
 import { Tools } from "../Tools/Tools";
 import { motion, useAnimation, useInView } from "framer-motion";
 
@@ -135,6 +135,8 @@ export const Skills = ({ theme }) => {
 };
 
 /** 
+ *  
+ * 
         <div className="skill-section">
           <h2 className="skill-title" id={theme}>
             Compétences
