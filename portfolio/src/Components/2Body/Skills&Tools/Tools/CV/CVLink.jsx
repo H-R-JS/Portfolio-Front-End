@@ -2,8 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Skills } from "../../Skills/Skills";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import { PDFCV } from "./PDFCV";
 import pdf from "./DEMISSION_2.pdf";
 
 export const CVLink = ({ theme, variSTChildren }) => {

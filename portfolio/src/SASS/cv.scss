@@ -1,0 +1,76 @@
+$fontcv-main: "Oswald", sans-serif;
+$fontcv-second: "Noto Serif", serif;
+
+li {
+  list-style-type: none;
+}
+
+.cv-page {
+  width: 950px;
+  background-color: red;
+  height: 100vh;
+}
+
+.header-cv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 650px;
+  margin-left: 300px;
+  background-color: #bbb;
+  //font-size: 50px;
+  font-family: $fontcv-main;
+}
+.aside-cv {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 300px;
+  background-color: $color-main;
+  color: #fff;
+  font-family: $fontcv-second;
+  h3 {
+    font-family: $fontcv-main;
+    margin-left: 40px;
+  }
+  li {
+    margin-top: 10px;
+  }
+}
+
+.contact-cv-container {
+  li {
+    margin-left: 10px;
+  }
+}
+
+.contact-cv-icon {
+  position: relative;
+  top: 3px;
+  right: 10px;
+  li {
+    margin-left: 10px;
+  }
+}
+
+.section-cv {
+  position: relative;
+  bottom: 800px;
+  left: 300px;
+  width: 600px;
+  font-family: $fontcv-main;
+  margin-left: 20px;
+}
+
+.cv-background-icon {
+  display: inline-block;
+  width: 18px;
+  height: 20px;
+  background-color: #111;
+  color: #fff;
+  padding: 10px;
+  padding-left: 13px;
+  border-radius: 50px;
+}
