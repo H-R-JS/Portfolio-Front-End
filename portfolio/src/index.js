@@ -9,8 +9,8 @@ import { CV } from "./Components/2Body/Skills&Tools/Tools/CV/CV";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <CV />
+    <App />
   </BrowserRouter>
 );
 
-//<App />
+// <CV />

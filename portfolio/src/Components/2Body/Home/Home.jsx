@@ -116,24 +116,38 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
           })}
         </motion.ul>
         <motion.aside variants={variHChild1}>
-          <Link
-            to="/aboutMe"
-            className="white-square-left"
-            onClick={() => setSlide("right")}
-            onMouseEnter={bodyVariant}
-            onMouseLeave={appVariant}
-          />
+          <section className="white-square-left">
+            <article>
+              <h4>FABRIQUER AVEC :</h4>
+              <ul>
+                <li>HTML & CSS</li>
+                <li>JAVASCRIPT</li>
+                <li>REACT</li>
+                <li>SASS</li>
+                <li>
+                  ADOBE ILLUSTRATOR
+                  <br /> ( Débutant )
+                </li>
+              </ul>
+            </article>
+          </section>
         </motion.aside>
       </motion.section>
-      <RevealFadeRight>
-        <Link
-          to="/aboutMe"
-          className="white-square-right"
-          onClick={() => setSlide("right")}
-          onMouseEnter={bodyVariant}
-          onMouseLeave={appVariant}
-        ></Link>
-      </RevealFadeRight>
+      <motion.aside>
+        <section className="white-square-right">
+          <article>
+            <h4>À PROPOS DE MOI :</h4>
+            <ul>
+              <li>- Autodidacte</li>
+              <li>- Créatif</li>
+              <li>- Patient et Persévérant</li>
+              <li>- Découvrir de nouvelles technologie</li>
+              <li>- Aventureux et Curieux</li>
+            </ul>
+          </article>
+        </section>
+      </motion.aside>
+
       <motion.svg
         variants={variWave}
         id="Mode_Isolation"
