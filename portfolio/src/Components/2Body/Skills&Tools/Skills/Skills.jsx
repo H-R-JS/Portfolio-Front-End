@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from "react";
-import { SkillsArray } from "./SkillsArray";
 import { CVLink } from "../Tools/CV/CVLink";
 import { Tools } from "../Tools/Tools";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-export const Skills = ({ theme }) => {
+export const Skills = () => {
+  const { AnimMouseHover, AnimMouseOff, AnimMouseOn } = CursorStyle();
   const refFade = useRef();
   const isInView = useInView(refFade, { once: true });
   const controlFade = useAnimation();

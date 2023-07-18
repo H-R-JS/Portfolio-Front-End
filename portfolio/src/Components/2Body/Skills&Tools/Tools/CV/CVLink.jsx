@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Skills } from "../../Skills/Skills";
-import pdf from "./DEMISSION_2.pdf";
+import pdf from "./CV.pdf";
 
 export const CVLink = ({ theme, variSTChildren }) => {
   return (

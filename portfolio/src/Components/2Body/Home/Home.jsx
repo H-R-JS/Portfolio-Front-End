@@ -1,15 +1,17 @@
-import React, { useState, useRef, useEffect } from "react";
-import { RevealFadeLeftHome, RevealFadeRight } from "../../Motion/Fade";
+import React, { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { Link } from "react-router-dom";
-import { Ligne } from "./Ligne";
-import { ArraySProg1, ArraySites } from "./DataSites/Sites";
+import { AllSites } from "./DataSites/Sites";
+import { AboutRight } from "./About/AboutRight";
+import { AboutLeft } from "./About/AboutLeft";
+import { CursorStyle } from "../../OutPage/AnimCursor";
 
-export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
+export const Home = () => {
+  const { AnimMouseHover, AnimMouseOff } = CursorStyle();
+
   const refFade = useRef();
   const isInView = useInView(refFade, { once: true });
   const controlFade = useAnimation();
-  /// FRAMER MOTION
+  /// FRAMER MOTION VARIANTS
   const variMainWave = {
     noWave: { opacity: 0 },
     wave: { opacity: 1, transition: { duration: 0.3, staggerChildren: 0.3 } },
@@ -55,12 +57,8 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.2 } },
   };
+  /// FRAMER MOTION VARIANTS END
 
-  const variLiSites = {
-    //hidden: { height: "auto" },
-    visible: {},
-  };
-  /////
   useEffect(() => {
     if (isInView) {
       controlFade.start("visible");
@@ -81,73 +79,36 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
         initial="hidden"
         animate="visible"
         className="home-section"
-        id={theme}
       >
-        <motion.article
-          variants={variHChild1}
-          className="h-title-box"
-          onMouseEnter={bodyVariant}
-          onMouseLeave={appVariant}
-          id={theme}
-        >
+        <motion.article variants={variHChild1} className="h-title-box">
+          {/** TITLES*/}
           <motion.span className="h-title">Jordy Rocacher</motion.span>
           <motion.span className="h-title-two">
             Developpeur Front End React
           </motion.span>
         </motion.article>
+        {/** LINKS SITES WEB */}
         <motion.h3 variants={variHChild1} className="h3-home">
           Mes sites :
         </motion.h3>
-        <motion.ul variants={variHChild1} className="ul-sites">
-          {ArraySites.map((item, index) => {
-            return (
-              <motion.li
-                variants={variLiSites}
-                whileHover={{ height: 150 }}
-                key={index}
-                className={item.classN}
-              >
-                <Link to={item.path} className="link-sites">
-                  {item.title}
-                </Link>
-                {item.details}
-              </motion.li>
-            );
-          })}
-        </motion.ul>
-        <motion.aside variants={variHChild1}>
-          <section className="white-square-left">
-            <article>
-              <h4>FABRIQUER AVEC :</h4>
-              <ul>
-                <li>HTML & CSS</li>
-                <li>JAVASCRIPT</li>
-                <li>REACT</li>
-                <li>SASS</li>
-                <li>
-                  ADOBE ILLUSTRATOR
-                  <br /> ( Débutant )
-                </li>
-              </ul>
-            </article>
-          </section>
+        <AllSites {...{ variHChild1 }} />
+        {/** ABOUT IN SQUARE */}
+        <motion.aside
+          variants={variHChild1}
+          onMouseEnter={() => AnimMouseHover()}
+          onMouseLeave={() => AnimMouseOff()}
+        >
+          <AboutLeft />
+        </motion.aside>
+        <motion.aside
+          variants={variHChild1}
+          onMouseEnter={() => AnimMouseHover()}
+          onMouseLeave={() => AnimMouseOff()}
+        >
+          <AboutRight />
         </motion.aside>
       </motion.section>
-      <motion.aside>
-        <section className="white-square-right">
-          <article>
-            <h4>À PROPOS DE MOI :</h4>
-            <ul>
-              <li>- Autodidacte</li>
-              <li>- Créatif</li>
-              <li>- Patient et Persévérant</li>
-              <li>- Découvrir de nouvelles technologie</li>
-              <li>- Aventureux et Curieux</li>
-            </ul>
-          </article>
-        </section>
-      </motion.aside>
-
+      {/** THREE WAVES ANIMATES */}
       <motion.svg
         variants={variWave}
         id="Mode_Isolation"
@@ -190,10 +151,3 @@ export const Home = ({ appVariant, bodyVariant, theme, setSlide }) => {
     </motion.main>
   );
 };
-
-/** <AboutMe {...{ appVariant, bodyVariant, imgVariant, theme }} />
- *
- *  <Ligne />
- *
- *
- */
