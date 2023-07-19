@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import { CursorStyle } from "../../../OutPage/AnimCursor";
 import { ToolsArray } from "./ToolsArray";
 
 export const Tools = ({ theme, variLogo, variSTChildren }) => {
+  const { AnimMouseHover, AnimMouseOff } = CursorStyle();
   const variContainerRight = {
     hidden: { opacity: 0, x: 300 },
     visible: {
@@ -21,7 +22,12 @@ export const Tools = ({ theme, variLogo, variSTChildren }) => {
   return (
     <motion.article variants={variSTChildren} className="tools-article">
       <h2>Outils</h2>
-      <motion.figure variants={variContainerRight} className="tools-container">
+      <motion.figure
+        variants={variContainerRight}
+        className="tools-container"
+        onMouseEnter={() => AnimMouseHover()}
+        onMouseLeave={() => AnimMouseOff()}
+      >
         {ToolsArray.map((item, index) => {
           return (
             <motion.figure

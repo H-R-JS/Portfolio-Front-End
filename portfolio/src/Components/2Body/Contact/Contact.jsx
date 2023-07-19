@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
+import { CursorStyle } from "../../OutPage/AnimCursor";
 
-export const Contact = ({ theme }) => {
+export const Contact = () => {
+  const { AnimMouseOff, AnimMouseOn } = CursorStyle();
+
   const controlBoxR = useAnimation();
   const controlBoxE = useAnimation();
 
@@ -58,7 +61,7 @@ export const Contact = ({ theme }) => {
 
   return (
     <section id="contact">
-      <div className="contact-container" id={theme}>
+      <div className="contact-container">
         <motion.div
           variants={variFadeContact}
           initial="hidden"
@@ -89,11 +92,17 @@ export const Contact = ({ theme }) => {
               <Link
                 to="https://www.instagram.com/jordy.rocacher/"
                 className="contact-link"
-                id={theme}
+                onMouseEnter={() => AnimMouseOn()}
+                onMouseLeave={() => AnimMouseOff()}
               >
                 Instagram
               </Link>
-              <Link to="" className="contact-link" id={theme}>
+              <Link
+                to=""
+                className="contact-link"
+                onMouseEnter={() => AnimMouseOn()}
+                onMouseLeave={() => AnimMouseOff()}
+              >
                 LinkdIn
               </Link>
             </motion.div>
@@ -123,7 +132,8 @@ export const Contact = ({ theme }) => {
               <Link
                 to="mailto:jprogpro7@outlook.com"
                 className="contact-link "
-                id={theme}
+                onMouseEnter={() => AnimMouseOn()}
+                onMouseLeave={() => AnimMouseOff()}
               >
                 jprogpro7@outlook.com
               </Link>

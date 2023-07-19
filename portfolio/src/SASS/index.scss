@@ -12,12 +12,10 @@ $square-rotate: rotate(45deg);
   align-items: center;
 }
 
-$lol: #044baf;
-
-//
-* {
+/////// CSS
+/* {
   cursor: none;
-}
+}*/
 .cursors {
   background-color: #fff;
   position: fixed;
@@ -53,74 +51,3 @@ body {
   background-size: 210% 100%;
   transition: all 0.5s;
 }
-#dark.App {
-  background-color: $color-main;
-}
-
-#light.App {
-  background-color: #fff;
-}
-@media screen and (max-width: 1400px) {
-  .App {
-    height: 4030px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .App {
-    margin-left: 50px;
-  }
-  .all-out-page {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .App {
-    margin-left: 0px;
-    width: 100%;
-  }
-}
-@media screen and (max-width: 1150px) {
-  .App {
-    height: 4600px;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .App {
-    height: 5320px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .App {
-    height: 5180px;
-  }
-}
-
-//////////////////////////////
-
-/*font-family
- Zeyada
-Rubik Wet Paint
-Covered By Your Grace
-Nanum Brush Script
-Annie Use Your Telescope
-Libre Barcode 39 Text
-Jockey One
-Mansalva
-Chelsea Market
-Major Mono Display
-Just Me Again Down Here
-Nabla
-Libre Barcode 128 Text
-Long Cang
-Splash
-Lacquer
-Rubik Glitch
-Flow Circular
-Redacted Script
-Yuji Boku
-Kolker Brush
-Flow Block*/

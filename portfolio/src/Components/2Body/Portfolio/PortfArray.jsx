@@ -1,4 +1,8 @@
-import { InfosBoxsReact, InfosBoxsRFire } from "./PorftInfoBox/InfoBox";
+import {
+  InfosBoxsReact,
+  InfosBoxsRFBoot,
+  InfosBoxsRFire,
+} from "./PorftInfoBox/InfoBox";
 
 export const PortfArray = [
   {
@@ -20,7 +24,9 @@ export const PortfArray = [
   {
     img: require("./PortfImg/screen1.png"),
     class: "portf-img three",
-    title: "Game",
-    text: " Boat",
+    title: "Netflix Clone",
+    text: "Clone",
+    path: "https://meute2rats.fr/",
+    infoB: <InfosBoxsRFBoot />,
   },
 ];

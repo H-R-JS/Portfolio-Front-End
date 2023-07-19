@@ -7,8 +7,24 @@
 @import "./AboutMe.scss";
 @import "./cv.scss";
 
+////// PHONE
+.h2-phone {
+  display: none;
+}
+
+.angle.down {
+  display: none;
+}
+
+.angle.up {
+  display: none;
+}
+
+///
+
 .header-param {
   position: fixed;
+  display: flex;
   overflow: hidden;
   z-index: 5;
   width: 100%;
@@ -21,10 +37,6 @@ header {
   height: 80px;
   background-color: $color-main;
   z-index: 3;
-}
-
-#light header {
-  background-color: #fff;
 }
 
 .ul-menu {
@@ -57,13 +69,6 @@ header {
   transition: all 0.5s ease-out;
 }
 
-#light.link-menu {
-  background: linear-gradient(to right, #a00e0e 50%, #fff 50%);
-  background-size: 210% 100%;
-  background-position: right bottom;
-  color: #111;
-}
-
 .li-menu::before {
   position: absolute;
   content: " ";
@@ -76,16 +81,8 @@ header {
   border-top-right-radius: 20px;
 }
 
-#light li::before {
-  background-color: $color-main;
-}
-
 .link-menu:hover {
   color: $color-main;
-  background-position: left bottom;
-}
-
-#light.link-menu:hover {
   background-position: left bottom;
 }
 
@@ -98,8 +95,8 @@ header {
     font-size: 25px;
   }
 
-  li::before {
-    height: 36px;
+  .li-menu::before {
+    height: 31px;
   }
 }
 
@@ -111,5 +108,92 @@ header {
     width: 87%;
     margin-left: 0px;
     margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .h2-phone {
+    display: block;
+    //padding-bottom: 50px;
+    text-align: center;
+    color: #fff;
+    font-family: $font-main;
+    font-size: 35px;
+  }
+
+  .angle.down {
+    display: block;
+    position: relative;
+    // left: 35px;
+    color: #fff;
+    font-size: 35px;
+  }
+
+  .angle.up {
+    display: block;
+    position: relative;
+    //  left: 120px;
+    color: #fff;
+    font-size: 35px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 350px;
+    background-color: $color-main;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+  }
+
+  header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .ul-menu {
+    display: flex;
+    position: relative;
+    right: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .li-menu {
+    //display: none;
+    list-style: none;
+    overflow: hidden;
+    width: 250px;
+    margin-top: 5px;
+  }
+
+  .link-menu {
+    background: linear-gradient(to right, #fff 50%, rgba(0, 0, 0, 0) 50%);
+    background-size: 210% 100%;
+    background-position: right bottom;
+    overflow: hidden;
+    font-size: 30px;
+    font-family: $font-main;
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+
+    transition: all 0.5s ease-out;
+  }
+
+  .li-menu::before {
+    display: none;
+  }
+
+  .link-menu:hover {
+    color: $color-main;
+    background-position: left bottom;
   }
 }

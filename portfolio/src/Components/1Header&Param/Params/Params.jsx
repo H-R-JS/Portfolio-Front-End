@@ -23,7 +23,7 @@ export const Params = ({ toggleTheme, theme }) => {
   );
 };
 
-export const IconParam = ({ paramToggle, appVariant, textVariant }) => {
+export const IconParam = ({ paramToggle }) => {
   const IconCog = (
     <TiCog
       className="icon-param"
@@ -52,13 +52,7 @@ export const IconParam = ({ paramToggle, appVariant, textVariant }) => {
   };
 
   return (
-    <motion.div
-      variants={variParamReveal}
-      initial="hidden"
-      animate="visible"
-      onMouseEnter={textVariant}
-      onMouseLeave={appVariant}
-    >
+    <motion.div variants={variParamReveal} initial="hidden" animate="visible">
       {icon}
     </motion.div>
   );
