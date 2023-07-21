@@ -33,7 +33,7 @@
 header {
   position: fixed;
   display: inline-block;
-  width: 100%;
+  width: 98%;
   height: 80px;
   background-color: $color-main;
   z-index: 3;
@@ -112,9 +112,19 @@ header {
 }
 
 @media screen and (max-width: 700px) {
+  header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    z-index: 3;
+  }
+
   .h2-phone {
     display: block;
-    //padding-bottom: 50px;
+    position: relative;
+    bottom: 10px;
     text-align: center;
     color: #fff;
     font-family: $font-main;
@@ -124,7 +134,7 @@ header {
   .angle.down {
     display: block;
     position: relative;
-    // left: 35px;
+    bottom: 38px;
     color: #fff;
     font-size: 35px;
   }
@@ -132,7 +142,6 @@ header {
   .angle.up {
     display: block;
     position: relative;
-    //  left: 120px;
     color: #fff;
     font-size: 35px;
   }
@@ -141,18 +150,9 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 350px;
+    width: 100%;
     background-color: $color-main;
-    width: 100%;
     border-bottom: 2px solid #fff;
-  }
-
-  header {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    z-index: 3;
   }
 
   .ul-menu {

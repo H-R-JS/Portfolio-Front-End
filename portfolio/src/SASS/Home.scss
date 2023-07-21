@@ -15,17 +15,13 @@
   margin-left: -50px;
 }
 
-#light.home-text {
-  color: #111;
-}
-
 .h-title-box {
   display: flex;
   flex-direction: column;
   font-family: $font-main;
   text-align: center;
-  width: 42vw;
-  padding-left: 20px;
+  width: 44vw;
+  padding-left: 40px;
   color: #fff;
 }
 
@@ -45,8 +41,8 @@
 
 .h3-home {
   position: relative;
-  top: 100px;
-  left: 40px;
+  top: 130px;
+  left: 20px;
   font-family: $font-main;
   font-size: 24px;
 }
@@ -54,6 +50,7 @@
 .ul-sites {
   display: flex;
   margin-top: 150px;
+  margin-left: -40px;
 }
 
 .li-sites {
@@ -61,26 +58,20 @@
   flex-direction: column;
   align-items: center;
   margin-left: 50px;
-  padding: 25px;
   height: 25px;
+  padding: 25px;
   font-family: $font-second;
   font-size: 20px;
   list-style: none;
   background-color: #fff;
   border-radius: 34px;
-  z-index: 5;
+  z-index: 4;
 }
-
 .li-sites.one {
   height: 25px;
 }
-
 .li-sites.two {
   height: 25px;
-}
-
-.li-sites:before {
-  content: "";
 }
 
 .link-sites {
@@ -174,12 +165,12 @@
 .white-square-right {
   position: absolute;
   top: 300px;
-  left: 1920px;
+  right: -500px;
   width: 500px;
   height: 354px;
   background-color: #fff;
   color: $color-main;
-  transition: left 0.3s;
+  transition: right 0.3s;
   article {
     position: relative;
     z-index: 5;
@@ -213,32 +204,24 @@
 }
 
 .white-square-right:hover {
-  left: 1585px;
+  right: -150px;
 }
 
-.lignes-container {
+.wave-container {
   position: absolute;
-  bottom: 20px;
-  width: 1200px;
-}
-
-.lignes {
-  background-color: #fff;
-  height: 10px;
-  margin-top: 10px;
-  transform-origin: left;
+  width: 100%;
 }
 
 .wave {
   position: absolute;
   width: 200%;
+
   top: 765px;
   fill: rgb(100, 149, 204);
   animation: medium-wave linear 9s infinite;
   z-index: 1;
 }
 .wave.two {
-  width: 200%;
   top: 815px;
   fill: rgb(53, 107, 168);
   animation: medium-wave linear 6s infinite;
@@ -246,7 +229,6 @@
 }
 
 .wave.three {
-  width: 200%;
   top: 850px;
   fill: rgb(22, 82, 150);
   animation: medium-wave linear 3s infinite;
@@ -271,99 +253,260 @@
   }
 }
 
-@media screen and (max-width: 1800px) {
-  .home-text {
-    width: 66.2vw;
-    height: 500px;
-    margin: 250px 0;
-    margin-left: -60px;
+@media screen and (max-width: 1506px) {
+  .h3-home {
+    left: 5px;
   }
 
-  .h-text-2 {
-    font-size: 50px;
-  }
-}
-
-@media screen and (max-width: 1700px) {
-  .home-text {
-    width: 65vw;
-  }
-}
-
-@media screen and (max-width: 1500px) {
-  .home-text {
-    width: 62vw;
-    height: 500px;
+  .ul-sites {
+    margin-left: -40px;
   }
 
-  .h-text-1 {
-    font-size: 20px;
+  .li-sites {
+    margin-left: 10px;
+    font-size: 16px;
   }
 
-  .h-text-2 {
-    font-size: 44px;
+  .white-square-right:hover {
+    right: -180px;
   }
 
-  .h-text-3 {
-    font-size: 18px;
-  }
-
-  .black-square {
-    top: 220px;
+  .white-square-left:hover {
+    left: -180px;
   }
 }
 
 @media screen and (max-width: 1300px) {
-  .home-text {
-    width: 58.5vw;
-    height: 500px;
+  .h-title-box {
+    padding-left: 60px;
+  }
+  .h-title {
+    font-size: 50px;
   }
 
-  .h-text-2 {
-    font-size: 37px;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .home-text {
-    width: 53.2vw;
-    height: 500px;
+  .h-title-two {
+    font-size: 20px;
   }
 
-  .h-text-1 {
-    font-size: 18px;
+  .h3-home {
+    left: 20px;
+    font-size: 20px;
   }
 
-  .h-text-2 {
-    font-size: 30px;
+  .ul-sites {
+    width: 580px;
+    margin-top: 160px;
+    margin-left: 80px;
   }
 
-  .h-text-3 {
-    font-size: 16px;
+  .li-sites {
+    padding: 15px;
   }
 
-  .black-square {
-    width: 200px;
-    height: 200px;
-    top: 230px;
+  .white-square-left {
+    top: 280px;
+    left: -500px;
+    height: 300px;
+    article {
+      margin-left: 300px;
+      margin-top: 10px;
+    }
+  }
+
+  .white-square-left::after {
+    top: 44px;
+    left: 394px;
+    width: 212px;
+    height: 212px;
+  }
+
+  .white-square-right {
+    top: 280px;
+    right: -500px;
+    height: 300px;
+    article {
+      margin-top: 10px;
+      li {
+        width: 150px;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .white-square-right::after {
+    content: "";
+    top: 44px;
+    left: -106px;
+    width: 212px;
+    height: 212px;
+  }
+
+  .white-square-right:hover {
+    right: -300px;
+  }
+
+  .white-square-left:hover {
+    left: -300px;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .home-text {
-    width: 53.2vw;
-    height: 500px;
-    margin-left: -100px;
+  .home-page {
+    overflow-y: auto;
+    //height: 150vh;
   }
 
-  .h-text-2 {
-    width: 400px;
-    min-width: 300px;
+  .home-section {
+    width: 100vw;
+    margin: 150px 0;
+    overflow: hidden;
+  }
+
+  .h-title-box {
+    width: 100vw;
+  }
+
+  .ul-sites-detail {
+    position: relative;
+    bottom: 30px;
+  }
+
+  .white-square-left {
+    top: 750px;
+    left: -200px;
+    height: 300px;
+    article {
+      margin-left: 300px;
+      margin-top: 10px;
+    }
+  }
+
+  .white-square-left::after {
+    display: none;
+  }
+
+  .white-square-right {
+    top: 750px;
+    right: -200px;
+    height: 300px;
+    article {
+      margin-top: 10px;
+      li {
+        width: 280px;
+        font-size: 18px;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .white-square-right::after {
+    display: none;
+  }
+  .white-square-right:hover {
+    right: -200px;
+  }
+
+  .white-square-left:hover {
+    left: -200px;
+  }
+
+  .wave {
+    display: none;
   }
 }
 
-@media screen and (max-width: 800px) {
-  .black-square {
-    display: none;
+@media screen and (max-width: 620px) {
+  .white-square-left {
+    top: 675px;
+    left: 00px;
+    width: 100%;
+    height: 275px;
+    background-color: transparent;
+    article {
+      margin-left: 300px;
+      margin-top: 10px;
+      h4 {
+        font-size: 14px;
+      }
+      li {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .white-square-right {
+    top: 675px;
+    left: 00px;
+    height: 275px;
+    width: 100%;
+    article {
+      margin-top: 10px;
+      h4 {
+        font-size: 14px;
+      }
+      li {
+        width: 200px;
+        font-size: 12px;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .white-square-right:hover {
+    right: -200px;
+  }
+
+  .white-square-left:hover {
+    left: -200px;
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .home-section {
+    background-color: red;
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .h-title-box {
+    width: 100vw;
+    padding-left: 0px;
+    color: #fff;
+  }
+
+  .ul-sites {
+    display: flex;
+
+    width: 100%;
+    margin-top: 160px;
+    margin-left: 0px;
+  }
+
+  .li-sites {
+    margin-left: 5px;
+    padding: 5px;
+    font-size: 11px;
+  }
+
+  .li-sites-detail {
+    font-size: 11px;
+  }
+
+  .white-square-left {
+    top: 675px;
+    left: 00px;
+    width: 100%;
+    height: 275px;
+    background-color: transparent;
+    article {
+      margin-left: 300px;
+      margin-top: 10px;
+      h4 {
+        font-size: 14px;
+      }
+      li {
+        font-size: 12px;
+      }
+    }
   }
 }

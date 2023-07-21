@@ -1,14 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Skills } from "../../Skills/Skills";
+
 import pdf from "./CV.pdf";
 
-export const CVLink = ({ theme, variSTChildren }) => {
+export const CVLink = ({ variSTChildren }) => {
   return (
     <motion.article variants={variSTChildren}>
-      <Link target="_blank" to={pdf}>
-        LIJDUHQ
+      <Link className="cv-link" target="_blank" to={pdf}>
+        Curriculum vitae
       </Link>
     </motion.article>
   );

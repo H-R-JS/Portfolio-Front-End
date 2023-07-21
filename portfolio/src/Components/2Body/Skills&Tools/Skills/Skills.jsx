@@ -56,6 +56,7 @@ export const Skills = () => {
         variants={variSkillTools}
         initial="hidden"
         animate="visible"
+        className="skills-section"
       >
         <SkillFront {...{ variLogo, variSTChildren, variContainerLeft }} />
         <SkillBack {...{ variLogo, variSTChildren, variContainerLeft }} />

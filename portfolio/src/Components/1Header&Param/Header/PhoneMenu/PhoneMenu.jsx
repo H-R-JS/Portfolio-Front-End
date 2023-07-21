@@ -17,12 +17,16 @@ export const PhoneMenu = () => {
 
   const variNavPhone = {
     hidden: { height: 100 },
-    visible: { height: 350 },
+    visible: { height: 350, transition: { duration: 0.1 } },
   };
 
   const variUlPhone = {
-    hidden: { display: "none" },
-    visible: { display: "flex" },
+    hidden: { opacity: 0, display: "none" },
+    visible: {
+      opacity: 1,
+      display: "flex",
+      transition: { duration: 0.4 },
+    },
   };
   const media700 = window.matchMedia("(max-width: 700px)");
   const query700 = media700.matches ? "hidden" : "visible";

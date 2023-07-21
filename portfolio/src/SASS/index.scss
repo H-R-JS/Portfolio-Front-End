@@ -42,12 +42,22 @@ $square-rotate: rotate(45deg);
 body {
   margin: 0;
   overflow: hidden;
+  background-color: $color-main;
 }
 
-.App {
-  overflow: hidden;
-  height: 100vh;
-  background: linear-gradient(to right, #03224c 50%, #fff 50%);
-  background-size: 210% 100%;
-  transition: all 0.5s;
+@media screen and (max-width: 900px) {
+  body {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .cursors {
+    display: none;
+  }
+
+  .cursor-back {
+    display: none;
+  }
 }

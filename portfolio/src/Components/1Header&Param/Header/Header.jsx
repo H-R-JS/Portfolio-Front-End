@@ -10,20 +10,10 @@ export const Header = () => {
     visible: { y: 0, transition: { duration: 0.3, delay: 0.2 } },
   };
   return (
-    <motion.header variants={variNavReveal} initial="hidden" animate="visible">
+    <header>
       <Media query="(max-width: 700px)">
         {(matches) => (matches ? <PhoneMenu /> : <Navbar />)}
       </Media>
-    </motion.header>
+    </header>
   );
 };
-
-/**<Media query="(max-width: 800px)">
-        {(matches) =>
-          matches ? (
-            <PhoneMenu />
-          ) : (
-            <Navbar {...{ appVariant, textVariant, theme }} />
-          )
-        }
-      </Media> */

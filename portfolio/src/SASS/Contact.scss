@@ -48,14 +48,6 @@
   transition: all 0.2s;
 }
 
-#light.contact-container {
-  border-bottom: 2px dashed #111;
-}
-
-#light.contact-title {
-  color: #111;
-}
-
 .contact-h2 {
   font-family: $font-main;
 }
@@ -69,10 +61,6 @@
   margin: 0px 50px;
 }
 
-#light.contact-link {
-  color: #111;
-}
-
 .slash {
   position: relative;
   bottom: 260px;
@@ -82,25 +70,71 @@
   transform: rotate(30deg);
 }
 
-@media screen and (max-width: 1100px) {
-  .contact-link {
-    font-size: 20px;
+@media screen and (max-width: 1350px) {
+  .contact-content {
+    width: 900px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .contact-content {
+    width: 700px;
   }
 
-  .contact-content {
-    display: flex;
+  .contact-reseaux-box {
+    width: 300px;
+    height: 100px;
+  }
+
+  .contact-reseaux-box::before {
+    left: -50px;
+    top: 10px;
+    font-size: 100px;
+  }
+
+  .contact-email-box {
+    width: 300px;
+    height: 100px;
+  }
+  .contact-email-box::after {
+    right: -50px;
+    top: 10px;
+    font-size: 100px;
+  }
+
+  .contact-link {
+    font-size: 22px;
+    margin: 0px 10px;
+  }
+
+  .slash {
+    bottom: 180px;
+    width: 4px;
+    height: 500px;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .contact-content {
-    flex-wrap: wrap;
-    justify-content: center;
+  .contact-reseaux-box {
+    bottom: 100px;
+    left: 200px;
+    width: 300px;
+    height: 100px;
   }
-  .contact-link {
-    margin-top: 20px;
+
+  .contact-email-box {
+    top: 100px;
+    right: 200px;
+    width: 300px;
+    height: 100px;
   }
-  .contact-container {
-    height: 300px;
+
+  .slash {
+    bottom: 180px;
+    left: 15px;
+    transform: rotate(80deg);
   }
+}
+
+@media screen and (max-width: 499px) {
 }
