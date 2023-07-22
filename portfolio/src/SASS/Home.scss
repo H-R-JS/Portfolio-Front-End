@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   overflow-y: hidden;
+  width: 100%;
 }
 
 .home-section {
@@ -215,7 +216,6 @@
 .wave {
   position: absolute;
   width: 200%;
-
   top: 765px;
   fill: rgb(100, 149, 204);
   animation: medium-wave linear 9s infinite;
@@ -419,11 +419,10 @@
   .white-square-left {
     top: 675px;
     left: 00px;
-    width: 100%;
+    width: 50%;
     height: 275px;
-    background-color: transparent;
     article {
-      margin-left: 300px;
+      margin-left: 0px;
       margin-top: 10px;
       h4 {
         font-size: 14px;
@@ -436,11 +435,13 @@
 
   .white-square-right {
     top: 675px;
-    left: 00px;
+    right: 00px;
     height: 275px;
-    width: 100%;
+    width: 50%;
     article {
+      width: 200px;
       margin-top: 10px;
+      margin-left: 50px;
       h4 {
         font-size: 14px;
       }
@@ -465,21 +466,30 @@
   .home-section {
     background-color: red;
     width: 100%;
+    height: 450px;
     margin-left: 0px;
+    overflow: hidden;
   }
 
   .h-title-box {
     width: 100vw;
     padding-left: 0px;
     color: #fff;
+    margin-top: 0px;
+  }
+
+  .h3-home {
+    top: 20px;
+    left: 10px;
+    font-size: 20px;
   }
 
   .ul-sites {
     display: flex;
-
+    justify-content: center;
     width: 100%;
-    margin-top: 160px;
-    margin-left: 0px;
+    margin-top: 30px;
+    margin-left: -20px;
   }
 
   .li-sites {
@@ -493,20 +503,36 @@
   }
 
   .white-square-left {
-    top: 675px;
-    left: 00px;
-    width: 100%;
+    top: 650px;
+    left: 0px;
+    width: 51%;
     height: 275px;
-    background-color: transparent;
     article {
-      margin-left: 300px;
       margin-top: 10px;
+    }
+  }
+  .white-square-right {
+    top: 650px;
+    right: 00px;
+    height: 275px;
+    width: 50%;
+    article {
+      margin-top: 10px;
+      margin-left: 0px;
       h4 {
-        font-size: 14px;
+        width: 140px;
       }
       li {
+        width: 130px;
         font-size: 12px;
       }
     }
+  }
+  .white-square-right:hover {
+    right: 0px;
+  }
+
+  .white-square-left:hover {
+    left: 0px;
   }
 }

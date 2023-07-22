@@ -7,21 +7,6 @@
 @import "./AboutMe.scss";
 @import "./cv.scss";
 
-////// PHONE
-.h2-phone {
-  display: none;
-}
-
-.angle.down {
-  display: none;
-}
-
-.angle.up {
-  display: none;
-}
-
-///
-
 .header-param {
   position: fixed;
   display: flex;
@@ -116,8 +101,7 @@ header {
     position: fixed;
     display: flex;
     justify-content: center;
-    width: 100%;
-
+    width: 100vw;
     z-index: 3;
   }
 
@@ -139,18 +123,16 @@ header {
     font-size: 35px;
   }
 
-  .angle.up {
-    display: block;
-    position: relative;
-    color: #fff;
-    font-size: 35px;
+  .angle.none {
+    display: none;
   }
 
   nav {
+    background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     background-color: $color-main;
     border-bottom: 2px solid #fff;
   }

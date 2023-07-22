@@ -44,6 +44,9 @@ body {
   overflow: hidden;
   background-color: $color-main;
 }
+.app {
+  width: 100%;
+}
 
 @media screen and (max-width: 900px) {
   body {

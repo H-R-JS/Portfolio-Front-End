@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { CursorStyle } from "../../OutPage/AnimCursor";
@@ -8,20 +8,6 @@ export const Contact = () => {
 
   const controlBoxR = useAnimation();
   const controlBoxE = useAnimation();
-
-  const variContactBox = {
-    init: {
-      opacity: 1,
-      x: 0,
-    },
-    hoverLeft: {
-      x: 50,
-    },
-    hoverRight: {
-      x: -50,
-    },
-    hidden: { opacity: 0.3 },
-  };
 
   useEffect(() => {
     const paralMove = (e) => {
@@ -44,35 +30,83 @@ export const Contact = () => {
     },
   };
 
-  const variFadeCChildren = {
-    hiddenLeft: { opacity: 0, x: -200 },
-    hiddenRight: { opacity: 0, x: 200 },
-    visibleLeft: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.4, delay: 0.4 },
-    },
-    visibleRight: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.4, delay: 0.6 },
-    },
-  };
+  const [mQueyry, setMQuery] = useState({
+    matches: window.innerWidth < 700 ? true : false,
+  });
+
+  const variFadeCChildren = mQueyry
+    ? {
+        hiddenLeft: { opacity: 0, y: -200 },
+        hiddenRight: { opacity: 0, y: 200 },
+        visibleLeft: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.4, delay: 0.4 },
+        },
+        visibleRight: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.4, delay: 0.6 },
+        },
+      }
+    : {
+        hiddenLeft: { opacity: 0, x: -200 },
+        hiddenRight: { opacity: 0, x: 200 },
+        visibleLeft: {
+          opacity: 1,
+          x: 0,
+          transition: { duration: 0.4, delay: 0.4 },
+        },
+        visibleRight: {
+          opacity: 1,
+          x: 0,
+          transition: { duration: 0.4, delay: 0.6 },
+        },
+      };
+
+  const variContactBox = mQueyry
+    ? {
+        init: {
+          opacity: 1,
+          y: 0,
+        },
+        hoverLeft: {
+          y: 50,
+        },
+        hoverRight: {
+          y: -50,
+        },
+        hidden: { opacity: 0.3 },
+      }
+    : {
+        init: {
+          opacity: 1,
+          x: 0,
+        },
+        hoverLeft: {
+          x: 50,
+        },
+        hoverRight: {
+          x: -50,
+        },
+        hidden: { opacity: 0.3 },
+      };
 
   return (
-    <section id="contact">
-      <div className="contact-container">
-        <motion.div
+    <main id="contact" className="contact-page">
+      <section className="contact-container">
+        <motion.article
           variants={variFadeContact}
           initial="hidden"
           animate="visible"
           className="contact-content move"
           data-speed="2"
         >
-          <motion.div
+          <motion.aside
             variants={variFadeCChildren}
             initial="hiddenLeft"
             animate="visibleLeft"
+            className="contact-aside-box res"
           >
             <motion.div
               variants={variContactBox}
@@ -106,13 +140,14 @@ export const Contact = () => {
                 LinkdIn
               </Link>
             </motion.div>
-          </motion.div>
+          </motion.aside>
 
           <div className="slash" />
-          <motion.div
+          <motion.aside
             variants={variFadeCChildren}
             initial="hiddenRight"
             animate="visibleRight"
+            className="contact-aside-box eml"
           >
             <motion.div
               variants={variContactBox}
@@ -138,11 +173,9 @@ export const Contact = () => {
                 jprogpro7@outlook.com
               </Link>
             </motion.div>
-          </motion.div>
-
-          <div className="validation" />
-        </motion.div>
-      </div>
-    </section>
+          </motion.aside>
+        </motion.article>
+      </section>
+    </main>
   );
 };

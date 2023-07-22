@@ -1,19 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { NavItems } from "../Navbar/NavItems";
 import { Link } from "react-router-dom";
-import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa";
 import { motion, useAnimation } from "framer-motion";
 import { CursorStyle } from "../../../OutPage/AnimCursor";
 
 export const PhoneMenu = () => {
   const { AnimMouseOn, AnimMouseOff } = CursorStyle();
 
-  const variFadeHeader = {
-    hidden: { x: -250 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.7 } },
-  };
-
   const controlUl = useAnimation();
+  const refNav = useRef();
+
+  const [mQueyry, setMQuery] = useState({
+    matches: window.innerWidth < 700 ? true : false,
+  });
+
+  const useMediaPhone = window.matchMedia("(max-width: 700px)");
+
+  const variFadeHeader = mQueyry
+    ? {
+        hidden: { opacity: 0 },
+        show: { opacity: 1, transition: { duration: 0.8, delay: 0.5 } },
+      }
+    : {
+        hidden: { x: -250 },
+        show: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.7 } },
+      };
 
   const variNavPhone = {
     hidden: { height: 100 },
@@ -28,11 +40,39 @@ export const PhoneMenu = () => {
       transition: { duration: 0.4 },
     },
   };
-  const media700 = window.matchMedia("(max-width: 700px)");
-  const query700 = media700.matches ? "hidden" : "visible";
+
+  const variParamReveal = {
+    hidden: { y: -110 },
+    visible: { y: 0, transition: { duration: 0.5, delay: 0.2 } },
+  };
+
+  const [icon, setIcon] = useState("angle down");
+
+  useEffect(() => {
+    let mediaQuery = window.matchMedia("(max-width: 700px)");
+    document.addEventListener("resize", mediaQuery);
+
+    const toggleNav = (e) => {
+      if (
+        !refNav.current.contains(e.target) ||
+        e.target.href === window.location.href
+      ) {
+        controlUl.start("hidden");
+        setIcon("angle down");
+      } else {
+        return null;
+      }
+    };
+    document.addEventListener("click", toggleNav);
+    return () => {
+      document.removeEventListener("click", toggleNav);
+      document.removeEventListener("resize", mediaQuery);
+    };
+  }, []);
 
   return (
     <motion.nav
+      ref={refNav}
       variants={variNavPhone}
       initial="hidden"
       animate={controlUl}
@@ -42,7 +82,7 @@ export const PhoneMenu = () => {
 
       <motion.ul
         variants={variUlPhone}
-        initial={query700}
+        initial="hidden"
         animate={controlUl}
         className="ul-menu"
       >
@@ -67,44 +107,19 @@ export const PhoneMenu = () => {
           );
         })}
       </motion.ul>
-      <motion.span>
-        <IconMenuPhone {...{ controlUl }} />
+      <motion.span
+        variants={variParamReveal}
+        initial="hidden"
+        animate="visible"
+      >
+        <FaAngleDown
+          className={icon}
+          onClick={() => {
+            controlUl.start("visible");
+            setIcon("angle none");
+          }}
+        />
       </motion.span>
     </motion.nav>
-  );
-};
-
-export const IconMenuPhone = ({ controlUl }) => {
-  const IconCog = (
-    <FaAngleDown
-      className="angle down"
-      onClick={() => {
-        controlUl.start("visible");
-        setIcon(IconArrow);
-      }}
-    />
-  );
-
-  const IconArrow = (
-    <FaAngleUp
-      className="angle up"
-      onClick={() => {
-        controlUl.start("hidden");
-        setIcon(IconCog);
-      }}
-    />
-  );
-
-  const [icon, setIcon] = useState(IconCog);
-
-  const variParamReveal = {
-    hidden: { y: -110 },
-    visible: { y: 0, transition: { duration: 0.5, delay: 0.2 } },
-  };
-
-  return (
-    <motion.div variants={variParamReveal} initial="hidden" animate="visible">
-      {icon}
-    </motion.div>
   );
 };

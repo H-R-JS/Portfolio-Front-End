@@ -1,9 +1,14 @@
+.contact-page {
+  display: flex;
+  position: relative;
+  top: 400px;
+  height: 100vh;
+}
 .contact-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  top: 400px;
+
   width: 100%;
   height: 240px;
   color: #fff;
@@ -137,4 +142,65 @@
 }
 
 @media screen and (max-width: 499px) {
+  .contact-page {
+    top: 0px;
+  }
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 300px;
+    width: 100%;
+    height: 240px;
+    color: #fff;
+  }
+  .contact-aside-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .contact-aside-box.eml {
+    position: relative;
+    top: 100px;
+  }
+  .contact-content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-reseaux-box {
+    bottom: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100px;
+  }
+
+  .contact-reseaux-box::before {
+    left: 130px;
+    top: -60px;
+    font-size: 70px;
+    transform: rotate(90deg);
+  }
+
+  .contact-email-box {
+    top: 0px;
+    right: 0px;
+    width: 300px;
+    height: 100px;
+  }
+
+  .contact-email-box::after {
+    right: 130px;
+    top: 100px;
+    font-size: 70px;
+    transform: rotate(90deg);
+  }
+
+  .slash {
+    position: fixed;
+    top: 0px;
+    left: 200px;
+    height: 340px;
+  }
 }
