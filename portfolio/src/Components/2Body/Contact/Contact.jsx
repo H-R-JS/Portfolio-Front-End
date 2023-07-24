@@ -30,9 +30,8 @@ export const Contact = () => {
     },
   };
 
-  const [mQueyry, setMQuery] = useState({
-    matches: window.innerWidth < 700 ? true : false,
-  });
+  const mediaMatch = window.matchMedia("(max-width: 499px)");
+  const [mQueyry, setMQueyry] = useState(mediaMatch.matches);
 
   const variFadeCChildren = mQueyry
     ? {
@@ -92,6 +91,16 @@ export const Contact = () => {
         hidden: { opacity: 0.3 },
       };
 
+  useEffect(() => {
+    function updateMedia(e) {
+      setMQueyry(e.matches);
+    }
+    mediaMatch.addEventListener("change", updateMedia);
+    return () => {
+      mediaMatch.removeEventListener("change", updateMedia);
+    };
+  }, []);
+
   return (
     <main id="contact" className="contact-page">
       <section className="contact-container">
@@ -123,22 +132,36 @@ export const Contact = () => {
               }}
             >
               <h2 className="contact-h2">Réseaux</h2>
-              <Link
-                to="https://www.instagram.com/jordy.rocacher/"
-                className="contact-link"
-                onMouseEnter={() => AnimMouseOn()}
-                onMouseLeave={() => AnimMouseOff()}
-              >
-                Instagram
-              </Link>
-              <Link
-                to=""
-                className="contact-link"
-                onMouseEnter={() => AnimMouseOn()}
-                onMouseLeave={() => AnimMouseOff()}
-              >
-                LinkdIn
-              </Link>
+              <span className="span-link">
+                <Link
+                  to="https://www.instagram.com/jordy.rocacher/"
+                  className="contact-link"
+                  onMouseEnter={() => AnimMouseOn()}
+                  onMouseLeave={() => AnimMouseOff()}
+                >
+                  Instagram
+                </Link>
+              </span>
+              <span className="span-link">
+                <Link
+                  to="https://www.linkedin.com/in/jr-dev-front/"
+                  className="contact-link"
+                  onMouseEnter={() => AnimMouseOn()}
+                  onMouseLeave={() => AnimMouseOff()}
+                >
+                  LinkdIn
+                </Link>
+              </span>
+              <span className="span-link">
+                <Link
+                  to="https://github.com/H-R-JS"
+                  className="contact-link"
+                  onMouseEnter={() => AnimMouseOn()}
+                  onMouseLeave={() => AnimMouseOff()}
+                >
+                  Github
+                </Link>
+              </span>
             </motion.div>
           </motion.aside>
 

@@ -1,7 +1,4 @@
-à faire :
-
-- menu hidden in 2 sec
-- (optional) paramètre
+(optional) param
 
 /_font-family
 Zeyada

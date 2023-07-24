@@ -11,21 +11,12 @@ export const PhoneMenu = () => {
   const controlUl = useAnimation();
   const refNav = useRef();
 
-  const [mQueyry, setMQuery] = useState({
-    matches: window.innerWidth < 700 ? true : false,
-  });
+  const variFadeHeader = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 0.8, delay: 0.5 } },
+  };
 
-  const useMediaPhone = window.matchMedia("(max-width: 700px)");
-
-  const variFadeHeader = mQueyry
-    ? {
-        hidden: { opacity: 0 },
-        show: { opacity: 1, transition: { duration: 0.8, delay: 0.5 } },
-      }
-    : {
-        hidden: { x: -250 },
-        show: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.7 } },
-      };
+  console.log(variFadeHeader);
 
   const variNavPhone = {
     hidden: { height: 100 },

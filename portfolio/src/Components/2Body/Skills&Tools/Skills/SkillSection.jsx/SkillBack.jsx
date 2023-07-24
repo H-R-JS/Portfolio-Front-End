@@ -4,6 +4,12 @@ import { CursorStyle } from "../../../../OutPage/AnimCursor";
 
 export const SkillBack = ({ variLogo, variSTChildren, variContainerLeft }) => {
   const { AnimMouseHover, AnimMouseOff } = CursorStyle();
+
+  const variHover = {
+    init: { scale: 1 },
+    hover: { scale: 1.1 },
+  };
+
   return (
     <motion.article variants={variSTChildren} className="back-container">
       <h3> Back end </h3>
@@ -14,7 +20,10 @@ export const SkillBack = ({ variLogo, variSTChildren, variContainerLeft }) => {
         onMouseLeave={() => AnimMouseOff()}
       >
         <motion.figure variants={variLogo} className="front-img-container">
-          <img
+          <motion.img
+            variants={variHover}
+            initial="init"
+            whileHover="hover"
             src={require("../SkillImg/firebase.png")}
             alt="Technologie Front End"
             className="front-img"

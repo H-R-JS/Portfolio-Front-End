@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { CursorStyle } from "../../../../OutPage/AnimCursor";
 
 const ArrayFront = [
@@ -7,31 +7,51 @@ const ArrayFront = [
     src: require("../SkillImg/htmlcss.png"),
     className: "front-img n1",
     descrip: "HTML & CSS",
+    per: "90%",
+    classPer: "percentage",
   },
   {
     src: require("../SkillImg/js.png"),
     className: "front-img n2",
     descrip: "JAVASCRIPT",
+    per: "70%",
+    classPer: "percentage",
   },
   {
     src: require("../SkillImg/reactjs.png"),
     className: "front-img n3",
     descrip: "REACT",
+    per: "80%",
+    classPer: "percentage",
   },
   {
     src: require("../SkillImg/sass.png"),
     className: "front-img n4",
     descrip: "SASS",
+    per: "90%",
+    classPer: "percentage",
   },
   {
     src: require("../SkillImg/bootstrap.png"),
     className: "front-img n5",
     descrip: "BOOTSTRAP",
+    per: "60%",
+    classPer: "percentage",
   },
 ];
 
 export const SkillFront = ({ variLogo, variSTChildren, variContainerLeft }) => {
   const { AnimMouseHover, AnimMouseOff } = CursorStyle();
+
+  const variHover = {
+    init: { scale: 1 },
+    hover: { scale: 1.1 },
+  };
+
+  const variPer = {
+    init: { opacity: 0.2 },
+    hover: { opacity: 1 },
+  };
 
   return (
     <motion.article variants={variSTChildren} className="front-container">
@@ -49,11 +69,15 @@ export const SkillFront = ({ variLogo, variSTChildren, variContainerLeft }) => {
               variants={variLogo}
               className="front-img-container"
             >
-              <img
+              <motion.img
+                variants={variHover}
+                initial="init"
+                whileHover="hover"
                 src={item.src}
                 alt="Technologie Front End"
                 className={item.className}
               />
+              <span className={item.classPer}>{item.per}</span>
               <figcaption style={{ marginTop: "10px" }}>
                 {item.descrip}
               </figcaption>
@@ -64,44 +88,3 @@ export const SkillFront = ({ variLogo, variSTChildren, variContainerLeft }) => {
     </motion.article>
   );
 };
-
-/** <motion.figure variants={variLogo} className="front-img-container">
-          <img
-            src={require("./SkillImg/htmlcss.png")}
-            alt="Technologie Front End"
-            className="front-img"
-          />
-          <figcaption style={{ marginTop: "10px" }}>HTML & CSS</figcaption>
-        </motion.figure>
-        <motion.figure variants={variLogo} className="front-img-container">
-          <img
-            src={require("./SkillImg/js.png")}
-            alt="Technologie Front End"
-            className="front-img"
-          />
-          <figcaption style={{ marginTop: "10px" }}>Javascript</figcaption>
-        </motion.figure>
-        <motion.figure variants={variLogo} className="front-img-container">
-          <img
-            src={require("./SkillImg/reactjs.png")}
-            alt="Technologie Front End"
-            className="front-img"
-          />
-          <figcaption style={{ marginTop: "10px" }}>React</figcaption>
-        </motion.figure>
-        <motion.figure variants={variLogo} className="front-img-container">
-          <img
-            src={require("./SkillImg/sass.png")}
-            alt="Technologie Front End"
-            className="front-img  n4"
-          />
-          <figcaption style={{ marginTop: "10px" }}>Sass</figcaption>
-        </motion.figure>
-        <motion.figure variants={variLogo} className="front-img-container">
-          <img
-            src={require("./SkillImg/bootstrap.png")}
-            alt="Technologie Front End"
-            className="front-img"
-          />
-          <figcaption style={{ marginTop: "10px" }}>Bootstrap</figcaption>
-        </motion.figure> */

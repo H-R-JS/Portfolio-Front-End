@@ -5,6 +5,7 @@ import { ToolsArray } from "./ToolsArray";
 
 export const Tools = ({ theme, variLogo, variSTChildren }) => {
   const { AnimMouseHover, AnimMouseOff } = CursorStyle();
+
   const variContainerRight = {
     hidden: { opacity: 0, x: 300 },
     visible: {
@@ -17,6 +18,11 @@ export const Tools = ({ theme, variLogo, variSTChildren }) => {
         when: "beforeChildren",
       },
     },
+  };
+
+  const variHover = {
+    init: { scale: 1 },
+    hover: { scale: 1.1 },
   };
 
   return (
@@ -36,7 +42,10 @@ export const Tools = ({ theme, variLogo, variSTChildren }) => {
               id={theme}
               key={index}
             >
-              <img
+              <motion.img
+                variants={variHover}
+                initial="init"
+                whileHover="hover"
                 src={require(`${item.img}`)}
                 className={item.classN}
                 id={theme}

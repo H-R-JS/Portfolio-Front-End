@@ -22,7 +22,7 @@ export const PortfArray = [
     infoB: <InfosBoxsRFire />,
   },
   {
-    img: require("./PortfImg/screen1.png"),
+    img: require("./PortfImg/screen3.png"),
     class: "portf-img three",
     title: "Netflix Clone",
     text: "Clone",
