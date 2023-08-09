@@ -26,7 +26,7 @@ export const PortfArray = [
     class: "portf-img three",
     title: "Netflix Clone",
     text: "Clone",
-    path: "https://meute2rats.fr/",
+    path: "https://github.com/H-R-JS",
     infoB: <InfosBoxsRFBoot />,
   },
 ];
