@@ -42,7 +42,7 @@ export const ArraySites = [
   {
     title: "Netflix-Clone",
     classN: "li-sites two",
-    path: "https://Meute2Rats.fr/",
+    path: "https://github.com/H-R-JS",
     details: <SProgDetails1 />,
   },
 ];

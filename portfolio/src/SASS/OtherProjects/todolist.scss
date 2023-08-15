@@ -1,0 +1,151 @@
+.to-do-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 100px;
+  width: 100%;
+  h1 {
+    color: #fff;
+    font-size: 60px;
+    font-family: $font-main;
+  }
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  width: 65em;
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.input-todo {
+  width: 800px;
+  padding: 20px;
+  font-size: 30px;
+  font-family: $font-second;
+  border: none;
+  border-radius: 50px;
+}
+
+.check-todo,
+.trash-todo {
+  //background-color: red;
+  width: 50px;
+  margin: 0px -20px;
+  font-size: 30px;
+  transition: all 0.3s;
+}
+
+.check-todo:hover,
+.trash-todo:hover {
+  color: $color-main;
+  font-size: 42px;
+}
+
+.section-to-do {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  height: 600px;
+}
+
+.to-do {
+  display: flex;
+  width: 550px;
+  height: 67px;
+  padding: 0px 30px;
+  margin-top: 30px;
+  background-color: #fff;
+  font-size: 20px;
+  font-family: $font-second;
+  border-radius: 50px;
+  p {
+    width: 458px;
+  }
+}
+
+.trash-to-do {
+  background-image: url("../../Components/2Body/Other-Projects/ToDoList/ImgTodo/trash.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 13px;
+  margin-left: 10px;
+  width: 35px;
+  height: 35px;
+  transition: all 0.2s;
+}
+
+.trash-to-do:hover {
+  transform: scale(1.3);
+}
+
+.modif-to-do {
+  background-image: url("../../Components/2Body/Other-Projects/ToDoList/ImgTodo/crayon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 13px;
+  margin-left: 10px;
+  width: 35px;
+  height: 35px;
+  transition: all 0.2s;
+}
+
+.modif-to-do:hover {
+  transform: scale(1.3);
+}
+
+.modif-input {
+  width: 450px;
+  font-size: 20px;
+  font-family: $font-second;
+}
+
+@media screen and (max-width: 1100px) {
+  .check-todo,
+  .trash-todo {
+    margin: 0px 5px;
+  }
+
+  .input-container {
+    width: 90vw;
+  }
+
+  .input-todo {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .to-do-list {
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  .check-todo,
+  .trash-todo {
+    min-width: 20px;
+    margin: 0px 10px;
+  }
+
+  .to-do {
+    width: 70vw;
+    p {
+      width: 60vw;
+    }
+  }
+
+  .trash-to-do {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+
+  .modif-to-do {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+}
