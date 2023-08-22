@@ -46,11 +46,13 @@
 }
 
 .section-to-do {
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 800px;
-  height: 600px;
+  height: 500px;
+  margin: 25px 0;
 }
 
 .to-do {
@@ -63,9 +65,14 @@
   font-size: 20px;
   font-family: $font-second;
   border-radius: 50px;
+  cursor: pointer;
   p {
     width: 458px;
   }
+}
+
+.over {
+  background-color: #aaa;
 }
 
 .trash-to-do {
