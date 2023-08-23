@@ -16,8 +16,6 @@ export const PhoneMenu = () => {
     show: { opacity: 1, transition: { duration: 0.8, delay: 0.5 } },
   };
 
-  console.log(variFadeHeader);
-
   const variNavPhone = {
     hidden: { height: 100 },
     visible: { height: 350, transition: { duration: 0.1 } },

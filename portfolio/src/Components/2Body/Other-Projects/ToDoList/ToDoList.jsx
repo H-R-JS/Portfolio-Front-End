@@ -1,30 +1,33 @@
 import React, { useEffect } from "react";
 import { FaCheck, FaTrash } from "react-icons/fa";
+import { ToDoNav } from "./ToDoNav";
 
 export const ToDoList = () => {
   //function input
   var todos = [];
+  var doneToDo = [];
   var todosLocaleStorage = localStorage.getItem("todos")?.toString();
+  var doneLocaleStorage = localStorage.getItem("done")?.toString();
   var index = 0;
 
   function inputCheck() {
     let valueInput = document.querySelector(".input-todo")?.value;
-    //let value = valueInput;
-    createElementTodo(valueInput);
+    let sectionToDo = document.querySelector(".section-to-do");
+    createElementTodo(valueInput, sectionToDo);
     addStorage(valueInput);
   }
 
-  function createElementTodo(value) {
+  function createElementTodo(value, Section) {
     // create element
-    let sectionTodo = document.querySelector(".section-to-do");
+    console.log(Section);
     let li = document.createElement("li");
     let p = document.createElement("p");
     // btns todo
     let trash = document.createElement("span");
-    let modif = document.createElement("span");
+    let done = document.createElement("span");
     // classlist
     trash.classList.add("trash-to-do");
-    modif.classList.add("modif-to-do");
+    done.classList.add("done-to-do");
     li.classList.add("to-do");
     p.classList.add("drag-item");
     //set element
@@ -32,12 +35,12 @@ export const ToDoList = () => {
     li.setAttribute("data-index", (index += 1));
     p.setAttribute("draggable", "true");
     li.append(p);
-    li.append(modif);
+    li.append(done);
     li.append(trash);
-    sectionTodo.append(li);
+    Section.append(li);
     //btns function
     createTrash(trash);
-    createModif(modif);
+    todoDone(done);
     console.log(li.getAttribute("data-index"));
   }
 
@@ -55,8 +58,19 @@ export const ToDoList = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }
 
-  // function trash and modif
-  function createModif(element) {
+  function addStorageDone(todo) {
+    if (localStorage.getItem("done") === null) {
+      doneToDo = [];
+    } else {
+      doneToDo = JSON.parse(localStorage.getItem("done"));
+    }
+    console.log(todo);
+    doneToDo.push(todo);
+    localStorage.setItem("done", JSON.stringify(doneToDo));
+  }
+
+  // function trash, modif and done
+  /* function createModif(element) {
     element.addEventListener("click", (e) => {
       let targetDiv = e.target.parentNode;
       let inputModif = document.createElement("input");
@@ -80,7 +94,7 @@ export const ToDoList = () => {
         targetDiv.prepend(inputModif);
       }
     });
-  }
+  }*/
 
   function createTrash(element) {
     element.addEventListener("click", (e) => {
@@ -90,6 +104,14 @@ export const ToDoList = () => {
       todos = todos.filter((t) => t !== todoTarget);
       localStorage.setItem("todos", JSON.stringify(todos));
       console.log("ooiiiu");
+    });
+  }
+
+  function todoDone(element) {
+    element.addEventListener("click", (e) => {
+      let valueElement = element.parentNode.textContent;
+      console.log(valueElement);
+      addStorageDone(valueElement);
     });
   }
 
@@ -152,16 +174,45 @@ export const ToDoList = () => {
     });
   }
 
+  function update() {
+    if (localStorage.getItem("todos") === null) {
+      return (todos = []);
+    } else {
+      const sectionTodo = document.querySelector(".section-to-do");
+      todos = JSON.parse(todosLocaleStorage);
+      todos.forEach((todo) => {
+        createElementTodo(todo, sectionTodo);
+      });
+    }
+
+    if (localStorage.getItem("done") === null) {
+      return (doneToDo = []);
+    } else {
+      const sectionDone = document.querySelector(".section-done");
+      doneToDo = JSON.parse(doneLocaleStorage);
+      doneToDo.forEach((todo) => {
+        createElementTodo(todo, sectionDone);
+      });
+    }
+  }
+
+  var classSecToDo = ".section-todos";
+  var classSecDone = ".section-done-todos";
+
+  function displayTodos(e) {
+    if (classSecToDo !== ".none") {
+      classSecToDo = ".none";
+    } else {
+      classSecToDo = ".section-todos";
+      console.log("sfjsifsfb");
+    }
+  }
+
+  function displayDone() {}
+
   useEffect(() => {
     if (document.readyState !== "loading") {
-      if (localStorage.getItem("todos") === null) {
-        return (todos = []);
-      } else {
-        todos = JSON.parse(todosLocaleStorage);
-        todos.forEach((todo) => {
-          createElementTodo(todo);
-        });
-      }
+      update();
       addEventListeners();
     }
   });
@@ -178,7 +229,22 @@ export const ToDoList = () => {
           className="trash-todo"
         />
       </form>
-      <ul className="section-to-do"></ul>
+      <nav>
+        <button className="btn-do" onClick={displayTodos}>
+          To do
+        </button>
+        <button className="btn-do" onClick={displayDone}>
+          Done
+        </button>
+      </nav>
+      <section className={classSecToDo}>
+        <ul className="section-to-do"></ul>
+      </section>
+      <section className={classSecDone}>
+        <ul className="section-done"></ul>
+      </section>
     </main>
   );
 };
+
+//À faire
