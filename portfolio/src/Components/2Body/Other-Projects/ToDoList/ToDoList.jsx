@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaCheck, FaTrash } from "react-icons/fa";
-import { ToDoNav } from "./ToDoNav";
 
 export const ToDoList = () => {
   //function input
@@ -10,38 +9,26 @@ export const ToDoList = () => {
   var doneLocaleStorage = localStorage.getItem("done")?.toString();
   var index = 0;
 
+  const elementTodos = [];
+  // const sectionToDo = document.querySelector(".section-to-do");
+
   function inputCheck() {
     let valueInput = document.querySelector(".input-todo")?.value;
-    let sectionToDo = document.querySelector(".section-to-do");
-    createElementTodo(valueInput, sectionToDo);
+    createElementTodo(valueInput);
     addStorage(valueInput);
   }
 
-  function createElementTodo(value, Section) {
-    // create element
-    console.log(Section);
-    let li = document.createElement("li");
-    let p = document.createElement("p");
-    // btns todo
-    let trash = document.createElement("span");
-    let done = document.createElement("span");
-    // classlist
-    trash.classList.add("trash-to-do");
-    done.classList.add("done-to-do");
-    li.classList.add("to-do");
-    p.classList.add("drag-item");
-    //set element
-    p.innerHTML = value;
-    li.setAttribute("data-index", (index += 1));
-    p.setAttribute("draggable", "true");
-    li.append(p);
-    li.append(done);
-    li.append(trash);
-    Section.append(li);
-    //btns function
-    createTrash(trash);
-    todoDone(done);
-    console.log(li.getAttribute("data-index"));
+  function createElementTodo(value) {
+    const sectionToDo = document.querySelector(".section-to-do");
+    const liTodo = document.createElement("li");
+    liTodo.setAttribute("data-index", index);
+    liTodo.setAttribute("draggable", true);
+    liTodo.classList.add("to-do");
+    liTodo.innerHTML = `<p>${value}</p>
+      <span className="done-to-do" ></span>
+      <span className="trash-to-do" ></span>
+     `;
+    sectionToDo.append(liTodo);
   }
 
   function inputTrash(clas) {
@@ -96,16 +83,15 @@ export const ToDoList = () => {
     });
   }*/
 
-  function createTrash(element) {
-    element.addEventListener("click", (e) => {
-      const todoTarget = e.target.parentNode.textContent;
-      console.log(todoTarget);
-      element.parentNode.remove();
-      todos = todos.filter((t) => t !== todoTarget);
-      localStorage.setItem("todos", JSON.stringify(todos));
-      console.log("ooiiiu");
-    });
-  }
+  const trashTodo = document.querySelector("trash-to-do");
+  trashTodo?.addEventListener("click", (e) => {
+    const todoTarget = e.target.parentNode.textContent;
+    console.log(todoTarget);
+    e.target.parentNode.remove();
+    todos = todos.filter((t) => t !== todoTarget);
+    localStorage.setItem("todos", JSON.stringify(todos));
+    console.log("ooiiiu");
+  });
 
   function todoDone(element) {
     element.addEventListener("click", (e) => {
@@ -178,43 +164,34 @@ export const ToDoList = () => {
     if (localStorage.getItem("todos") === null) {
       return (todos = []);
     } else {
-      const sectionTodo = document.querySelector(".section-to-do");
       todos = JSON.parse(todosLocaleStorage);
       todos.forEach((todo) => {
-        createElementTodo(todo, sectionTodo);
+        createElementTodo(todo);
       });
     }
 
     if (localStorage.getItem("done") === null) {
       return (doneToDo = []);
     } else {
-      const sectionDone = document.querySelector(".section-done");
       doneToDo = JSON.parse(doneLocaleStorage);
       doneToDo.forEach((todo) => {
-        createElementTodo(todo, sectionDone);
+        createElementTodo(todo);
       });
     }
   }
 
-  var classSecToDo = ".section-todos";
-  var classSecDone = ".section-done-todos";
+  const [classTodos, setClassTodos] = useState(".section-todos");
+  const [classDone, setClassDone] = useState(".section-done-todos");
 
   function displayTodos(e) {
-    if (classSecToDo !== ".none") {
-      classSecToDo = ".none";
-    } else {
-      classSecToDo = ".section-todos";
-      console.log("sfjsifsfb");
-    }
+    setClassTodos(".none");
   }
 
   function displayDone() {}
 
   useEffect(() => {
-    if (document.readyState !== "loading") {
-      update();
-      addEventListeners();
-    }
+    update();
+    addEventListeners();
   });
 
   //localStorage.clear();
@@ -237,14 +214,36 @@ export const ToDoList = () => {
           Done
         </button>
       </nav>
-      <section className={classSecToDo}>
+      <section className={classTodos}>
         <ul className="section-to-do"></ul>
       </section>
-      <section className={classSecDone}>
+      <section className={classDone}>
         <ul className="section-done"></ul>
       </section>
     </main>
   );
 };
 
-//À faire
+//
+
+/* let li = document.createElement("li");
+    let p = document.createElement("p");
+    // btns todo
+    let trash = document.createElement("span");
+    let done = document.createElement("span");
+    // classlist
+    trash.classList.add("trash-to-do");
+    done.classList.add("done-to-do");
+    li.classList.add("to-do");
+    p.classList.add("drag-item");
+    //set element
+    p.innerHTML = value;
+    li.setAttribute("data-index", (index += 1));
+    p.setAttribute("draggable", "true");
+    li.append(p);
+    li.append(done);
+    li.append(trash);*/
+//btns function
+//createTrash(trash);
+// todoDone(done);
+//console.log(li.getAttribute("data-index"));

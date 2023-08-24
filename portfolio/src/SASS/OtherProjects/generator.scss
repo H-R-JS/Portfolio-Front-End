@@ -1,0 +1,98 @@
+.generator-quotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 300px;
+  width: 100%;
+}
+
+.box-quotes {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.text-quote {
+  font-size: 30px;
+  font-family: $font-second;
+  font-style: italic;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.text-author {
+  text-align: center;
+  font-family: $font-second;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+
+.slideY {
+  transform: translateY(-250px);
+}
+.slideX {
+  transform: translateX(-400px);
+}
+
+.btn-generator {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: -10px;
+  height: 50px;
+  padding: 10px;
+  background: linear-gradient(
+    to right,
+    rgb(146, 36, 193) 35%,
+    rgb(8, 170, 92) 50%
+  );
+  background-size: 210% 110%;
+  background-position: right;
+  color: #fff;
+  font-size: 24px;
+  font-family: $font-main;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-generator:hover {
+  background-position: center;
+}
+
+.btn-generator:hover .btn-text.click {
+  top: 0px;
+}
+
+.btn-generator:hover .btn-text.gener {
+  top: 10px;
+}
+
+.btn-generator:active {
+  background-position: left;
+}
+
+.btn-text {
+  position: relative;
+  text-transform: uppercase;
+  pointer-events: none;
+
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.btn-text.gener {
+  top: -30px;
+}
+
+.btn-text.click {
+  top: -100px;
+}

@@ -1,0 +1,18 @@
+/_
+function createElementTodo(value, Section) {
+// create element
+/_ [...todos].forEach((todo, index) => {
+const liTodo = document.createElement("li");
+liTodo.setAttribute("data-index", index);
+liTodo.setAttribute("draggable", true);
+liTodo.classList.add("to-do");
+liTodo.innerHTML = `      <p>${todo}</p>
+      <span className="done-to-do"></span>
+      <span className="trash-to-do"></span>
+     `;
+
+      elementTodos.push(liTodo);
+      sectionToDo.append(elementTodos);
+    });*/
+    
+}
