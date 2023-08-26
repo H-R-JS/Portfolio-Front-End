@@ -9,26 +9,42 @@ export const ToDoList = () => {
   var doneLocaleStorage = localStorage.getItem("done")?.toString();
   var index = 0;
 
-  const elementTodos = [];
-  // const sectionToDo = document.querySelector(".section-to-do");
-
   function inputCheck() {
     let valueInput = document.querySelector(".input-todo")?.value;
     createElementTodo(valueInput);
     addStorage(valueInput);
+    inputTrash(".input-todo");
   }
 
   function createElementTodo(value) {
+    const imgTrash = require("./ImgTodo/trash.png");
+    const imgDone = require("./ImgTodo/done.png");
     const sectionToDo = document.querySelector(".section-to-do");
     const liTodo = document.createElement("li");
-    liTodo.setAttribute("data-index", index);
+    liTodo.setAttribute("data-index", (index += 1));
     liTodo.setAttribute("draggable", true);
     liTodo.classList.add("to-do");
-    liTodo.innerHTML = `<p>${value}</p>
-      <span className="done-to-do" ></span>
-      <span className="trash-to-do" ></span>
+    liTodo.innerHTML = `<p id="pID${index}">${value}</p>
+      <img src=${imgDone} id="doneID${index}" class="done-to-do" />
+      <img src=${imgTrash} id="trashID${index}" class="trash-to-do" />
      `;
     sectionToDo.append(liTodo);
+
+    const trashTodo = document.getElementById(`trashID${index}`);
+    //function trash
+    trashTodo?.addEventListener("click", (e) => {
+      e.target.parentNode.remove();
+      todos = todos.filter((t) => t !== value);
+      localStorage.setItem("todos", JSON.stringify(todos));
+    });
+
+    const doneTodo = document.getElementById(`doneID${index}`);
+    const pElement = document.getElementById(`pID${index}`);
+    doneTodo?.addEventListener("click", (e) => {
+      pElement.classList.add("line-trough");
+      localStorage.setItem("todos", JSON.stringify(todos));
+      console.log(pElement);
+    });
   }
 
   function inputTrash(clas) {
@@ -82,16 +98,6 @@ export const ToDoList = () => {
       }
     });
   }*/
-
-  const trashTodo = document.querySelector("trash-to-do");
-  trashTodo?.addEventListener("click", (e) => {
-    const todoTarget = e.target.parentNode.textContent;
-    console.log(todoTarget);
-    e.target.parentNode.remove();
-    todos = todos.filter((t) => t !== todoTarget);
-    localStorage.setItem("todos", JSON.stringify(todos));
-    console.log("ooiiiu");
-  });
 
   function todoDone(element) {
     element.addEventListener("click", (e) => {
@@ -180,15 +186,6 @@ export const ToDoList = () => {
     }
   }
 
-  const [classTodos, setClassTodos] = useState(".section-todos");
-  const [classDone, setClassDone] = useState(".section-done-todos");
-
-  function displayTodos(e) {
-    setClassTodos(".none");
-  }
-
-  function displayDone() {}
-
   useEffect(() => {
     update();
     addEventListeners();
@@ -206,18 +203,11 @@ export const ToDoList = () => {
           className="trash-todo"
         />
       </form>
-      <nav>
-        <button className="btn-do" onClick={displayTodos}>
-          To do
-        </button>
-        <button className="btn-do" onClick={displayDone}>
-          Done
-        </button>
-      </nav>
-      <section className={classTodos}>
+
+      <section>
         <ul className="section-to-do"></ul>
       </section>
-      <section className={classDone}>
+      <section>
         <ul className="section-done"></ul>
       </section>
     </main>
@@ -247,3 +237,12 @@ export const ToDoList = () => {
 //createTrash(trash);
 // todoDone(done);
 //console.log(li.getAttribute("data-index"));
+
+/*<nav>
+        <button className="btn-do" onClick={displayTodos}>
+          To do
+        </button>
+        <button className="btn-do" onClick={displayDone}>
+          Done
+        </button>
+      </nav>*/
