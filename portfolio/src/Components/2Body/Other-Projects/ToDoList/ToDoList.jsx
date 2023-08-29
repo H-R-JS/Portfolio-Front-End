@@ -1,26 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FaCheck, FaTrash } from "react-icons/fa";
 
 export const ToDoList = () => {
-  //function input
   var todos = [];
-  var doneToDo = [];
-  var todosLocaleStorage = localStorage.getItem("todos")?.toString();
-  var doneLocaleStorage = localStorage.getItem("done")?.toString();
+  var classTodos = [];
+  //var todosLocaleStorage = localStorage.getItem("todos")?.toString();
+  // var doneLocaleStorage = localStorage.getItem("done")?.toString();
   var index = 0;
 
+  const listRef = useRef(null);
+
+  /*const toggleChange = () => {
+    console.log(listRef.current);
+  };*/
+
   function inputCheck() {
+    console.log(listRef.current);
     let valueInput = document.querySelector(".input-todo")?.value;
     createElementTodo(valueInput);
-    addStorage(valueInput);
+    //addStorage(valueInput, todos, "todos");
     inputTrash(".input-todo");
   }
 
   function createElementTodo(value) {
+    const listContainer = document.querySelector(".section-to-do"); // init
     const imgTrash = require("./ImgTodo/trash.png");
     const imgDone = require("./ImgTodo/done.png");
-    const sectionToDo = document.querySelector(".section-to-do");
+    //const sectionToDo = document.querySelector(".section-to-do");
     const liTodo = document.createElement("li");
+
+    const pElement = document.getElementById(`pID${index}`);
+    // set element
     liTodo.setAttribute("data-index", (index += 1));
     liTodo.setAttribute("draggable", true);
     liTodo.classList.add("to-do");
@@ -28,40 +38,56 @@ export const ToDoList = () => {
       <img src=${imgDone} id="doneID${index}" class="done-to-do" />
       <img src=${imgTrash} id="trashID${index}" class="trash-to-do" />
      `;
-    sectionToDo.append(liTodo);
-
-    const trashTodo = document.getElementById(`trashID${index}`);
-    //function trash
+    listContainer.append(liTodo);
+    listContainer.addEventListener("click", (e) => {
+      if (e.target.className === "trash-to-do") {
+        console.log(e.target);
+      } else if (e.target.className === "done-to-do") {
+        console.log(e.target);
+      }
+    });
+    //function TRASH
+    /*const trashTodo = document.getElementById(`trashID${index}`);
+    console.log(trashTodo);
     trashTodo?.addEventListener("click", (e) => {
       e.target.parentNode.remove();
+      addStorage();
+        e.target.parentNode.remove();
+      // const indexP = e.target.parentNode.getAttribute("data-index");
       todos = todos.filter((t) => t !== value);
+      //classTodos = classTodos.splice(indexP, indexP);
+      console.log(todos);
       localStorage.setItem("todos", JSON.stringify(todos));
+      //localStorage.setItem("classTodos", JSON.stringify(classTodos));
     });
-
+    //function DONE
     const doneTodo = document.getElementById(`doneID${index}`);
-    const pElement = document.getElementById(`pID${index}`);
-    doneTodo?.addEventListener("click", (e) => {
+    doneTodo?.addEventListener("click", () => {
       pElement.classList.add("line-trough");
       localStorage.setItem("todos", JSON.stringify(todos));
       console.log(pElement);
-    });
+    });*/
+
+    addStorage();
   }
 
   function inputTrash(clas) {
     document.querySelector(clas).value = "";
   }
   // function set and get localeStorage
-  function addStorage(todo) {
-    if (localStorage.getItem("todos") === null) {
-      todos = [];
+  function addStorage() {
+    localStorage.setItem("todos", listRef.current.innerHTML);
+    console.log(listRef.current.innerHTML);
+    /*if (localStorage.getItem(nameStor) === null) {
+      storage = [];
     } else {
-      todos = JSON.parse(localStorage.getItem("todos"));
+      storage = JSON.parse(localStorage.getItem(nameStor));
     }
-    todos.push(todo);
-    localStorage.setItem("todos", JSON.stringify(todos));
+    storage.push(todo);
+    localStorage.setItem(nameStor, JSON.stringify(storage));*/
   }
 
-  function addStorageDone(todo) {
+  /* function addStorageDone(todo) {
     if (localStorage.getItem("done") === null) {
       doneToDo = [];
     } else {
@@ -70,7 +96,7 @@ export const ToDoList = () => {
     console.log(todo);
     doneToDo.push(todo);
     localStorage.setItem("done", JSON.stringify(doneToDo));
-  }
+  }*/
 
   // function trash, modif and done
   /* function createModif(element) {
@@ -99,13 +125,13 @@ export const ToDoList = () => {
     });
   }*/
 
-  function todoDone(element) {
+  /*function todoDone(element) {
     element.addEventListener("click", (e) => {
       let valueElement = element.parentNode.textContent;
       console.log(valueElement);
       addStorageDone(valueElement);
     });
-  }
+  }*/
 
   // Events drag ans drop
 
@@ -167,48 +193,35 @@ export const ToDoList = () => {
   }
 
   function update() {
-    if (localStorage.getItem("todos") === null) {
+    listRef.current.innerHTML = localStorage.getItem("todos");
+    /*if (localStorage.getItem("todos") === null) {
       return (todos = []);
     } else {
       todos = JSON.parse(todosLocaleStorage);
       todos.forEach((todo) => {
         createElementTodo(todo);
       });
-    }
-
-    if (localStorage.getItem("done") === null) {
-      return (doneToDo = []);
-    } else {
-      doneToDo = JSON.parse(doneLocaleStorage);
-      doneToDo.forEach((todo) => {
-        createElementTodo(todo);
-      });
-    }
+    }*/
   }
 
   useEffect(() => {
     update();
     addEventListeners();
   });
-
-  //localStorage.clear();
+  localStorage.clear();
   return (
     <main className="to-do-list">
       <h1>TO DO LIST</h1>
       <form className="input-container">
-        <input type="text" className="input-todo" />
+        <input type="text" /*onChange={toggleChange}*/ className="input-todo" />
         <FaCheck onClick={inputCheck} className="check-todo" />
         <FaTrash
           onClick={() => inputTrash(".input-todo")}
           className="trash-todo"
         />
       </form>
-
       <section>
-        <ul className="section-to-do"></ul>
-      </section>
-      <section>
-        <ul className="section-done"></ul>
+        <ul ref={listRef} className="section-to-do"></ul>
       </section>
     </main>
   );
