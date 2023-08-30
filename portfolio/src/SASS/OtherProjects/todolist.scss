@@ -31,7 +31,7 @@
   border-radius: 50px;
 }
 
-.check-todo,
+.add-todo,
 .trash-todo {
   //background-color: red;
   width: 50px;
@@ -40,7 +40,7 @@
   transition: all 0.3s;
 }
 
-.check-todo:hover,
+.add-todo:hover,
 .trash-todo:hover {
   color: $color-main;
   font-size: 42px;
@@ -124,9 +124,8 @@
   display: none;
 }
 
-.line-trough {
+.done {
   text-decoration: line-through;
-  background-color: red;
 }
 
 @media screen and (max-width: 1100px) {
