@@ -11,41 +11,32 @@ export class ToDoList extends Component {
       todos: [],
     };
     this.onChange = this.onChange.bind(this);
+    this.setStateSynchrone = this.setStateSynchrone.bind(this);
+    this.addStorage = this.addStorage.bind(this);
+    this.getTodos = this.getTodos.bind(this);
+    // this.renderTodos = this.renderTodos.bind(this);
   }
 
-  onChange(e) {
-    this.setState({ userInput: e.target.value });
+  setStateSynchrone(stateUpdate) {
+    return new Promise((resolve) => {
+      this.setState(stateUpdate, () => resolve());
+    });
+  }
+
+  async onChange(e) {
+    await this.setStateSynchrone({ userInput: e.target.value });
     console.log(this.state.userInput);
   }
 
-  inputAdd(e) {
+  async inputAdd(e) {
     e.preventDefault();
-    console.log(this.state.userInput);
-    this.setState({
+    this.addStorage(this.state.userInput);
+    await this.setStateSynchrone({
       items: [...this.state.items, this.state.userInput],
       userInput: "",
-      todos: [
-        this.state.items.map((item, index) => {
-          return (
-            <li key={index} data-key={index + 1} className="to-do">
-              <p>{item}</p>
-              <img
-                src={require("./ImgTodo/done.png")}
-                className="done-to-do"
-                onClick={this.doneItem.bind(this)}
-              />
-              <img
-                src={require("./ImgTodo/trash.png")}
-                onClick={this.trashItem.bind(this, item)}
-                className="trash-to-do"
-              />
-            </li>
-          );
-        }),
-      ],
     });
-    console.log(this.state.items);
-    this.renderTodos();
+
+    // insert in localstorage value and class, and change class with data-index
   }
 
   inputTrash(e) {
@@ -67,39 +58,58 @@ export class ToDoList extends Component {
   doneItem(e) {
     const itemElement = e.target.parentNode;
     itemElement.classList.add("done");
-    console.log(itemElement.className);
   }
 
-  renderTodos() {
-    this.setState({
-      items: [...this.state.items, this.state.userInput],
-      todos: [
-        this.state.items.map((item, index) => {
-          return (
-            <li key={index} data-key={index + 1} className="to-do">
-              <p>{item}</p>
-              <img
-                src={require("./ImgTodo/done.png")}
-                className="done-to-do"
-                onClick={this.doneItem.bind(this)}
-              />
-              <img
-                src={require("./ImgTodo/trash.png")}
-                onClick={this.trashItem.bind(this, item)}
-                className="trash-to-do"
-              />
-            </li>
-          );
-        }),
-      ],
+  async addStorage() {
+    let todos;
+    if (localStorage.getItem("todos") === null) {
+      todos = [];
+    } else {
+      (todos = JSON.parse(localStorage.getItem("todos"))),
+        console.log(this.state.todos);
+    }
+
+    /*if (localStorage.getItem("todos") === null) {
+      await this.setStateSynchrone({
+        todos: [...this.state.items],
+      });
+    } else {
+      console.log("section get");
+      await this.setStateSynchrone({
+        todos: JSON.parse(localStorage.getItem("todos")),
+      });
+      console.log(this.state.todos);
+    }
+
+    // if (this.state.todos === []) {
+    // console.log("fsfsefsfdqqdfzqdzqdqzdqzdqzdh");
+    await this.setStateSynchrone({
+      todos: [JSON.parse(localStorage.getItem("todos")), ...this.state.items],
     });
+    // }*/
 
     console.log(this.state.todos);
+    localStorage.setItem("todos", JSON.stringify(this.state.todos));
   }
+
+  async getTodos() {
+    if (localStorage.getItem("todos") === null) {
+      await this.setStateSynchrone({
+        todos: [],
+      });
+    } else {
+      await this.setStateSynchrone({
+        todos: JSON.parse(localStorage.getItem("todos")),
+      });
+      console.log(this.state.todos);
+    }
+    localStorage.clear();
+  }
+
   componentDidMount() {
-    this.renderTodos();
+    this.getTodos();
   }
-  //localStorage.clear();
+
   render() {
     return (
       <main className="to-do-list">
@@ -118,12 +128,30 @@ export class ToDoList extends Component {
           />
         </form>
         <section>
-          <ul className="section-to-do">{this.state.todos}</ul>
+          <ul className="section-to-do"></ul>
         </section>
       </main>
     );
   }
 }
+
+/**{this.state.todos.map((item, index) => {
+              return (
+                <li key={index} data-key={index + 1} className="to-do">
+                  <p>{item}</p>
+                  <img
+                    src={require("./ImgTodo/done.png")}
+                    className="done-to-do"
+                    onClick={this.doneItem.bind(this)}
+                  />
+                  <img
+                    src={require("./ImgTodo/trash.png")}
+                    onClick={this.trashItem.bind(this, item)}
+                    className="trash-to-do"
+                  />
+                </li>
+              );
+            })} */
 
 //
 
