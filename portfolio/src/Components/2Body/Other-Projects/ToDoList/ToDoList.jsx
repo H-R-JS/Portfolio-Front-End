@@ -6,15 +6,17 @@ export class ToDoList extends Component {
     super(props);
     this.state = {
       userInput: "",
-      items: [],
+      classIndex: [],
       classItem: "to-do",
       todos: [],
     };
     this.onChange = this.onChange.bind(this);
+    this.trashItem = this.trashItem.bind(this);
+    this.doneItem = this.doneItem.bind(this);
     this.setStateSynchrone = this.setStateSynchrone.bind(this);
     this.addStorage = this.addStorage.bind(this);
     this.getTodos = this.getTodos.bind(this);
-    // this.renderTodos = this.renderTodos.bind(this);
+    this.renderTodos = this.renderTodos.bind(this);
   }
 
   setStateSynchrone(stateUpdate) {
@@ -25,18 +27,15 @@ export class ToDoList extends Component {
 
   async onChange(e) {
     await this.setStateSynchrone({ userInput: e.target.value });
-    console.log(this.state.userInput);
   }
 
   async inputAdd(e) {
     e.preventDefault();
     this.addStorage(this.state.userInput);
+    this.renderTodos(this.state.todos);
     await this.setStateSynchrone({
-      items: [...this.state.items, this.state.userInput],
       userInput: "",
     });
-
-    // insert in localstorage value and class, and change class with data-index
   }
 
   inputTrash(e) {
@@ -46,50 +45,49 @@ export class ToDoList extends Component {
     });
   }
 
-  trashItem(item) {
-    const array = this.state.items;
-    const index = array.indexOf(item);
-    array.splice(index, 1);
-    this.setState({
-      items: array,
-    });
+  trashItem(e) {
+    const parentTarget = e.target.parentNode;
+    const dataArray = this.state.todos;
+    const dataFilter = dataArray.filter((i) => i !== parentTarget.innerText);
+    parentTarget.remove();
+    localStorage.setItem("todos", JSON.stringify(dataFilter));
   }
 
   doneItem(e) {
     const itemElement = e.target.parentNode;
     itemElement.classList.add("done");
+    const dataIndex = itemElement.getAttribute("data-index");
+    this.addStorageIndex(dataIndex);
   }
 
-  async addStorage() {
+  async addStorage(todo) {
     let todos;
     if (localStorage.getItem("todos") === null) {
       todos = [];
     } else {
-      (todos = JSON.parse(localStorage.getItem("todos"))),
-        console.log(this.state.todos);
+      todos = JSON.parse(localStorage.getItem("todos"));
     }
+    todos.push(todo);
+    localStorage.setItem("todos", JSON.stringify(todos));
 
-    /*if (localStorage.getItem("todos") === null) {
-      await this.setStateSynchrone({
-        todos: [...this.state.items],
-      });
-    } else {
-      console.log("section get");
-      await this.setStateSynchrone({
-        todos: JSON.parse(localStorage.getItem("todos")),
-      });
-      console.log(this.state.todos);
-    }
-
-    // if (this.state.todos === []) {
-    // console.log("fsfsefsfdqqdfzqdzqdqzdqzdqzdh");
     await this.setStateSynchrone({
-      todos: [JSON.parse(localStorage.getItem("todos")), ...this.state.items],
+      todos: [...this.state.todos, this.state.userInput],
     });
-    // }*/
+  }
 
-    console.log(this.state.todos);
-    localStorage.setItem("todos", JSON.stringify(this.state.todos));
+  async addStorageIndex(index) {
+    let classIndex;
+    if (localStorage.getItem("class") === null) {
+      classIndex = [];
+    } else {
+      classIndex = JSON.parse(localStorage.getItem("class"));
+    }
+    classIndex.push(index);
+    localStorage.setItem("class", JSON.stringify(classIndex));
+
+    await this.setStateSynchrone({
+      classIndex: [...this.state.classIndex, index],
+    });
   }
 
   async getTodos() {
@@ -101,13 +99,63 @@ export class ToDoList extends Component {
       await this.setStateSynchrone({
         todos: JSON.parse(localStorage.getItem("todos")),
       });
-      console.log(this.state.todos);
     }
-    localStorage.clear();
+
+    if (localStorage.getItem("class") === null) {
+      await this.setStateSynchrone({
+        classIndex: [],
+      });
+    } else {
+      await this.setStateSynchrone({
+        classIndex: JSON.parse(localStorage.getItem("class")),
+      });
+    }
+
+    //localStorage.clear();
+  }
+
+  renderTodos(stateTodos) {
+    return stateTodos?.map((item, index) => {
+      console.log(index);
+      if (this.state.classIndex.includes(`${index + 1}`)) {
+        return (
+          <li key={index} data-index={index + 1} className="to-do done">
+            <p>{item}</p>
+            <img
+              src={require("./ImgTodo/done.png")}
+              className="done-to-do"
+              onClick={this.doneItem}
+            />
+            <img
+              src={require("./ImgTodo/trash.png")}
+              onClick={this.trashItem}
+              className="trash-to-do"
+            />
+          </li>
+        );
+      } else {
+        return (
+          <li key={index} data-index={index + 1} className="to-do">
+            <p>{item}</p>
+            <img
+              src={require("./ImgTodo/done.png")}
+              className="done-to-do"
+              onClick={this.doneItem}
+            />
+            <img
+              src={require("./ImgTodo/trash.png")}
+              onClick={this.trashItem}
+              className="trash-to-do"
+            />
+          </li>
+        );
+      }
+    });
   }
 
   componentDidMount() {
     this.getTodos();
+    this.renderTodos(this.state.todos);
   }
 
   render() {
@@ -128,7 +176,9 @@ export class ToDoList extends Component {
           />
         </form>
         <section>
-          <ul className="section-to-do"></ul>
+          <ul className="section-to-do">
+            {this.renderTodos(this.state.todos)}
+          </ul>
         </section>
       </main>
     );
