@@ -3,6 +3,7 @@ import { Home } from "./Home/Home";
 import { Skills } from "./Skills&Tools/Skills/Skills";
 import { Portfolio } from "./Portfolio/Portfolio";
 import { Contact } from "./Contact/Contact";
+import { OtherProjects } from "./Other-Projects/OtherProjects";
 import { ToDoList } from "./Other-Projects/ToDoList/ToDoList";
 import { Generator } from "./Other-Projects/Quote/Generator";
 import { AnimatePresence } from "framer-motion";
@@ -17,7 +18,7 @@ export const BodyRouter = ({ setSlide }) => {
         <Route path="/skills" element={<Skills />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/otherProjects" element={<OtherProjects />} />
         <Route path="/todo" element={<ToDoList />} />
         <Route path="/quotes" element={<Generator />} />
       </Routes>
