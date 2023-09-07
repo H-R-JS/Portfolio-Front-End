@@ -43,7 +43,7 @@
   }
 }
 
-.img-project {
+.img-project.one {
   object-fit: cover;
   position: relative;
   top: 100px;
@@ -55,6 +55,62 @@
   //background-color: purple;
 }
 
-.img-project:hover {
+.img-project.one:hover {
   transform: translateY(-80px);
+}
+
+.link-project.two {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 174px;
+  height: 200px;
+  text-decoration: none;
+
+  z-index: 0;
+  h2 {
+    position: relative;
+    top: 40px;
+    left: 25px;
+    width: 80px;
+    height: 0px;
+    text-align: center;
+    font-family: $font-main;
+    color: #fff;
+    font-weight: 900;
+    transition: all 0.3s;
+    z-index: 1;
+  }
+  h2:nth-child(even) {
+    position: relative;
+    left: 40px;
+  }
+  h2:nth-child(even)::after {
+    content: "Perdue...";
+    position: relative;
+    left: 80px;
+    width: 190px;
+  }
+  h2:nth-child(odd)::after {
+    content: "Sens...";
+    position: relative;
+    left: 80px;
+  }
+}
+.link-project.two:hover .h22 {
+  position: relative;
+  left: -150px;
+}
+
+.img-project.two {
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  left: -13px;
+  width: 200px;
+  height: 200px;
+  transform: translateY(0px);
+  transition: all 0.3s;
+  z-index: 2;
+  //background-color: purple;
 }

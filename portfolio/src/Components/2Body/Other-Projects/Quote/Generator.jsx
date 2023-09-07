@@ -46,7 +46,7 @@ export const Generator = () => {
   ];
 
   let quote = "Générez une citation";
-  let author = " Appuyez sur le bouton";
+  let author = "Appuyez sur le bouton";
   let random = 0;
 
   function generatorNumber(max) {

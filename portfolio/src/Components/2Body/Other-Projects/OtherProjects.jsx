@@ -6,13 +6,19 @@ export const OtherProjects = () => {
     {
       to: "/todo",
       src: require("./imgOtherP/todolist.png"),
-      className: "link-project one",
+      classLink: "link-project one",
+      classImg: "img-project one",
+      classH2: "h21",
       title: "To do List",
     },
     {
       to: "/quotes",
-      src: require("./ToDoList/ImgTodo/done.png"),
-      className: "link-project two",
+      src: require("./imgOtherP/quotes.png"),
+      classLink: "link-project two",
+      classImg: "img-project two",
+      classH2: "h22",
+      title: "Citation",
+      title2: "Generator",
     },
   ];
   return (
@@ -20,9 +26,10 @@ export const OtherProjects = () => {
       <section className="container-project">
         {projects.map((item, index) => {
           return (
-            <Link to={item.to} key={index} className={item.className}>
-              <img src={item.src} className="img-project" />
-              <h2>{item.title}</h2>
+            <Link to={item.to} key={index} className={item.classLink}>
+              <img src={item.src} className={item.classImg} />
+              <h2 className={item.classH2}>{item.title}</h2>
+              <h2 className={item.classH2}>{item.title2}</h2>
             </Link>
           );
         })}
