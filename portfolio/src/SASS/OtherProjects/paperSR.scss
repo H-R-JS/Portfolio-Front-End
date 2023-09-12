@@ -10,7 +10,8 @@
 
 .btn-action {
   position: relative;
-  top: 300px;
+  grid-column: 2/3;
+  top: 200px;
   height: 40px;
   background-color: transparent;
   color: #fff;
@@ -18,6 +19,12 @@
   font-family: $font-main;
   border: 4px solid #fff;
   border-radius: 5px;
+  opacity: 1;
+  transition: all 0.2s;
+}
+.btn-action:hover {
+  color: $color-main;
+  background-color: #fff;
 }
 
 .btn-action::before {
@@ -26,7 +33,7 @@
   height: 100px;
   width: 4px;
   margin-top: -105px;
-  margin-left: 35px;
+  margin-left: 31px;
   background-color: #fff;
 }
 
@@ -36,17 +43,23 @@
   height: 100px;
   width: 4px;
   margin-top: 30px;
-  margin-left: -30px;
+  margin-left: -32px;
   background-color: #fff;
 }
 
 .render-action {
   grid-column: 4/5;
   position: relative;
-  top: 200px;
-  right: 00px;
+  top: 120px;
+  right: 300px;
   width: 200px;
   height: 200px;
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.render-action.none {
+  opacity: 0;
 }
 
 .container-choices {
@@ -59,17 +72,25 @@
 .judge-text {
   grid-column: 2 / 3;
   position: absolute;
+  margin-left: -55px;
+  width: 200px;
   color: #fff;
   font-family: $font-main;
   font-size: 50px;
-  width: 600px;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.4s 0.4s;
+}
+
+.judge-text.none {
+  opacity: 0;
 }
 
 .info-text {
   grid-column: 2 / 3;
   position: absolute;
-  top: 600px;
-  left: -250px;
+  top: 100px;
+  left: -225px;
   color: #fff;
   font-family: $font-main;
   font-size: 50px;
@@ -82,17 +103,32 @@
   width: 200px;
   //margin-top: 0px;
   padding: 20px;
-  border: 2px solid rgba(255, 255, 255, 0);
+  //border: 2px solid rgba(255, 255, 255, 0);
   transition: all 0.3s;
 }
 
 .hand:hover {
-  border: 2px solid rgba(255, 255, 255, 1);
+  // border: 2px solid rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.hand:active {
+  transform: scale(0.8);
 }
 
 .hand.p,
 .hand.s {
   transform: rotate(90deg);
+}
+
+.hand.p:hover,
+.hand.s:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+.hand.p:active,
+.hand.s:active {
+  transform: scale(0.8) rotate(90deg);
 }
 
 .hand.s {
@@ -102,4 +138,24 @@
 
 .hand.p {
   margin-top: 40px;
+}
+
+.render-action-player {
+  grid-column: 1/2;
+  position: relative;
+  left: 500px;
+  top: 215px;
+  color: #fff;
+  font-size: 24px;
+  font-family: $font-main;
+}
+
+.container-score {
+  position: relative;
+  top: 450px;
+  left: 20px;
+  grid-column: 2/3;
+  color: #fff;
+  font-size: 30px;
+  font-family: $font-main;
 }

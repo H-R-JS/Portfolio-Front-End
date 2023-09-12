@@ -20,6 +20,15 @@ export const OtherProjects = () => {
       title: "Citation",
       title2: "Generator",
     },
+    {
+      to: "/paperSR",
+      src: require("./imgOtherP/paperSR.png"),
+      classLink: "link-project three",
+      classImg: "img-project three",
+      classH2: "h23",
+      title: "Paper, Scissors, Rock",
+      //title2: "Generator",
+    },
   ];
   return (
     <main className="main-project">

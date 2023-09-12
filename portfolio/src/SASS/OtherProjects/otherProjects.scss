@@ -11,14 +11,17 @@
 .container-project {
   display: flex;
   justify-content: space-evenly;
-  width: 50%;
-  //background-color: green;
+  flex-wrap: wrap;
+  width: 40%;
+  // background-color: green;
 }
 
 .link-project {
   position: relative;
   top: 20px;
   width: 300px;
+  margin-left: 130px;
+  text-decoration: none;
   // height: 300px;
 }
 
@@ -113,4 +116,44 @@
   transition: all 0.3s;
   z-index: 2;
   //background-color: purple;
+}
+
+.link-project.three {
+  //overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  // background-color: #fff;
+  border-radius: 150px;
+  text-decoration: none;
+  h2 {
+    position: absolute;
+    top: 190px;
+    width: 200px;
+    text-align: center;
+    font-family: $font-main;
+    color: #fff;
+    font-weight: 900;
+    z-index: 0;
+  }
+}
+
+.img-project.three {
+  object-fit: cover;
+  position: absolute;
+  top: -10px;
+  //left: -13px;
+  width: 210px;
+  height: 210px;
+  transform: translateY(0px);
+  transition: all 0.3s;
+  transform-origin: center;
+  z-index: 2;
+  //background-color: purple;
+}
+
+.img-project.three:hover {
+  transform: rotate(60deg);
+  transform-origin: center;
 }
