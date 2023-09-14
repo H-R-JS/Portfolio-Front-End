@@ -40,9 +40,9 @@ export const ArraySites = [
     details: <SProgDetails2 />,
   },
   {
-    title: "Netflix-Clone",
+    title: "Other-Projects",
     classN: "li-sites two",
-    path: "https://github.com/H-R-JS",
+    path: "/otherProjects",
     details: <SProgDetails1 />,
   },
 ];
