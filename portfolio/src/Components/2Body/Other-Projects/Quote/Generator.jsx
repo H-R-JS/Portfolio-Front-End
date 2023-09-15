@@ -19,6 +19,10 @@ export const Generator = () => {
         boxShadow:
           "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
       },
+      {
+        boxShadow:
+          "160px 0px 20px inset rgb(8, 170, 92), -160px 0px 20px inset rgb(146, 36, 193) ",
+      },
     ],
     [
       "Regarde les abysses trop longtemps, elle te regarderonts aussi.",
@@ -27,13 +31,21 @@ export const Generator = () => {
         boxShadow:
           "950px 2px 1000px inset #A9A9A9, -1050px -2px 1000px inset #FF7F50 ",
       },
+      {
+        boxShadow:
+          "160px 0px 20px inset #A9A9A9, -160px 0px 20pxinset #FF7F50 ",
+      },
     ],
     [
       "L'humanité est condamné, car elle ne pardonnera jamais ses propes méfaits.",
       "Moi",
       {
         boxShadow:
-          "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
+          "950px 2px 1000px inset #E1AD01, -1050px -2px 1000px inset #000000 ",
+      },
+      {
+        boxShadow:
+          "160px 0px 20px inset #E1AD01, -160px 0px 20px inset #000000 ",
       },
     ],
     [
@@ -41,7 +53,11 @@ export const Generator = () => {
       "Ghoete",
       {
         boxShadow:
-          "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
+          "950px 2px 1000px inset #fd6c9e, -1050px -2px 1000px inset #322514 ",
+      },
+      {
+        boxShadow:
+          "160px 0px 20px inset #fd6c9e, -160px 0px 20px inset #322514 ",
       },
     ],
     [
@@ -49,7 +65,11 @@ export const Generator = () => {
       "Furi",
       {
         boxShadow:
-          "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
+          "950px 2px 1000px inset #EF9B0F, -1050px -2px 1000px inset #FF4500  ",
+      },
+      {
+        boxShadow:
+          "160px 0px 20px inset #EF9B0F, -160px 0px 20px inset #FF4500  ",
       },
     ],
     [
@@ -57,7 +77,11 @@ export const Generator = () => {
       "Moi",
       {
         boxShadow:
-          "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
+          "950px 2px 1000px inset #79cbb8, -1050px -2px 1000px inset #500472 ",
+      },
+      {
+        boxShadow:
+          "160px 0px 20px inset #79cbb8, -160px 0px 20px inset #500472 ",
       },
     ],
     [
@@ -65,7 +89,11 @@ export const Generator = () => {
       "Moi",
       {
         boxShadow:
-          "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
+          "950px 2px 1000px inset #d9a5b3, -1050px -2px 1000px inset #c6d7eb ",
+      },
+      {
+        boxShadow:
+          "160px 0px 20px inset #d9a5b3, -160px 0px 20px inset #c6d7eb ",
       },
     ],
     [
@@ -73,7 +101,11 @@ export const Generator = () => {
       "Moi",
       {
         boxShadow:
-          "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
+          "950px 2px 1000px inset #7a2048, -1050px -2px 1000px inset #1e2761 ",
+      },
+      {
+        boxShadow:
+          "160px 0px 20px inset #7a2048, -160px 0px 20px inset #1e2761 ",
       },
     ],
     [
@@ -81,7 +113,11 @@ export const Generator = () => {
       "Moi",
       {
         boxShadow:
-          "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
+          "950px 2px 1000px inset #1d3c45, -1050px -2px 1000px inset #d2601a ",
+      },
+      {
+        boxShadow:
+          "160px 0px 20px inset #1d3c45, -160px 0px 20px inset #d2601a ",
       },
     ],
     [
@@ -89,7 +125,11 @@ export const Generator = () => {
       "Mr Robot",
       {
         boxShadow:
-          "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
+          "950px 2px 1000px inset #aed6dc, -1050px -2px 1000px inset #ff9a8d ",
+      },
+      {
+        boxShadow:
+          "160px 0px 20px inset #aed6dc, -160px 0px 20px inset #ff9a8d ",
       },
     ],
     [
@@ -97,7 +137,11 @@ export const Generator = () => {
       "Moi",
       {
         boxShadow:
-          "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
+          "950px 2px 1000px inset #1b6535, -1050px -2px 1000px inset #e1dd72 ",
+      },
+      {
+        boxShadow:
+          "160px 0px 20px inset #1b6535, -160px 0px 20px inset #e1dd72 ",
       },
     ],
   ];
@@ -117,8 +161,8 @@ export const Generator = () => {
   function generatorQuotes() {
     const textQuote = document.querySelector(".text-quote");
     const textAuthor = document.querySelector(".text-author");
-    textQuote.classList.add("slideY");
-    textAuthor.classList.add("slideX");
+    textQuote.classList.add("opacity-none");
+    textAuthor.classList.add("opacity-none");
     setTimeout(() => {
       random = generatorNumber(quotes.length);
       quote = quotes[random][0];
@@ -126,11 +170,11 @@ export const Generator = () => {
       backgroundQuotes = quotes[random][2];
       textQuote.innerHTML = '" ' + quote + ' "';
       textAuthor.innerHTML = "- " + author;
-      textQuote.classList.remove("slideY");
-      textAuthor.classList.remove("slideX");
+      textQuote.classList.remove("opacity-none");
+      textAuthor.classList.remove("opacity-none");
       setBackground(quotes[random][2]);
-      console.log(background);
-    }, 450);
+      setBtnColor(quotes[random][3]);
+    }, 500);
   }
 
   useEffect(() => {
@@ -161,8 +205,6 @@ export const Generator = () => {
       author.style.transform = "translateZ(0px)";
       btn.style.transform = "translateZ(0px)";
     });
-    console.log(textQuote);
-    console.log(btnColor);
   });
 
   return (

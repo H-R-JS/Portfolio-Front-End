@@ -47,17 +47,37 @@ export class ToDoList extends Component {
 
   trashItem(e) {
     const parentTarget = e.target.parentNode;
-    const dataArray = this.state.todos;
-    const dataFilter = dataArray.filter((i) => i !== parentTarget.innerText);
-    parentTarget.remove();
-    localStorage.setItem("todos", JSON.stringify(dataFilter));
+    const indexTarget = e.target.parentNode.getAttribute("data-index");
+    const dataElementArray = this.state.todos;
+    const dataIndexArray = this.state.classIndex;
+    const dataElementFilter = dataElementArray.filter(
+      (i) => i !== parentTarget.innerText
+    );
+    const dataIndexFilter = dataIndexArray.filter((i) => i !== indexTarget);
+    /* const dataIndexStorage = dataIndexFilter.filter(
+      (i) => i <= dataIndexFilter.length
+    );*/
+
+    localStorage.setItem("todos", JSON.stringify(dataElementFilter));
+    localStorage.setItem("class", JSON.stringify(dataIndexFilter));
+    this.setStateSynchrone({
+      todos: dataElementFilter,
+      classIndex: dataIndexFilter,
+    });
+    console.log(dataIndexFilter);
+    console.log(this.state.classIndex);
+    // take todos className and in sert in classIndex and localstorage
   }
 
   doneItem(e) {
-    const itemElement = e.target.parentNode;
-    itemElement.classList.add("done");
-    const dataIndex = itemElement.getAttribute("data-index");
-    this.addStorageIndex(dataIndex);
+    if (e.target.parentNode.className == "to-do done") {
+      return null;
+    } else {
+      const itemElement = e.target.parentNode;
+      itemElement.classList.add("done");
+      const dataIndex = itemElement.getAttribute("data-index");
+      this.addStorageIndex(dataIndex);
+    }
   }
 
   async addStorage(todo) {
@@ -100,7 +120,10 @@ export class ToDoList extends Component {
         todos: JSON.parse(localStorage.getItem("todos")),
       });
     }
+    //localStorage.clear();
+  }
 
+  async getClass() {
     if (localStorage.getItem("class") === null) {
       await this.setStateSynchrone({
         classIndex: [],
@@ -110,13 +133,11 @@ export class ToDoList extends Component {
         classIndex: JSON.parse(localStorage.getItem("class")),
       });
     }
-
-    //localStorage.clear();
+    console.log(this.state.classIndex);
   }
 
   renderTodos(stateTodos) {
     return stateTodos?.map((item, index) => {
-      console.log(index);
       if (this.state.classIndex.includes(`${index + 1}`)) {
         return (
           <li key={index} data-index={index + 1} className="to-do done">
@@ -155,6 +176,7 @@ export class ToDoList extends Component {
 
   componentDidMount() {
     this.getTodos();
+    this.getClass();
     this.renderTodos(this.state.todos);
   }
 
