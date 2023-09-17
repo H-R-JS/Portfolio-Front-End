@@ -3,12 +3,10 @@ import React, { useEffect, useState } from "react";
 
 export const Generator = () => {
   const [background, setBackground] = useState({
-    boxShadow:
-      "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
+    backgroundColor: "#14b55a",
   });
   const [btnColor, setBtnColor] = useState({
-    background:
-      "linear-gradient(to right, rgb(146, 36, 193) 35%, rgb(8, 170, 92) 50%)",
+    backgroundColor: "#b85811",
   });
 
   const quotes = [
@@ -16,132 +14,110 @@ export const Generator = () => {
       "Le monde nous accueille, la vie nous détruit.",
       "Moi",
       {
-        boxShadow:
-          "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
+        backgroundColor: "#9a68af",
       },
       {
-        boxShadow:
-          "160px 0px 20px inset rgb(8, 170, 92), -160px 0px 20px inset rgb(146, 36, 193) ",
+        backgroundColor: "#8c8c8c",
       },
     ],
     [
       "Regarde les abysses trop longtemps, elle te regarderonts aussi.",
       "Friedrich Nietzsche",
       {
-        boxShadow:
-          "950px 2px 1000px inset #A9A9A9, -1050px -2px 1000px inset #FF7F50 ",
+        backgroundColor: "#581d22",
       },
       {
-        boxShadow:
-          "160px 0px 20px inset #A9A9A9, -160px 0px 20pxinset #FF7F50 ",
+        backgroundColor: "#3b3b3b ",
       },
     ],
     [
       "L'humanité est condamné, car elle ne pardonnera jamais ses propes méfaits.",
       "Moi",
       {
-        boxShadow:
-          "950px 2px 1000px inset #E1AD01, -1050px -2px 1000px inset #000000 ",
+        backgroundColor: "#dd4124",
       },
       {
-        boxShadow:
-          "160px 0px 20px inset #E1AD01, -160px 0px 20px inset #000000 ",
+        backgroundColor: "#02b6ff",
       },
     ],
     [
       "Les désirs sont les pressentiments des possibilités qui sont en nous.",
       "Ghoete",
       {
-        boxShadow:
-          "950px 2px 1000px inset #fd6c9e, -1050px -2px 1000px inset #322514 ",
+        backgroundColor: "#14b55a",
       },
       {
-        boxShadow:
-          "160px 0px 20px inset #fd6c9e, -160px 0px 20px inset #322514 ",
+        backgroundColor: "#b85811",
       },
     ],
     [
       "Nous nous battons en duel, pourtant nous savons que nous nous battons que conte-soi même.",
       "Furi",
       {
-        boxShadow:
-          "950px 2px 1000px inset #EF9B0F, -1050px -2px 1000px inset #FF4500  ",
+        backgroundColor: "#e8e13a  ",
       },
       {
-        boxShadow:
-          "160px 0px 20px inset #EF9B0F, -160px 0px 20px inset #FF4500  ",
+        backgroundColor: "#55b4cc  ",
       },
     ],
     [
       "Si le corps est une entrave, alors la haine est la chaîne la plus robuste.",
       "Moi",
       {
-        boxShadow:
-          "950px 2px 1000px inset #79cbb8, -1050px -2px 1000px inset #500472 ",
+        backgroundColor: "#7bc4c4",
       },
       {
-        boxShadow:
-          "160px 0px 20px inset #79cbb8, -160px 0px 20px inset #500472 ",
+        backgroundColor: "#843b3b",
       },
     ],
     [
       "La fin de l'humanité, ne sera que l'humain confronté à ses propres actes.",
       "Moi",
       {
-        boxShadow:
-          "950px 2px 1000px inset #d9a5b3, -1050px -2px 1000px inset #c6d7eb ",
+        backgroundColor: "#8c8c8c",
       },
       {
-        boxShadow:
-          "160px 0px 20px inset #d9a5b3, -160px 0px 20px inset #c6d7eb ",
+        backgroundColor: "#9a68af",
       },
     ],
     [
       "La seule est grande vérité réside en nous, le plus triste, est que peu de personne la trouve avant la mort.",
       "Moi",
       {
-        boxShadow:
-          "950px 2px 1000px inset #7a2048, -1050px -2px 1000px inset #1e2761 ",
+        backgroundColor: "#581d22",
       },
       {
-        boxShadow:
-          "160px 0px 20px inset #7a2048, -160px 0px 20px inset #1e2761 ",
+        backgroundColor: "#3b3b3b",
       },
     ],
     [
       "On peut gagné une vengeance, avec l'obligation de nous perdre en chemin.",
       "Moi",
       {
-        boxShadow:
-          "950px 2px 1000px inset #1d3c45, -1050px -2px 1000px inset #d2601a ",
+        backgroundColor: "#02b6ff",
       },
       {
-        boxShadow:
-          "160px 0px 20px inset #1d3c45, -160px 0px 20px inset #d2601a ",
+        backgroundColor: "#dd4124",
       },
     ],
     [
       "Donnez une arme à un homme, il pillera une banque, donnez une banque à un homme, il piellera le monde.",
       "Mr Robot",
       {
-        boxShadow:
-          "950px 2px 1000px inset #aed6dc, -1050px -2px 1000px inset #ff9a8d ",
+        backgroundColor: "#b91428",
       },
       {
-        boxShadow:
-          "160px 0px 20px inset #aed6dc, -160px 0px 20px inset #ff9a8d ",
+        backgroundColor: "#4c7d8e",
       },
     ],
     [
       "L'essentiel des choses, devrait être sans cesse l'objectif à nos yeux.",
       "Moi",
       {
-        boxShadow:
-          "950px 2px 1000px inset #1b6535, -1050px -2px 1000px inset #e1dd72 ",
+        backgroundColor: "#4a494d",
       },
       {
-        boxShadow:
-          "160px 0px 20px inset #1b6535, -160px 0px 20px inset #e1dd72 ",
+        backgroundColor: "#008080 ",
       },
     ],
   ];

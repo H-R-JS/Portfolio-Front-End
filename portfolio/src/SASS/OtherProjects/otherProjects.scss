@@ -71,37 +71,37 @@
   width: 174px;
   height: 200px;
   text-decoration: none;
-
   z-index: 0;
   h2 {
     position: relative;
-    top: 40px;
-    left: 25px;
+    top: 20px;
+    left: 35px;
     width: 80px;
     height: 0px;
     text-align: center;
-    font-family: $font-main;
+    font-family: "Handlee", cursive;
     color: #fff;
     font-weight: 900;
     transition: all 0.3s;
-    z-index: 1;
+    z-index: 5;
   }
   h2:nth-child(even) {
     position: relative;
-    left: 40px;
+    left: 47px;
   }
   h2:nth-child(even)::after {
-    content: "Perdue...";
+    content: "Monde...";
     position: relative;
-    left: 80px;
+    left: 115px;
     width: 190px;
   }
   h2:nth-child(odd)::after {
     content: "Sens...";
     position: relative;
-    left: 80px;
+    left: 100px;
   }
 }
+
 .link-project.two:hover .h22 {
   position: relative;
   left: -150px;

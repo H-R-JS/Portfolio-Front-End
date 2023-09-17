@@ -45,7 +45,7 @@ export class ToDoList extends Component {
     });
   }
 
-  trashItem(e) {
+  async trashItem(e) {
     const parentTarget = e.target.parentNode;
     const indexTarget = e.target.parentNode.getAttribute("data-index");
     const dataElementArray = this.state.todos;
@@ -60,12 +60,19 @@ export class ToDoList extends Component {
 
     localStorage.setItem("todos", JSON.stringify(dataElementFilter));
     localStorage.setItem("class", JSON.stringify(dataIndexFilter));
-    this.setStateSynchrone({
+    await this.setStateSynchrone({
       todos: dataElementFilter,
       classIndex: dataIndexFilter,
     });
-    console.log(dataIndexFilter);
-    console.log(this.state.classIndex);
+    // console.log(dataIndexFilter);
+    //console.log(this.state.classIndex);
+    //console.log(this.state.todos);
+
+    for (let i = 0; i < this.state.todos.length; i++) {
+      let childElement = document.querySelector(".section-to-do").childNodes;
+      // console.log(childElement[i].getAttribute("data-index"));
+    }
+
     // take todos className and in sert in classIndex and localstorage
   }
 
@@ -133,7 +140,7 @@ export class ToDoList extends Component {
         classIndex: JSON.parse(localStorage.getItem("class")),
       });
     }
-    console.log(this.state.classIndex);
+    //console.log(this.state.classIndex);
   }
 
   renderTodos(stateTodos) {
