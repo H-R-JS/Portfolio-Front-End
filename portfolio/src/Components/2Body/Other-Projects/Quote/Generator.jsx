@@ -12,7 +12,7 @@ export const Generator = () => {
   const quotes = [
     [
       "Le monde nous accueille, la vie nous détruit.",
-      "Moi",
+      "Inconnu",
       {
         backgroundColor: "#9a68af",
       },
@@ -21,7 +21,7 @@ export const Generator = () => {
       },
     ],
     [
-      "Regarde les abysses trop longtemps, elle te regarderonts aussi.",
+      "Regarde les abysses trop longtemps, elles te regardent aussi.",
       "Friedrich Nietzsche",
       {
         backgroundColor: "#581d22",
@@ -31,8 +31,8 @@ export const Generator = () => {
       },
     ],
     [
-      "L'humanité est condamné, car elle ne pardonnera jamais ses propes méfaits.",
-      "Moi",
+      "Danse comme si personne ne te regardait .",
+      "Inconnu",
       {
         backgroundColor: "#dd4124",
       },
@@ -51,8 +51,8 @@ export const Generator = () => {
       },
     ],
     [
-      "Nous nous battons en duel, pourtant nous savons que nous nous battons que conte-soi même.",
-      "Furi",
+      "Parfois, la souffrance est un moyen d'atteindre un moment de plénitude qui balaiera tout .",
+      "Alice Quinn",
       {
         backgroundColor: "#e8e13a  ",
       },
@@ -62,7 +62,7 @@ export const Generator = () => {
     ],
     [
       "Si le corps est une entrave, alors la haine est la chaîne la plus robuste.",
-      "Moi",
+      "Inconnu",
       {
         backgroundColor: "#7bc4c4",
       },
@@ -72,7 +72,7 @@ export const Generator = () => {
     ],
     [
       "La fin de l'humanité, ne sera que l'humain confronté à ses propres actes.",
-      "Moi",
+      "Inconnu",
       {
         backgroundColor: "#8c8c8c",
       },
@@ -81,8 +81,8 @@ export const Generator = () => {
       },
     ],
     [
-      "La seule est grande vérité réside en nous, le plus triste, est que peu de personne la trouve avant la mort.",
-      "Moi",
+      "Internet est la première chose que l'homme à créée sans la comprendre c'est la plus grande expérience en matière d'anarchie jamais réalisée.",
+      "Eric Schmidt",
       {
         backgroundColor: "#581d22",
       },
@@ -91,8 +91,8 @@ export const Generator = () => {
       },
     ],
     [
-      "On peut gagné une vengeance, avec l'obligation de nous perdre en chemin.",
-      "Moi",
+      "Le pire des crimes, c'est de tuer le temps.",
+      "Grégoire Lacroix",
       {
         backgroundColor: "#02b6ff",
       },
@@ -111,7 +111,7 @@ export const Generator = () => {
       },
     ],
     [
-      "L'essentiel des choses, devrait être sans cesse l'objectif à nos yeux.",
+      "C'est en étant dans la lumière qu'on perçoit le côté obscur des choses",
       "Moi",
       {
         backgroundColor: "#4a494d",
@@ -193,7 +193,7 @@ export const Generator = () => {
           onClick={generatorQuotes}
           style={btnColor}
         >
-          <span className="btn-text click">Click me</span>
+          <span className="btn-text click">Cliquez</span>
           <span className="btn-text gener">Générer une citation</span>
         </button>
       </article>

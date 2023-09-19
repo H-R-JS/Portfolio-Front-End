@@ -27,7 +27,14 @@ export const OtherProjects = () => {
       classImg: "img-project three",
       classH2: "h23",
       title: "Paper, Scissors, Rock",
-      //title2: "Generator",
+    },
+    {
+      to: "https://netflix-clone-28bfb.web.app/",
+      src: require("./imgOtherP/netflix.png"),
+      classLink: "link-project four",
+      classImg: "img-project four",
+      classH2: "h24",
+      title: "Netflix Clone",
     },
   ];
   return (

@@ -68,56 +68,60 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  width: 174px;
+  width: 200px;
   height: 200px;
+  background-color: #fff;
   text-decoration: none;
+  border-radius: 150px;
+  transition: all 0.3s;
   z-index: 0;
   h2 {
     position: relative;
-    top: 20px;
-    left: 35px;
+    top: 35px;
+    left: 50px;
     width: 80px;
     height: 0px;
     text-align: center;
-    font-family: "Handlee", cursive;
+    font-family: $font-quotes;
     color: #fff;
     font-weight: 900;
     transition: all 0.3s;
     z-index: 5;
   }
-  h2:nth-child(even) {
+  /* h2:nth-child(even) {
     position: relative;
-    left: 47px;
+    left: 60px;
   }
   h2:nth-child(even)::after {
     content: "Monde...";
     position: relative;
-    left: 115px;
+    left: 135px;
     width: 190px;
   }
   h2:nth-child(odd)::after {
     content: "Sens...";
     position: relative;
-    left: 100px;
-  }
+    left: 120px;
+  }*/
 }
 
-.link-project.two:hover .h22 {
-  position: relative;
-  left: -150px;
+.link-project.two:hover {
+  background-color: rgb(225, 111, 18);
+  h2 {
+    color: rgb(225, 111, 18);
+  }
 }
 
 .img-project.two {
   object-fit: cover;
   position: absolute;
-  top: 0px;
-  left: -13px;
-  width: 200px;
-  height: 200px;
+  top: 30px;
+  left: 26px;
+  width: 150px;
+  height: 150px;
   transform: translateY(0px);
   transition: all 0.3s;
   z-index: 2;
-  //background-color: purple;
 }
 
 .link-project.three {
@@ -152,10 +156,41 @@
   transition: all 0.3s;
   transform-origin: center;
   z-index: 2;
-  //background-color: purple;
 }
 
 .img-project.three:hover {
   transform: rotate(60deg);
   transform-origin: center;
+}
+
+.link-project.four {
+  //overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  background-color: #111;
+  border-radius: 150px;
+  text-decoration: none;
+  transition: all 0.3s;
+  h2 {
+    position: absolute;
+    top: 230px;
+    width: 200px;
+    text-align: center;
+    font-family: $font-main;
+    color: #fff;
+    font-weight: 900;
+    z-index: 0;
+    transition: all 0.3s;
+  }
+}
+
+.link-project.four:hover {
+  transform: translateY(-10px);
+  box-shadow: 4px 12px 10px red;
+  h2 {
+    transform: translateY(10px);
+  }
 }

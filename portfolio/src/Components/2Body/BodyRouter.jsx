@@ -4,9 +4,11 @@ import { Skills } from "./Skills&Tools/Skills/Skills";
 import { Portfolio } from "./Portfolio/Portfolio";
 import { Contact } from "./Contact/Contact";
 import { OtherProjects } from "./Other-Projects/OtherProjects";
+
 import { ToDoList } from "./Other-Projects/ToDoList/ToDoList";
 import { Generator } from "./Other-Projects/Quote/Generator";
 import { PaperSR } from "./Other-Projects/PaperSR/PaperSR";
+
 import { AnimatePresence } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";
 
