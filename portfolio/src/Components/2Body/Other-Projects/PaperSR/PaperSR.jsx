@@ -1,4 +1,5 @@
 import React from "react";
+import { CursorStyle } from "../../../OutPage/AnimCursor";
 
 export class PaperSR extends React.Component {
   constructor(props) {
@@ -154,7 +155,7 @@ document.addEventListener('mousedown', )
 
   render() {
     return (
-      <main className="section-paperSR">
+      <section className="section-paperSR">
         <article className="container-choices">
           <img
             ref={this.handRefS}
@@ -162,6 +163,7 @@ document.addEventListener('mousedown', )
             className="hand s"
             data-index="0"
             src={require("./ImgPaperSR/hand-s.png")}
+            // onMouseEnter={this.AnimMouseOn}
           />
           <img
             ref={this.handRefR}
@@ -197,7 +199,7 @@ document.addEventListener('mousedown', )
           <span className="score"> | </span>
           <span className="score element">{this.state.scoreElement}</span>
         </aside>
-      </main>
+      </section>
     );
   }
 }

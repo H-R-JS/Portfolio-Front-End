@@ -1,7 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CursorStyle } from "../../OutPage/AnimCursor";
+import { motion } from "framer-motion";
 
 export const OtherProjects = () => {
+  const { AnimMouseHover, AnimMouseOff, AnimMouseOn } = CursorStyle();
+
+  const variParentProjects = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        staggerChildren: 0.3,
+        when: "beforeChildren",
+      },
+    },
+  };
+
+  const variProjects = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 0.2 } },
+  };
+
   const projects = [
     {
       to: "/todo",
@@ -38,18 +59,25 @@ export const OtherProjects = () => {
     },
   ];
   return (
-    <main className="main-project">
-      <section className="container-project">
+    <main className="main-project" onMouseEnter={AnimMouseOn}>
+      <motion.section
+        variants={variParentProjects}
+        initial="hidden"
+        animate="show"
+        className="container-project"
+      >
         {projects.map((item, index) => {
           return (
-            <Link to={item.to} key={index} className={item.classLink}>
-              <img src={item.src} className={item.classImg} />
-              <h2 className={item.classH2}>{item.title}</h2>
-              <h2 className={item.classH2}>{item.title2}</h2>
-            </Link>
+            <motion.article variants={variProjects}>
+              <Link to={item.to} key={index} className={item.classLink}>
+                <img src={item.src} className={item.classImg} />
+                <h2 className={item.classH2}>{item.title}</h2>
+                <h2 className={item.classH2}>{item.title2}</h2>
+              </Link>
+            </motion.article>
           );
         })}
-      </section>
+      </motion.section>
     </main>
   );
 };

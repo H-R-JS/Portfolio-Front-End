@@ -7,6 +7,11 @@ $font-quotes: "Skranji", cursive;
 
 $square-rotate: rotate(45deg);
 
+@mixin size-project {
+  width: 200px;
+  height: 200px;
+}
+
 @mixin flex-col {
   display: flex;
   flex-direction: column;
@@ -14,9 +19,9 @@ $square-rotate: rotate(45deg);
 }
 
 /////// CSS
-/* {
+* {
   cursor: none;
-}*/
+}
 .cursors {
   background-color: #fff;
   position: fixed;

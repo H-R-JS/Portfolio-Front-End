@@ -189,7 +189,7 @@ export class ToDoList extends Component {
 
   render() {
     return (
-      <main className="to-do-list">
+      <section className="to-do-list">
         <h1>TO DO LIST</h1>
         <form className="input-container">
           <input
@@ -204,121 +204,12 @@ export class ToDoList extends Component {
             className="trash-todo"
           />
         </form>
-        <section>
+        <article>
           <ul className="section-to-do">
             {this.renderTodos(this.state.todos)}
           </ul>
-        </section>
-      </main>
+        </article>
+      </section>
     );
   }
 }
-
-/**{this.state.todos.map((item, index) => {
-              return (
-                <li key={index} data-key={index + 1} className="to-do">
-                  <p>{item}</p>
-                  <img
-                    src={require("./ImgTodo/done.png")}
-                    className="done-to-do"
-                    onClick={this.doneItem.bind(this)}
-                  />
-                  <img
-                    src={require("./ImgTodo/trash.png")}
-                    onClick={this.trashItem.bind(this, item)}
-                    className="trash-to-do"
-                  />
-                </li>
-              );
-            })} */
-
-//
-
-/**let dragIndexStart;
-
-    function dragStart() {
-      //console.log("dragStart");
-      dragIndexStart = +this.closest("li").getAttribute("data-index") - 1;
-      console.log(dragIndexStart);
-    }
-
-    function dragOver(e) {
-      //console.log("dragOver");
-      e.preventDefault();
-    }
-
-    function dragEnter() {
-      //console.log("dragEnter");
-      this.classList.add("over");
-    }
-
-    function dragLeave() {
-      // console.log("dragLeave");
-      this.classList.remove("over");
-    }
-
-    function dragDrop() {
-      // console.log("dragDrop");
-      const dragIndexEnd = +this.getAttribute("data-index") - 1;
-      console.log(dragIndexEnd);
-      this.classList.remove("over");
-      swapItems(dragIndexStart, dragIndexEnd);
-    }
-
-    function swapItems(fromIndex, toIndex) {
-      const itemOne = todos[fromIndex];
-      const itemTwo = todos[toIndex];
-      console.log(itemOne, itemTwo);
-      console.log(todos[fromIndex]);
-      todos[fromIndex] = itemTwo;
-      todos[toIndex] = itemOne;
-      console.log(todos);
-    }
-
-    function addEventListeners() {
-      const ItemDrag = document.querySelectorAll(".to-do p");
-      const ListDrag = document.querySelectorAll(".to-do");
-
-      ItemDrag.forEach((ItemDrag) => {
-        ItemDrag.addEventListener("dragstart", dragStart);
-      });
-
-      ListDrag.forEach((ListDrag) => {
-        ListDrag.addEventListener("dragover", dragOver);
-        ListDrag.addEventListener("drop", dragDrop);
-        ListDrag.addEventListener("dragenter", dragEnter);
-        ListDrag.addEventListener("dragleave", dragLeave);
-      });
-    }
- */
-
-/* let li = document.createElement("li");
-    let p = document.createElement("p");
-    // btns todo
-    let trash = document.createElement("span");
-    let done = document.createElement("span");
-    // classlist
-    trash.classList.add("trash-to-do");
-    done.classList.add("done-to-do");
-    li.classList.add("to-do");
-    p.classList.add("drag-item");
-    //set element
-    p.innerHTML = value;
-    li.setAttribute("data-index", (index += 1));
-    p.setAttribute("draggable", "true");
-    li.append(p);
-    li.append(done);
-    li.append(trash);*/
-//btns function
-//createTrash(trash);
-// todoDone(done);
-//console.log(li.getAttribute("data-index"));
-
-/*<nav>
-        <button className="btn-do" onClick={displayTodos}>
-          To do
-        </button>
-        <button className="btn-do" onClick={displayDone}>
-          Done
-        </button>
-      </nav>*/

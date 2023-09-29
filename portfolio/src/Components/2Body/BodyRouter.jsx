@@ -5,12 +5,14 @@ import { Portfolio } from "./Portfolio/Portfolio";
 import { Contact } from "./Contact/Contact";
 import { OtherProjects } from "./Other-Projects/OtherProjects";
 
-import { ToDoList } from "./Other-Projects/ToDoList/ToDoList";
+import { TDLContainer } from "./Other-Projects/ToDoList/TDLContainer";
 import { Generator } from "./Other-Projects/Quote/Generator";
-import { PaperSR } from "./Other-Projects/PaperSR/PaperSR";
+import { PSRContainer } from "./Other-Projects/PaperSR/PSRContainer";
 
 import { AnimatePresence } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";
+
+import { CursorStyle } from "../OutPage/AnimCursor";
 
 export const BodyRouter = ({ setSlide }) => {
   const location = useLocation();
@@ -22,9 +24,9 @@ export const BodyRouter = ({ setSlide }) => {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/otherProjects" element={<OtherProjects />} />
-        <Route path="/todo" element={<ToDoList />} />
+        <Route path="/todo" element={<TDLContainer />} />
         <Route path="/quotes" element={<Generator />} />
-        <Route path="/paperSR" element={<PaperSR />} />
+        <Route path="/paperSR" element={<PSRContainer />} />
       </Routes>
     </AnimatePresence>
   );

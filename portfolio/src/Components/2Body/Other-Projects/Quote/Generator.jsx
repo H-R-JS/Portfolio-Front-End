@@ -1,7 +1,9 @@
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
+import { CursorStyle } from "../../../OutPage/AnimCursor";
 import React, { useEffect, useState } from "react";
 
 export const Generator = () => {
+  const { AnimMouseHover, AnimMouseOff, AnimMouseOn } = CursorStyle();
+
   const [background, setBackground] = useState({
     backgroundColor: "#14b55a",
   });
@@ -101,7 +103,7 @@ export const Generator = () => {
       },
     ],
     [
-      "Donnez une arme à un homme, il pillera une banque, donnez une banque à un homme, il piellera le monde.",
+      "Donnez une arme à un homme, il pillera une banque, donnez une banque à un homme, il pillera le monde.",
       "Mr Robot",
       {
         backgroundColor: "#b91428",
@@ -184,7 +186,12 @@ export const Generator = () => {
   });
 
   return (
-    <section className="generator-quotes" style={background}>
+    <section
+      className="generator-quotes"
+      style={background}
+      onMouseEnter={AnimMouseHover}
+      onMouseLeave={AnimMouseOff}
+    >
       <article className="box-quotes">
         <p className="text-quote">{quote}</p>
         <p className="text-author">{author}</p>
@@ -192,6 +199,8 @@ export const Generator = () => {
           className="btn-generator"
           onClick={generatorQuotes}
           style={btnColor}
+          onMouseEnter={AnimMouseOn}
+          onMouseLeave={AnimMouseHover}
         >
           <span className="btn-text click">Cliquez</span>
           <span className="btn-text gener">Générer une citation</span>
