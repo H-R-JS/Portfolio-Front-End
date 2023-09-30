@@ -4,7 +4,7 @@ export const AboutLeft = () => {
   return (
     <section className="white-square-left">
       <article>
-        <h4>FABRIQUER AVEC :</h4>
+        <h4>MAKE WITH :</h4>
         <ul>
           <li>HTML & CSS</li>
           <li>JAVASCRIPT</li>
@@ -12,7 +12,7 @@ export const AboutLeft = () => {
           <li>SASS</li>
           <li>
             ADOBE ILLUSTRATOR
-            <br /> ( Débutant )
+            <br /> ( Beginner )
           </li>
         </ul>
       </article>

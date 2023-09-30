@@ -4,13 +4,13 @@ export const AboutRight = () => {
   return (
     <section className="white-square-right">
       <article>
-        <h4>À PROPOS DE MOI :</h4>
+        <h4>ABOUT ME :</h4>
         <ul>
-          <li>- Autodidacte</li>
-          <li>- Créatif</li>
-          <li>- Patient et Persévérant</li>
-          <li>- Découvrir de nouvelles technologie</li>
-          <li>- Aventureux et Curieux</li>
+          <li>- Self-taught</li>
+          <li>- Creative</li>
+          <li>- Patient et Persevere</li>
+          <li>- Discover news technologies</li>
+          <li>- Adventurous and Curious</li>
         </ul>
       </article>
     </section>

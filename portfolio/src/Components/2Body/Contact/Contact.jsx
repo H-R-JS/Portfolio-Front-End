@@ -131,7 +131,7 @@ export const Contact = () => {
                 controlBoxR.start("init");
               }}
             >
-              <h2 className="contact-h2">Réseaux</h2>
+              <h2 className="contact-h2">Networks</h2>
               <span className="span-link">
                 <Link
                   to="https://www.instagram.com/jordy.rocacher/"

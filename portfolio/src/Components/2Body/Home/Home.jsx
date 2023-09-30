@@ -84,12 +84,12 @@ export const Home = () => {
           {/** TITLES*/}
           <motion.span className="h-title">Jordy Rocacher</motion.span>
           <motion.span className="h-title-two">
-            Developpeur Front End React
+            Developpeur Front End
           </motion.span>
         </motion.article>
         {/** LINKS SITES WEB */}
         <motion.h3 variants={variHChild1} className="h3-home">
-          Mes sites :
+          My Websites :
         </motion.h3>
         <AllSites {...{ variHChild1 }} />
         {/** ABOUT IN SQUARE */}

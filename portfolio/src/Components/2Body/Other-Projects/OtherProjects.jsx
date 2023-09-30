@@ -38,7 +38,7 @@ export const OtherProjects = () => {
       classLink: "link-project two",
       classImg: "img-project two",
       classH2: "h22",
-      title: "Citation",
+      title: "Quote",
       title2: "Generator",
     },
     {

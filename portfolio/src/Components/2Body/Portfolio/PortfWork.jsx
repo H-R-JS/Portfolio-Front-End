@@ -50,7 +50,7 @@ export const PortfWork = () => {
                     onMouseEnter={() => AnimMouseOn()}
                     onMouseLeave={() => AnimMouseHover()}
                   >
-                    Lien vers le site Web
+                    Link to website
                   </Link>
                 </div>
               </div>
