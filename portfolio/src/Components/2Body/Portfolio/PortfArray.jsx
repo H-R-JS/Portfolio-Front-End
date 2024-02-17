@@ -29,4 +29,12 @@ export const PortfArray = [
     path: "https://netflix-clone-28bfb.web.app/",
     infoB: <InfosBoxsRFBoot />,
   },
+  {
+    img: require("./PortfImg/littleP.png"),
+    class: "portf-img four",
+    title: "Others Projects",
+    text: "Little projects",
+    path: "/otherProjects",
+    infoB: <InfosBoxsReact />,
+  },
 ];

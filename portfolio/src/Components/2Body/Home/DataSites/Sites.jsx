@@ -26,6 +26,18 @@ const SProgDetails2 = () => {
   );
 };
 
+const SProgDetails3 = () => {
+  return (
+    <ul className="ul-sites-detail">
+      <li className="li-sites-detail">Html & CSS</li>
+      <li className="li-sites-detail">Bootstrap</li>
+      <li className="li-sites-detail">Javascript</li>
+      <li className="li-sites-detail">Node.js</li>
+      <li className="li-sites-detail">React</li>
+    </ul>
+  );
+};
+
 export const ArraySites = [
   {
     title: "Meute2Rats",
@@ -40,10 +52,10 @@ export const ArraySites = [
     details: <SProgDetails2 />,
   },
   {
-    title: "Other-Projects",
+    title: "Netflix Clone",
     classN: "li-sites two",
-    path: "/otherProjects",
-    details: <SProgDetails1 />,
+    path: "https://clone-netflix7.netlify.app",
+    details: <SProgDetails3 />,
   },
 ];
 

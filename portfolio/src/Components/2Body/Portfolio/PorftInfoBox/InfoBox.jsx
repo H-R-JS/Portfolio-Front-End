@@ -46,7 +46,8 @@ export const InfosBoxsRFBoot = () => {
         <span>REACT</span>
       </div>
       <div className="info-box-container">
-        <span>FIREBASE</span>
+        <span>NODE.JS</span>
+        <span>MYSQL</span>
       </div>
     </div>
   );

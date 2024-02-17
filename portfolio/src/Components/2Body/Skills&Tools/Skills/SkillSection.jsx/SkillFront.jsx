@@ -12,13 +12,13 @@ const ArrayFront = [
   {
     src: require("../SkillImg/js.png"),
     className: "front-img n2",
-    descrip: "JAVASCRIPT",
+    descrip: "Javascript",
     classPer: "percentage",
   },
   {
     src: require("../SkillImg/reactjs.png"),
     className: "front-img n3",
-    descrip: "REACT",
+    descrip: "React.js",
     classPer: "percentage",
   },
   {
@@ -30,7 +30,7 @@ const ArrayFront = [
   {
     src: require("../SkillImg/bootstrap.png"),
     className: "front-img n5",
-    descrip: "BOOTSTRAP",
+    descrip: "Bootstrap",
     classPer: "percentage",
   },
 ];

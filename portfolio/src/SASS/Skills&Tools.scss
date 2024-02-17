@@ -207,7 +207,8 @@
   }
 
   .tools-container {
-    width: 85%;
+    width: 90%;
+    min-width: 300px;
     margin: 10px 0px;
     justify-content: center;
   }
@@ -237,7 +238,7 @@
 
 @media screen and (max-width: 800px) {
   .skills-tools {
-    height: auto;
+    height: 1350px;
     flex-direction: column;
     overflow-y: hidden;
     justify-content: center;
@@ -283,11 +284,16 @@
   }
 
   .cv-link {
-    right: 0px;
+    top: 30px;
+    left: 0px;
+    font-size: 26px;
   }
 }
 
 @media screen and (max-width: 499px) {
+  .skills-tools {
+    height: 1400px;
+  }
   .front-tech-container {
     width: 300px;
   }
@@ -315,5 +321,10 @@
   }
   .tools-img.n1 {
     height: 75px;
+  }
+
+  .cv-link {
+    top: 20px;
+    font-size: 18px;
   }
 }

@@ -25,10 +25,32 @@ export const SkillBack = ({ variLogo, variSTChildren, variContainerLeft }) => {
             initial="init"
             whileHover="hover"
             src={require("../SkillImg/firebase.png")}
-            alt="Technologie Front End"
+            alt="Technologie Back End"
             className="front-img"
           />
           <figcaption style={{ marginTop: "10px" }}>Firebase</figcaption>
+        </motion.figure>
+        <motion.figure variants={variLogo} className="front-img-container">
+          <motion.img
+            variants={variHover}
+            initial="init"
+            whileHover="hover"
+            src={require("../SkillImg/node.png")}
+            alt="Technologie Back End"
+            className="front-img"
+          />
+          <figcaption style={{ marginTop: "10px" }}>Node.js</figcaption>
+        </motion.figure>
+        <motion.figure variants={variLogo} className="front-img-container">
+          <motion.img
+            variants={variHover}
+            initial="init"
+            whileHover="hover"
+            src={require("../SkillImg/sql.png")}
+            alt="Technologie Back End"
+            className="front-img"
+          />
+          <figcaption style={{ marginTop: "10px" }}>MySQL</figcaption>
         </motion.figure>
       </motion.figure>
     </motion.article>

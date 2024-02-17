@@ -69,7 +69,7 @@ export class PaperSR extends React.Component {
       }, 1200);
     } else {
       await this.setStateSynchrone({
-        infoText: "Choississez une action",
+        infoText: "Choose an action",
       });
     }
   }
