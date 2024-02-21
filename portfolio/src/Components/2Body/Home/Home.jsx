@@ -84,7 +84,7 @@ export const Home = () => {
           {/** TITLES*/}
           <motion.span className="h-title">Jordy Rocacher</motion.span>
           <motion.span className="h-title-two">
-            Developpeur Javascript & Node.js
+            Developpeur React.js & Node.js
           </motion.span>
         </motion.article>
         {/** LINKS SITES WEB */}

@@ -6,10 +6,8 @@ import { CursorStyle } from "../../../OutPage/AnimCursor";
 const SProgDetails1 = () => {
   return (
     <ul className="ul-sites-detail">
-      <li className="li-sites-detail">Html & CSS</li>
       <li className="li-sites-detail">SASS</li>
-      <li className="li-sites-detail">Javascript</li>
-      <li className="li-sites-detail">React</li>
+      <li className="li-sites-detail">React.js</li>
       <li className="li-sites-detail">Firebase</li>
     </ul>
   );
@@ -18,10 +16,8 @@ const SProgDetails1 = () => {
 const SProgDetails2 = () => {
   return (
     <ul className="ul-sites-detail">
-      <li className="li-sites-detail">Html & CSS</li>
       <li className="li-sites-detail">SASS</li>
-      <li className="li-sites-detail">Javascript</li>
-      <li className="li-sites-detail">React</li>
+      <li className="li-sites-detail">React.js</li>
     </ul>
   );
 };
@@ -29,11 +25,10 @@ const SProgDetails2 = () => {
 const SProgDetails3 = () => {
   return (
     <ul className="ul-sites-detail">
-      <li className="li-sites-detail">Html & CSS</li>
+      <li className="li-sites-detail">React.js</li>
       <li className="li-sites-detail">Bootstrap</li>
-      <li className="li-sites-detail">Javascript</li>
+      <li className="li-sites-detail">SASS</li>
       <li className="li-sites-detail">Node.js</li>
-      <li className="li-sites-detail">React</li>
     </ul>
   );
 };
@@ -57,14 +52,6 @@ export const ArraySites = [
     path: "https://clone-netflix7.netlify.app",
     details: <SProgDetails3 />,
   },
-];
-
-export const ArraySProg1 = [
-  { title: "Html & CSS" },
-  { title: "SASS" },
-  { title: "Javascript" },
-  { title: "React" },
-  { title: "Firebase" },
 ];
 
 export const AllSites = ({ variHChild1 }) => {

@@ -33,7 +33,7 @@ export const PortfArray = [
     img: require("./PortfImg/littleP.png"),
     class: "portf-img four",
     title: "Others Projects",
-    text: "Little projects",
+    text: "Little project",
     path: "/otherProjects",
     infoB: <InfosBoxsReact />,
   },

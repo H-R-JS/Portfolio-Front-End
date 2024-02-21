@@ -4,18 +4,6 @@ import { CursorStyle } from "../../../../OutPage/AnimCursor";
 
 const ArrayFront = [
   {
-    src: require("../SkillImg/htmlcss.png"),
-    className: "front-img n1",
-    descrip: "HTML & CSS",
-    classPer: "percentage",
-  },
-  {
-    src: require("../SkillImg/js.png"),
-    className: "front-img n2",
-    descrip: "Javascript",
-    classPer: "percentage",
-  },
-  {
     src: require("../SkillImg/reactjs.png"),
     className: "front-img n3",
     descrip: "React.js",
