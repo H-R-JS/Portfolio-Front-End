@@ -57,7 +57,7 @@ export const PhoneMenu = () => {
       document.removeEventListener("click", toggleNav);
       document.removeEventListener("resize", mediaQuery);
     };
-  }, []);
+  }, [controlUl]);
 
   return (
     <motion.nav

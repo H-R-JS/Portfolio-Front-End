@@ -29,7 +29,7 @@ export const Home = () => {
     if (isInView) {
       controlFade.start("visible");
     }
-  }, [isInView]);
+  }, [isInView]); // eslint-disable-next-line react-hooks/exhaustive-deps
 
   return (
     <motion.main

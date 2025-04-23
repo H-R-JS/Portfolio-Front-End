@@ -14,10 +14,10 @@ export const Generator = () => {
 
   let quote = "Générez une citation";
   let author = "Appuyez sur le bouton";
-  let backgroundQuotes = {
+  /*let backgroundQuotes = {
     boxShadow:
       "950px 2px 1000px inset rgb(8, 170, 92), -1050px -2px 1000px inset rgb(146, 36, 193) ",
-  };
+  };*/
   let random = 0;
 
   function generatorNumber(max) {

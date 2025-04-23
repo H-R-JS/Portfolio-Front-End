@@ -18,11 +18,11 @@ function App() {
     setTheme((current) => (current === "dark" ? "light" : "dark"));
   };
 
-  const [slide, setSlide] = useState("left");
+  //const [slide, setSlide] = useState("left");
 
   return (
     <ThemeContext.Provider value={(theme, toggleTheme)}>
-      <div className="App" style={{ backgroundPosition: slide }} id={theme}>
+      <div className="App" style={{ backgroundPosition: "left" }} id={theme}>
         <AnimCursorContext>
           <Header />
           <BodyRouter />

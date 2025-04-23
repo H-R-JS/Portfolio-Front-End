@@ -12,9 +12,6 @@ import { PSRContainer } from "./Other-Projects/PaperSR/PSRContainer";
 import { AnimatePresence } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import { CursorStyle } from "../OutPage/AnimCursor";
-import { Test } from "./Test";
-
 export const BodyRouter = () => {
   const location = useLocation();
   return (

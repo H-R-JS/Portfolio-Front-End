@@ -20,7 +20,7 @@ export const Skills = () => {
     if (isInView) {
       controlFade.start("visible");
     }
-  }, [isInView]);
+  }, [isInView]); // eslint-disable-next-line react-hooks/exhaustive-deps
 
   return (
     <main className="skills-tools" id="skills">

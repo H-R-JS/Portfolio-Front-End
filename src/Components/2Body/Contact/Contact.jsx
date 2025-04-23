@@ -32,7 +32,7 @@ export const Contact = () => {
       });
     };
     document.addEventListener("mousemove", paralMove);
-  }, []);
+  }, []); // eslint-disable-next-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     function updateMedia(e) {
@@ -42,7 +42,7 @@ export const Contact = () => {
     return () => {
       mediaMatch.removeEventListener("change", updateMedia);
     };
-  }, []);
+  }, [mediaMatch]);
 
   return (
     <main id="contact" className="contact-page">

@@ -4,7 +4,7 @@ import { CursorStyle } from "../../OutPage/AnimCursor";
 import { motion } from "framer-motion";
 
 export const OtherProjects = () => {
-  const { AnimMouseHover, AnimMouseOff, AnimMouseOn } = CursorStyle();
+  const { AnimMouseOn } = CursorStyle();
 
   const variParentProjects = {
     hidden: { opacity: 0 },
@@ -62,7 +62,7 @@ export const OtherProjects = () => {
           return (
             <motion.article variants={variProjects}>
               <Link to={item.to} key={index} className={item.classLink}>
-                <img src={item.src} className={item.classImg} />
+                <img src={item.src} className={item.classImg} alt="project" />
                 <h2 className={item.classH2}>{item.title}</h2>
                 <h2 className={item.classH2}>{item.title2}</h2>
               </Link>

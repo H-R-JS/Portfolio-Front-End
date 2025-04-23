@@ -1,5 +1,4 @@
 import React from "react";
-import { CursorStyle } from "../../../OutPage/AnimCursor";
 
 export class PaperSR extends React.Component {
   constructor(props) {
@@ -46,7 +45,7 @@ export class PaperSR extends React.Component {
   }
   // function paperSR
   async renderAction() {
-    if (!this.state.actionPlayer == "") {
+    if (!this.state.actionPlayer === "") {
       const numAction = this.randomAction(this.state.papSciRock.length);
       await this.setStateSynchrone({
         classRenderEl: " none",
@@ -79,11 +78,11 @@ export class PaperSR extends React.Component {
     await this.setStateSynchrone({
       actionPlayer: `${numPlayer}`,
     });
-    if (numPlayer == 0) {
+    if (numPlayer === 0) {
       await this.setStateSynchrone({
         playerRender: `SCISSORS`,
       });
-    } else if (numPlayer == 1) {
+    } else if (numPlayer === 1) {
       await this.setStateSynchrone({
         playerRender: `ROCK`,
       });
@@ -161,6 +160,7 @@ document.addEventListener('mousedown', )
             ref={this.handRefS}
             onClick={this.playerAction}
             className="hand s"
+            alt="hand"
             data-index="0"
             src={require("./ImgPaperSR/hand-s.png")}
             // onMouseEnter={this.AnimMouseOn}
@@ -169,6 +169,7 @@ document.addEventListener('mousedown', )
             ref={this.handRefR}
             onClick={this.playerAction}
             className="hand r"
+            alt="hand"
             data-index="1"
             src={require("./ImgPaperSR/hand-r.png")}
           />
@@ -176,6 +177,7 @@ document.addEventListener('mousedown', )
             ref={this.handRefP}
             onClick={this.playerAction}
             className="hand p"
+            alt="hand"
             data-index="2"
             src={require("./ImgPaperSR/hand-p.png")}
           />
@@ -187,6 +189,7 @@ document.addEventListener('mousedown', )
         </button>
         <img
           src={this.state.elementRender}
+          alt="btn"
           className={"render-action" + this.state.classRenderEl}
         />
         <span className="info-text">{this.state.infoText}</span>

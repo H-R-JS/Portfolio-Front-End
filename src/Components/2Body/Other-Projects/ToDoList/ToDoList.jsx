@@ -54,9 +54,6 @@ export class ToDoList extends Component {
       (i) => i !== parentTarget.innerText
     );
     const dataIndexFilter = dataIndexArray.filter((i) => i !== indexTarget);
-    /* const dataIndexStorage = dataIndexFilter.filter(
-      (i) => i <= dataIndexFilter.length
-    );*/
 
     localStorage.setItem("todos", JSON.stringify(dataElementFilter));
     localStorage.setItem("class", JSON.stringify(dataIndexFilter));
@@ -64,20 +61,16 @@ export class ToDoList extends Component {
       todos: dataElementFilter,
       classIndex: dataIndexFilter,
     });
-    // console.log(dataIndexFilter);
-    //console.log(this.state.classIndex);
-    //console.log(this.state.todos);
 
-    for (let i = 0; i < this.state.todos.length; i++) {
-      let childElement = document.querySelector(".section-to-do").childNodes;
+    /* for (let i = 0; i < this.state.todos.length; i++) {
       // console.log(childElement[i].getAttribute("data-index"));
-    }
+    }*/
 
     // take todos className and in sert in classIndex and localstorage
   }
 
   doneItem(e) {
-    if (e.target.parentNode.className == "to-do done") {
+    if (e.target.parentNode.className === "to-do done") {
       return null;
     } else {
       const itemElement = e.target.parentNode;
@@ -153,11 +146,13 @@ export class ToDoList extends Component {
               src={require("./ImgTodo/done.png")}
               className="done-to-do"
               onClick={this.doneItem}
+              alt="done"
             />
             <img
               src={require("./ImgTodo/trash.png")}
               onClick={this.trashItem}
               className="trash-to-do"
+              alt="trash"
             />
           </li>
         );
@@ -169,11 +164,13 @@ export class ToDoList extends Component {
               src={require("./ImgTodo/done.png")}
               className="done-to-do"
               onClick={this.doneItem}
+              alt="done"
             />
             <img
               src={require("./ImgTodo/trash.png")}
               onClick={this.trashItem}
               className="trash-to-do"
+              alt="trash"
             />
           </li>
         );
