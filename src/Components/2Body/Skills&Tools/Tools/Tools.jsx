@@ -1,29 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CursorStyle } from "../../../OutPage/AnimCursor";
-import { ToolsArray } from "./ToolsArray";
+
+import { variContainerRight } from "./VariantsTools";
+import { variHover } from "../Skills/VariantsSkills";
 
 export const Tools = ({ theme, variLogo, variSTChildren }) => {
   const { AnimMouseHover, AnimMouseOff } = CursorStyle();
 
-  const variContainerRight = {
-    hidden: { opacity: 0, x: 300 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.4,
-        delay: 0.2,
-        staggerChildren: 0.2,
-        when: "beforeChildren",
-      },
+  const ToolsArray = [
+    {
+      imgTool: "./ToolsImg/figmaC.png",
+      classN: "tools-img n1",
+      nameTool: "Figma",
     },
-  };
-
-  const variHover = {
-    init: { scale: 1 },
-    hover: { scale: 1.1 },
-  };
+    {
+      imgTool: "./ToolsImg/gitbashC.png",
+      classN: "tools-img n2",
+      nameTool: "Gitbash",
+    },
+    {
+      imgTool: "./ToolsImg/githubC.png",
+      classN: "tools-img n3",
+      nameTool: "Github",
+    },
+    {
+      imgTool: "./ToolsImg/vscodeC.png",
+      classN: "tools-img n5",
+      nameTool: "VSCode",
+    },
+  ];
 
   return (
     <motion.article variants={variSTChildren} className="tools-article">
@@ -46,11 +52,11 @@ export const Tools = ({ theme, variLogo, variSTChildren }) => {
                 variants={variHover}
                 initial="init"
                 whileHover="hover"
-                src={require(`${item.img}`)}
+                src={require(`${item.imgTool}`)}
                 className={item.classN}
                 id={theme}
               />
-              <figcaption>{item.descript}</figcaption>
+              <figcaption>{item.nameTool}</figcaption>
             </motion.figure>
           );
         })}

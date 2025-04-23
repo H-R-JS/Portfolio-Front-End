@@ -2,39 +2,29 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { CursorStyle } from "../../../../OutPage/AnimCursor";
 
-const ArrayFront = [
+import { variHover } from "../VariantsSkills";
+
+import reactImg from "../SkillImg/reactjs.png";
+import sassImg from "../SkillImg/sass.png";
+import bootstrapImg from "../SkillImg/bootstrap.png";
+
+const imgsSkills = [
   {
-    src: require("../SkillImg/reactjs.png"),
-    className: "front-img n3",
-    descrip: "React.js",
-    classPer: "percentage",
+    src: reactImg,
+    skillName: "React.js",
   },
   {
-    src: require("../SkillImg/sass.png"),
-    className: "front-img n4",
-    descrip: "SASS",
-    classPer: "percentage",
+    src: sassImg,
+    skillName: "SASS",
   },
   {
-    src: require("../SkillImg/bootstrap.png"),
-    className: "front-img n5",
-    descrip: "Bootstrap",
-    classPer: "percentage",
+    src: bootstrapImg,
+    skillName: "Bootstrap",
   },
 ];
 
 export const SkillFront = ({ variLogo, variSTChildren, variContainerLeft }) => {
   const { AnimMouseHover, AnimMouseOff } = CursorStyle();
-
-  const variHover = {
-    init: { scale: 1 },
-    hover: { scale: 1.1 },
-  };
-
-  const variPer = {
-    init: { opacity: 0.2 },
-    hover: { opacity: 1 },
-  };
 
   return (
     <motion.article variants={variSTChildren} className="front-container">
@@ -45,7 +35,7 @@ export const SkillFront = ({ variLogo, variSTChildren, variContainerLeft }) => {
         onMouseEnter={() => AnimMouseHover()}
         onMouseLeave={() => AnimMouseOff()}
       >
-        {ArrayFront.map((item, index) => {
+        {imgsSkills.map((item, index) => {
           return (
             <motion.figure
               key={index}
@@ -58,11 +48,10 @@ export const SkillFront = ({ variLogo, variSTChildren, variContainerLeft }) => {
                 whileHover="hover"
                 src={item.src}
                 alt="Technologie Front End"
-                className={item.className}
+                className="front-img "
               />
-              <span className={item.classPer}>{item.per}</span>
               <figcaption style={{ marginTop: "10px" }}>
-                {item.descrip}
+                {item.skillName}
               </figcaption>
             </motion.figure>
           );

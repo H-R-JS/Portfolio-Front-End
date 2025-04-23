@@ -3,11 +3,23 @@ import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { CursorStyle } from "../../OutPage/AnimCursor";
 
+import {
+  variFadeContact,
+  getVariFadeCChildren,
+  getVariContactBox,
+} from "./VariantsContact";
+
 export const Contact = () => {
   const { AnimMouseOff, AnimMouseOn } = CursorStyle();
 
+  const mediaMatch = window.matchMedia("(max-width: 499px)");
+  const [isMobile, setIsMobile] = useState(mediaMatch.matches);
+
   const controlBoxR = useAnimation();
   const controlBoxE = useAnimation();
+
+  const variFadeCChildren = getVariFadeCChildren(isMobile);
+  const variContactBox = getVariContactBox(isMobile);
 
   useEffect(() => {
     const paralMove = (e) => {
@@ -22,78 +34,9 @@ export const Contact = () => {
     document.addEventListener("mousemove", paralMove);
   }, []);
 
-  const variFadeContact = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { duration: 0.4, delay: 0.2 },
-    },
-  };
-
-  const mediaMatch = window.matchMedia("(max-width: 499px)");
-  const [mQueyry, setMQueyry] = useState(mediaMatch.matches);
-
-  const variFadeCChildren = mQueyry
-    ? {
-        hiddenLeft: { opacity: 0, y: -200 },
-        hiddenRight: { opacity: 0, y: 200 },
-        visibleLeft: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.4, delay: 0.4 },
-        },
-        visibleRight: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.4, delay: 0.6 },
-        },
-      }
-    : {
-        hiddenLeft: { opacity: 0, x: -200 },
-        hiddenRight: { opacity: 0, x: 200 },
-        visibleLeft: {
-          opacity: 1,
-          x: 0,
-          transition: { duration: 0.4, delay: 0.4 },
-        },
-        visibleRight: {
-          opacity: 1,
-          x: 0,
-          transition: { duration: 0.4, delay: 0.6 },
-        },
-      };
-
-  const variContactBox = mQueyry
-    ? {
-        init: {
-          opacity: 1,
-          y: 0,
-        },
-        hoverLeft: {
-          y: 50,
-        },
-        hoverRight: {
-          y: -50,
-        },
-        hidden: { opacity: 0.3 },
-      }
-    : {
-        init: {
-          opacity: 1,
-          x: 0,
-        },
-        hoverLeft: {
-          x: 50,
-        },
-        hoverRight: {
-          x: -50,
-        },
-        hidden: { opacity: 0.3 },
-      };
-
   useEffect(() => {
     function updateMedia(e) {
-      setMQueyry(e.matches);
+      setIsMobile(e.matches);
     }
     mediaMatch.addEventListener("change", updateMedia);
     return () => {
@@ -149,7 +92,7 @@ export const Contact = () => {
                   onMouseEnter={() => AnimMouseOn()}
                   onMouseLeave={() => AnimMouseOff()}
                 >
-                  LinkdIn
+                  LinkedIn
                 </Link>
               </span>
               <span className="span-link">

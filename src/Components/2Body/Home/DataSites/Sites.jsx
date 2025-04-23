@@ -49,7 +49,7 @@ export const ArraySites = [
   {
     title: "Netflix Clone",
     classN: "li-sites two",
-    path: "https://clone-netflix7.netlify.app",
+    path: "https://clone-project-n.netlify.app/",
     details: <SProgDetails3 />,
   },
 ];
