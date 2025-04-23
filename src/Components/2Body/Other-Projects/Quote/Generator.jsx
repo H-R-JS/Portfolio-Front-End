@@ -33,7 +33,6 @@ export const Generator = () => {
       random = generatorNumber(quotes.length);
       quote = quotes[random][0];
       author = quotes[random][1];
-      backgroundQuotes = quotes[random][2];
       textQuote.innerHTML = '" ' + quote + ' "';
       textAuthor.innerHTML = "- " + author;
       textQuote.classList.remove("opacity-none");
