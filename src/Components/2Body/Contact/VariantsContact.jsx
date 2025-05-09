@@ -4,6 +4,18 @@ export const variFadeContact = {
     opacity: 1,
     transition: { duration: 0.4, delay: 0.2 },
   },
+  visibleAfter: {
+    opacity: 1,
+    transition: { duration: 0.4, delay: 0.5 },
+  },
+};
+
+export const variUpContact = {
+  hidden: { opacity: 0 },
+  up: {
+    opacity: 1,
+    transition: { duration: 0.4, delay: 0.2 },
+  },
 };
 
 export const getVariFadeCChildren = (isMobile) => ({
@@ -24,13 +36,13 @@ export const getVariFadeCChildren = (isMobile) => ({
 export const getVariContactBox = (isMobile) => ({
   init: {
     opacity: 1,
-    [isMobile ? "y" : "x"]: 0,
+    [isMobile ? "y" : "y"]: 0,
   },
   hoverLeft: {
-    [isMobile ? "y" : "x"]: isMobile ? 50 : 50,
+    [isMobile ? "y" : "y"]: isMobile ? 50 : -50,
   },
   hoverRight: {
-    [isMobile ? "y" : "x"]: isMobile ? -50 : -50,
+    [isMobile ? "y" : "y"]: isMobile ? -50 : -50,
   },
   hidden: { opacity: 0.3 },
 });

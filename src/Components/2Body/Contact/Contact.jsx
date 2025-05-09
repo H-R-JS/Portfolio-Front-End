@@ -10,7 +10,7 @@ import {
 } from "./VariantsContact";
 
 export const Contact = () => {
-  const { AnimMouseOff, AnimMouseOn } = CursorStyle();
+  const { AnimMouseOff, AnimMouseOn, AnimMouseHover } = CursorStyle();
 
   const mediaMatch = window.matchMedia("(max-width: 499px)");
   const [isMobile, setIsMobile] = useState(mediaMatch.matches);
@@ -50,37 +50,39 @@ export const Contact = () => {
         <motion.article
           variants={variFadeContact}
           initial="hidden"
-          animate="visible"
+          animate="visibleAfter"
           className="contact-content move"
-          data-speed="2"
+          data-speed="4"
         >
           <motion.aside
-            variants={variFadeCChildren}
-            initial="hiddenLeft"
-            animate="visibleLeft"
-            className="contact-aside-box res"
+            variants={variContactBox}
+            initial="init"
+            animate={controlBoxR}
+            onMouseEnter={() => {
+              controlBoxE.start("hidden");
+              controlBoxR.start("hoverRight");
+              AnimMouseHover();
+            }}
+            onMouseLeave={() => {
+              controlBoxE.start("init");
+              controlBoxR.start("init");
+              AnimMouseOff();
+            }}
+            className="contact-aside-box res "
           >
             <motion.div
               variants={variContactBox}
               initial="init"
               animate={controlBoxR}
               className="contact-reseaux-box"
-              onMouseEnter={() => {
-                controlBoxE.start("hidden");
-                controlBoxR.start("hoverRight");
-              }}
-              onMouseLeave={() => {
-                controlBoxE.start("init");
-                controlBoxR.start("init");
-              }}
             >
-              <h2 className="contact-h2">Networks</h2>
+              <h2 className="contact-h2">NETWORKS</h2>
               <span className="span-link">
                 <Link
                   to="https://www.instagram.com/jordy.rocacher/"
                   className="contact-link"
                   onMouseEnter={() => AnimMouseOn()}
-                  onMouseLeave={() => AnimMouseOff()}
+                  onMouseLeave={() => AnimMouseHover()}
                 >
                   Instagram
                 </Link>
@@ -90,7 +92,7 @@ export const Contact = () => {
                   to="https://www.linkedin.com/in/jr-dev-front/"
                   className="contact-link"
                   onMouseEnter={() => AnimMouseOn()}
-                  onMouseLeave={() => AnimMouseOff()}
+                  onMouseLeave={() => AnimMouseHover()}
                 >
                   LinkedIn
                 </Link>
@@ -100,7 +102,7 @@ export const Contact = () => {
                   to="https://github.com/H-R-JS"
                   className="contact-link"
                   onMouseEnter={() => AnimMouseOn()}
-                  onMouseLeave={() => AnimMouseOff()}
+                  onMouseLeave={() => AnimMouseHover()}
                 >
                   Github
                 </Link>
@@ -108,11 +110,20 @@ export const Contact = () => {
             </motion.div>
           </motion.aside>
 
-          <div className="slash" />
           <motion.aside
-            variants={variFadeCChildren}
-            initial="hiddenRight"
-            animate="visibleRight"
+            variants={variContactBox}
+            //initial="init"
+            animate={controlBoxE}
+            onMouseEnter={() => {
+              controlBoxR.start("hidden");
+              controlBoxE.start("hoverLeft");
+              AnimMouseHover();
+            }}
+            onMouseLeave={() => {
+              controlBoxR.start("init");
+              controlBoxE.start("init");
+              AnimMouseOff();
+            }}
             className="contact-aside-box eml"
           >
             <motion.div
@@ -120,28 +131,28 @@ export const Contact = () => {
               initial="init"
               animate={controlBoxE}
               className="contact-email-box"
-              onMouseEnter={() => {
-                controlBoxR.start("hidden");
-                controlBoxE.start("hoverLeft");
-              }}
-              onMouseLeave={() => {
-                controlBoxR.start("init");
-                controlBoxE.start("init");
-              }}
             >
-              <h2 className="contact-h2">Email</h2>
+              <h2 className="contact-h2">EMAIL</h2>
               <Link
                 to="mailto:jprogpro7@outlook.com"
-                className="contact-link "
+                className="contact-link"
                 onMouseEnter={() => AnimMouseOn()}
-                onMouseLeave={() => AnimMouseOff()}
+                onMouseLeave={() => AnimMouseHover()}
               >
                 jprogpro7@outlook.com
               </Link>
             </motion.div>
           </motion.aside>
         </motion.article>
+        <motion.div
+          variants={variFadeContact}
+          initial="hidden"
+          animate="visible"
+          className="contact-background"
+        ></motion.div>
       </section>
     </main>
   );
 };
+
+///<div className="slash" />

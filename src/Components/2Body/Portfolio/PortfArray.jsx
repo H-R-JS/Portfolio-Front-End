@@ -11,7 +11,7 @@ export const PortfArray = [
     title: "Photogralexphie",
     text: " Photography ",
     path: "https://photogralexphie.fr/",
-    infoB: <InfosBoxsReact />,
+    infos: ["React.js", "SASS"],
   },
   {
     img: require("./PortfImg/screen2.png"),
@@ -19,7 +19,7 @@ export const PortfArray = [
     title: "Meute2Rats",
     text: " Blog, Reach Tracking ",
     path: "https://meute2rats.fr/",
-    infoB: <InfosBoxsRFire />,
+    infos: ["React.js", "SASS", "Firebase"],
   },
   {
     img: require("./PortfImg/screen3.png"),
@@ -27,7 +27,31 @@ export const PortfArray = [
     title: "Netflix Clone",
     text: "Clone",
     path: "https://netflix-clone-28bfb.web.app/",
-    infoB: <InfosBoxsRFBoot />,
+    infos: ["React.js", "SASS", "Nodes.js", "MySQL"],
+  },
+  {
+    img: require("./PortfImg/screenBooki.png"),
+    class: "portf-img booki",
+    title: "Booki",
+    text: "Projet front-end OpenClassroom",
+    path: "",
+    infos: ["HTML5", "CSS3"],
+  },
+  {
+    img: require("./PortfImg/screenKasa.png"),
+    class: "portf-img kasa",
+    title: "Kasa",
+    text: "Projet front-end OpenClassroom",
+    path: "",
+    infos: ["React.js", "SASS"],
+  },
+  {
+    img: require("./PortfImg/screenGrim.png"),
+    class: "portf-img three",
+    title: "Mon vieux Grimoire",
+    text: "Projet back-end OpenClassroom",
+    path: "",
+    infos: ["React.js", "Node.js", "MongoDB"],
   },
   {
     img: require("./PortfImg/littleP.png"),
@@ -35,6 +59,6 @@ export const PortfArray = [
     title: "Others Projects",
     text: "Little project",
     path: "/otherProjects",
-    infoB: <InfosBoxsReact />,
+    infos: ["Javascript"],
   },
 ];

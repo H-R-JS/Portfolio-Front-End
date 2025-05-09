@@ -49,14 +49,14 @@
   align-items: center;
   position: absolute;
   width: 18vw;
-  min-width: 305px;
+  min-width: 380px;
   height: 400px;
-  margin-left: 50px;
+  margin-left: 0px;
   background-color: #fff;
   border-radius: 20px;
   opacity: 0;
   transition: opacity 0.3s;
-  span {
+  li {
     background-image: url("../Components/2Body/Portfolio/PortfImg/fondText.jpg");
     background-position: bottom;
     background-clip: text;

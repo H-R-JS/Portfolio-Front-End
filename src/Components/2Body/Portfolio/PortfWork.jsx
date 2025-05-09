@@ -3,6 +3,7 @@ import { PortfArray } from "./PortfArray";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CursorStyle } from "../../OutPage/AnimCursor";
+import { InfosBox } from "./PorftInfoBox/InfoBox";
 
 export const PortfWork = () => {
   const { AnimMouseHover, AnimMouseOff, AnimMouseOn } = CursorStyle();
@@ -40,7 +41,7 @@ export const PortfWork = () => {
                   className={item.class}
                   style={{ backgroundImage: `url(${item.img})` }}
                 />
-                {item.infoB}
+                <InfosBox infos={item.infos} />
                 <div className="portf-box-text">
                   <h3 className="box-h3">{item.title}</h3>
                   <p>{item.text}</p>
