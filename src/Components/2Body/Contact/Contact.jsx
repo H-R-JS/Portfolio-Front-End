@@ -18,7 +18,7 @@ export const Contact = () => {
   const controlBoxR = useAnimation();
   const controlBoxE = useAnimation();
 
-  const variFadeCChildren = getVariFadeCChildren(isMobile);
+  //const variFadeCChildren = getVariFadeCChildren(isMobile);
   const variContactBox = getVariContactBox(isMobile);
 
   useEffect(() => {

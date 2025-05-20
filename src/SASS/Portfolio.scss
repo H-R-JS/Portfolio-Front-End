@@ -79,8 +79,8 @@
 }
 
 .portf-box-text {
-  display: "flex";
-  flex-direction: "column";
+  display: flex;
+  flex-direction: column;
   text-align: center;
   width: 45%;
   height: 350px;
@@ -103,9 +103,48 @@
   text-transform: uppercase;
 }
 
+.description.less {
+  position: absolute;
+  margin-top: 70px;
+  margin-left: 30px;
+  background-color: #fff;
+  width: 300px;
+  min-height: 100px;
+}
+
+.description.more {
+  display: none;
+}
+
+.more-details {
+  position: relative;
+  top: 110px;
+  color: $color-main;
+  text-decoration: none;
+  font-family: $font-main;
+}
+
+.more-details::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 135px;
+  width: 100px;
+  height: 2px;
+  background-color: $color-main;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+.more-details:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 .link-web {
   position: relative;
-  top: 150px;
+  top: 120px;
   color: $color-main;
   text-decoration: none;
   font-family: $font-main;
@@ -115,7 +154,7 @@
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 126px;
   width: 120px;
   height: 2px;
   background-color: $color-main;

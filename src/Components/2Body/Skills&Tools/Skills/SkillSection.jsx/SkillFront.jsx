@@ -6,9 +6,13 @@ import { variHover } from "../VariantsSkills";
 
 import reactImg from "../SkillImg/reactjs.png";
 import sassImg from "../SkillImg/sass.png";
-import bootstrapImg from "../SkillImg/bootstrap.png";
+import jsImg from "../SkillImg/js.png";
 
 const imgsSkills = [
+  {
+    src: jsImg,
+    skillName: "Javascript",
+  },
   {
     src: reactImg,
     skillName: "React.js",
@@ -16,10 +20,6 @@ const imgsSkills = [
   {
     src: sassImg,
     skillName: "SASS",
-  },
-  {
-    src: bootstrapImg,
-    skillName: "Bootstrap",
   },
 ];
 

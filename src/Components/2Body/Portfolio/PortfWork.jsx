@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PortfArray } from "./PortfArray";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CursorStyle } from "../../OutPage/AnimCursor";
-import { InfosBox } from "./PorftInfoBox/InfoBox";
+import { PortfItem } from "./PortfItem";
 
 export const PortfWork = () => {
   const { AnimMouseHover, AnimMouseOff, AnimMouseOn } = CursorStyle();
@@ -31,30 +30,13 @@ export const PortfWork = () => {
         >
           {PortfArray.map((item, index) => {
             return (
-              <div
+              <PortfItem
                 key={index}
-                className="portf-box"
-                onMouseEnter={() => AnimMouseHover()}
-                onMouseLeave={() => AnimMouseOff()}
-              >
-                <div
-                  className={item.class}
-                  style={{ backgroundImage: `url(${item.img})` }}
-                />
-                <InfosBox infos={item.infos} />
-                <div className="portf-box-text">
-                  <h3 className="box-h3">{item.title}</h3>
-                  <p>{item.text}</p>
-                  <Link
-                    to={item.path}
-                    className="link-web"
-                    onMouseEnter={() => AnimMouseOn()}
-                    onMouseLeave={() => AnimMouseHover()}
-                  >
-                    Link to website
-                  </Link>
-                </div>
-              </div>
+                item={item}
+                AnimMouseHover={AnimMouseHover}
+                AnimMouseOff={AnimMouseOff}
+                AnimMouseOn={AnimMouseOn}
+              />
             );
           })}
         </motion.div>

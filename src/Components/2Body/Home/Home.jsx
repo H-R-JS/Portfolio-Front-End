@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { AllSites } from "./DataSites/Sites";
 import { AboutRight } from "./About/AboutRight";
@@ -10,9 +10,12 @@ import {
   variHChild,
   createWaveVariant,
 } from "./VariantsHome";
+import { ModalHome } from "./ModalHome";
 
 export const Home = () => {
-  const { AnimMouseHover, AnimMouseOff } = CursorStyle();
+  const { AnimMouseHover, AnimMouseOff, AnimMouseOn } = CursorStyle();
+
+  const [showModal, setShowModal] = useState(false);
 
   const refFade = useRef();
   const isInView = useInView(refFade, { once: true });
@@ -24,6 +27,10 @@ export const Home = () => {
     { variant: createWaveVariant(815), className: "wave two" },
     { variant: createWaveVariant(850), className: "wave three" },
   ];
+
+  function toggleModal() {
+    setShowModal(!showModal);
+  }
 
   useEffect(() => {
     if (isInView) {
@@ -52,6 +59,15 @@ export const Home = () => {
           <motion.span className="h-title-two">
             Developpeur Front-End
           </motion.span>
+          <motion.button
+            onClick={toggleModal}
+            className="h-btn-me"
+            onMouseEnter={() => AnimMouseOn()}
+            onMouseLeave={() => AnimMouseOff()}
+          >
+            Presentation
+          </motion.button>
+          <ModalHome show={showModal} onClose={toggleModal} />
         </motion.article>
         {/** LINKS SITES WEB */}
         <motion.h3 variants={variHChild} className="h3-home">

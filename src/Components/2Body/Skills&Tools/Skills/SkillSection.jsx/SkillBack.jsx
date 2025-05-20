@@ -5,7 +5,7 @@ import { CursorStyle } from "../../../../OutPage/AnimCursor";
 import { variHover } from "../VariantsSkills";
 
 import nodeImg from "../SkillImg/node.png";
-import firebaseImg from "../SkillImg/firebase.png";
+import mongoImg from "../SkillImg/mongo.png";
 import sqlImg from "../SkillImg/sql.png";
 
 export const SkillBack = ({ variLogo, variSTChildren, variContainerLeft }) => {
@@ -13,7 +13,7 @@ export const SkillBack = ({ variLogo, variSTChildren, variContainerLeft }) => {
 
   const imgsSkills = [
     { src: nodeImg, skillName: "Node.js" },
-    { src: firebaseImg, skillName: "Firebase" },
+    { src: mongoImg, skillName: "MongoDB" },
     { src: sqlImg, skillName: "MySQL" },
   ];
 
