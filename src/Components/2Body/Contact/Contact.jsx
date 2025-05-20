@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { CursorStyle } from "../../OutPage/AnimCursor";
 
-import {
-  variFadeContact,
-  getVariFadeCChildren,
-  getVariContactBox,
-} from "./VariantsContact";
+import { variFadeContact, getVariContactBox } from "./VariantsContact";
 
 export const Contact = () => {
   const { AnimMouseOff, AnimMouseOn, AnimMouseHover } = CursorStyle();
