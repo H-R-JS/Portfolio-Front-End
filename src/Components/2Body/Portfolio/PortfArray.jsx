@@ -43,7 +43,7 @@ export const PortfArray = [
     class: "portf-img kasa",
     title: "Kasa",
     text: "Projet front-end OpenClassroom",
-    path: "",
+    path: "https://project-kasa-izf3p9b35-h-r-js-projects.vercel.app/",
     infos: ["React.js", "SASS"],
     description:
       "A web application for peer-to-peer apartment rentals, developed with React and React Router. Integration of responsive Figma mockups, featuring a homepage, an apartment details page (carousel, dropdowns), an About page, and a 404 page. Data management via JSON, modern design, and smooth navigation.",
@@ -53,7 +53,7 @@ export const PortfArray = [
     class: "portf-img three",
     title: "Mon Grimoire",
     text: "Projet back-end OpenClassroom",
-    path: "",
+    path: "https://project-web-books-oqx414o1l-h-r-js-projects.vercel.app/",
     infos: ["React.js", "Node.js", "MongoDB"],
     description:
       "Back-end of a book rating website, developed with Node.js, Express, and MongoDB. Secure REST API for authentication (JWT), book management (CRUD), and ratings, with image optimization.",
