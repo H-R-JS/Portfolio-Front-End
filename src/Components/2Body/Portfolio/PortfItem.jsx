@@ -45,7 +45,7 @@ export const PortfItem = ({
         </span>
         <a
           href={item.path}
-          onClick={(e) => e.preventDefault()}
+          target="_blank"
           className="link-web"
           onMouseEnter={() => AnimMouseOn()}
           onMouseLeave={() => AnimMouseHover()}
