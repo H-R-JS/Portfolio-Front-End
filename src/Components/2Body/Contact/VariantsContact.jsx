@@ -39,10 +39,10 @@ export const getVariContactBox = (isMobile) => ({
     [isMobile ? "y" : "y"]: 0,
   },
   hoverLeft: {
-    [isMobile ? "y" : "y"]: isMobile ? 50 : -50,
+    [isMobile ? "y" : "y"]: isMobile ? 0 : -50,
   },
   hoverRight: {
-    [isMobile ? "y" : "y"]: isMobile ? -50 : -50,
+    [isMobile ? "y" : "y"]: isMobile ? 0 : -50,
   },
   hidden: { opacity: 0.3 },
 });

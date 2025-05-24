@@ -8,7 +8,7 @@ import { variFadeContact, getVariContactBox } from "./VariantsContact";
 export const Contact = () => {
   const { AnimMouseOff, AnimMouseOn, AnimMouseHover } = CursorStyle();
 
-  const mediaMatch = window.matchMedia("(max-width: 499px)");
+  const mediaMatch = window.matchMedia("(max-width: 1095px)");
   const [isMobile, setIsMobile] = useState(mediaMatch.matches);
 
   const controlBoxR = useAnimation();

@@ -117,12 +117,12 @@
   border-radius: 34px;
   z-index: 4;
 }
-.li-sites.one {
+/*.li-sites.one {
   height: 25px;
 }
 .li-sites.two {
   height: 25px;
-}
+}*/
 
 .link-sites {
   display: inline-block;
@@ -466,13 +466,13 @@
 
 @media screen and (max-width: 620px) {
   .modal-home {
-    width: 500px;
+    width: 76%;
     height: 300px;
     padding: 30px;
     border-radius: 20px;
     p {
       color: $color-main;
-      font-size: 18px;
+      font-size: 17px;
       text-align: center;
     }
   }
@@ -535,6 +535,7 @@
     width: 100vw;
     padding-left: 0px;
     color: #fff;
+    text-align: center;
     margin-top: 0px;
   }
 
@@ -549,13 +550,14 @@
     justify-content: center;
     width: 100%;
     margin-top: 30px;
-    margin-left: -20px;
+    margin-left: -40px;
   }
 
   .li-sites {
     margin-left: 5px;
     padding: 5px;
-    font-size: 11px;
+    height: 15px;
+    font-size: 10px;
   }
 
   .li-sites-detail {
@@ -577,21 +579,22 @@
     height: 275px;
     width: 50%;
     article {
-      width: 170px;
+      width: 100px;
       margin-top: 10px;
       margin-left: 0px;
       h4 {
-        width: 140px;
+        width: 100px;
       }
       ul {
-        width: 130px;
+        width: 100px;
       }
       li {
-        width: 130px;
+        width: 100px;
         font-size: 12px;
       }
     }
   }
+
   .white-square-right:hover {
     right: 0px;
   }
