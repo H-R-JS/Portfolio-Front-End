@@ -43,14 +43,14 @@ export const PortfItem = ({
         >
           {showDesc.charAt(0).toUpperCase() + showDesc.slice(1)} details
         </span>
-        <Link
-          to={item.path}
+        <a
+          href={item.path}
           className="link-web"
           onMouseEnter={() => AnimMouseOn()}
           onMouseLeave={() => AnimMouseHover()}
         >
           Link to website
-        </Link>
+        </a>
       </div>
     </div>
   );
