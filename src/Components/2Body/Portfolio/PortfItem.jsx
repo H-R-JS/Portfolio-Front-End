@@ -46,6 +46,7 @@ export const PortfItem = ({
         <a
           href={item.path}
           target="_blank"
+          rel="noopener noreferrer"
           className="link-web"
           onMouseEnter={() => AnimMouseOn()}
           onMouseLeave={() => AnimMouseHover()}
