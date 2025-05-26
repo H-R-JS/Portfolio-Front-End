@@ -26,9 +26,8 @@ const SProgDetails3 = () => {
   return (
     <ul className="ul-sites-detail">
       <li className="li-sites-detail">React.js</li>
-      <li className="li-sites-detail">Bootstrap</li>
-      <li className="li-sites-detail">SASS</li>
       <li className="li-sites-detail">Node.js</li>
+      <li className="li-sites-detail">MongoDB</li>
     </ul>
   );
 };
@@ -36,17 +35,17 @@ const SProgDetails3 = () => {
 export const ArraySites = [
   {
     title: "Meute2Rats",
-    path: "https://Meute2Rats.fr/",
+    path: "https://meute2rats.netlify.app/",
     details: <SProgDetails1 />,
   },
   {
     title: "Photogralexphie",
-    path: "https://photogralexphie.fr/",
+    path: "https://photogralexphie.netlify.app/",
     details: <SProgDetails2 />,
   },
   {
-    title: "NetflixClone",
-    path: "https://clone-project-n.netlify.app/",
+    title: "MonGrimoire",
+    path: "https://project-web-books-oqx414o1l-h-r-js-projects.vercel.app/",
     details: <SProgDetails3 />,
   },
 ];
