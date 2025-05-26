@@ -85,7 +85,7 @@
 .modal-home {
   background-color: #fff;
   width: 500px;
-  height: 300px;
+  height: 400px;
   padding: 50px;
   border-radius: 20px;
   p {
@@ -99,30 +99,18 @@
 
 .ul-sites {
   display: flex;
+  justify-content: space-evenly;
+
   margin-top: 100px;
-  margin-left: -40px;
+  margin-left: -20px;
 }
 
 .li-sites {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 50px;
-  height: 25px;
-  padding: 25px;
-  font-family: $font-second;
-  font-size: 20px;
-  list-style: none;
   background-color: #fff;
-  border-radius: 34px;
-  z-index: 4;
+  padding-top: 5px;
+  border-radius: 20px;
+  margin-left: 20px;
 }
-/*.li-sites.one {
-  height: 25px;
-}
-.li-sites.two {
-  height: 25px;
-}*/
 
 .link-sites {
   display: inline-block;
@@ -151,11 +139,11 @@
 }
 
 .ul-sites-detail {
-  position: fixed;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 47px;
+  margin-top: 20px;
 }
 
 .li-sites-detail {
@@ -311,11 +299,6 @@
     margin-left: -40px;
   }
 
-  .li-sites {
-    margin-left: 10px;
-    font-size: 16px;
-  }
-
   .white-square-right:hover {
     right: -180px;
   }
@@ -325,7 +308,7 @@
   }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1337px) {
   .h-title-box {
     padding-left: 60px;
   }
@@ -344,12 +327,7 @@
 
   .ul-sites {
     width: 580px;
-    margin-top: 160px;
-    margin-left: 80px;
-  }
-
-  .li-sites {
-    padding: 15px;
+    margin-left: -10px;
   }
 
   .white-square-left {
@@ -399,7 +377,7 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1027px) {
   .home-page {
     overflow-y: auto;
     //height: 150vh;
@@ -411,12 +389,24 @@
     overflow: hidden;
   }
 
+  .ul-sites {
+    display: flex;
+    margin-top: 100px;
+    margin-left: 0px;
+  }
+
+  .li-sites {
+    padding-top: 5px;
+    margin-left: 20px;
+  }
+
   .h-title-box {
     width: 100vw;
   }
 
   .ul-sites-detail {
     position: relative;
+    margin-top: 40px;
     bottom: 30px;
   }
 
@@ -550,22 +540,38 @@
     justify-content: center;
     width: 100%;
     margin-top: 30px;
+
     margin-left: -40px;
   }
 
   .li-sites {
+    padding-top: 8px;
+    font-size: 11px;
     margin-left: 5px;
-    padding: 5px;
-    height: 15px;
-    font-size: 10px;
   }
 
   .li-sites-detail {
     font-size: 11px;
   }
 
+  .link-sites::before {
+    width: 80%;
+    height: 1px;
+  }
+
+  .modal-home {
+    background-color: #fff;
+    width: 500px;
+    height: 400px;
+    padding: 25px;
+    margin: 10px;
+    p {
+      font-size: 18px;
+    }
+  }
+
   .white-square-left {
-    top: 650px;
+    top: 600px;
     left: 0px;
     width: 51%;
     height: 275px;
@@ -574,7 +580,7 @@
     }
   }
   .white-square-right {
-    top: 650px;
+    top: 600px;
     right: 00px;
     height: 275px;
     width: 50%;

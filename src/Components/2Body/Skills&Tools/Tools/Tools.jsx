@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CursorStyle } from "../../../OutPage/AnimCursor";
-
+import { FaFigma } from "react-icons/fa";
 import { variContainerRight } from "./VariantsTools";
 import { variHover } from "../Skills/VariantsSkills";
 
@@ -9,11 +9,6 @@ export const Tools = ({ theme, variLogo, variSTChildren }) => {
   const { AnimMouseHover, AnimMouseOff } = CursorStyle();
 
   const ToolsArray = [
-    {
-      imgTool: "./ToolsImg/figmaC.png",
-      classN: "tools-img n1",
-      nameTool: "Figma",
-    },
     {
       imgTool: "./ToolsImg/gitbashC.png",
       classN: "tools-img n2",
@@ -40,6 +35,20 @@ export const Tools = ({ theme, variLogo, variSTChildren }) => {
         onMouseEnter={() => AnimMouseHover()}
         onMouseLeave={() => AnimMouseOff()}
       >
+        <motion.figure
+          variants={variLogo}
+          className="tools-background"
+          id={theme}
+        >
+          <FaFigma
+            variants={variHover}
+            initial="init"
+            whileHover="hover"
+            className="tools-img n1"
+            id={theme}
+          />
+          <figcaption>Figma</figcaption>
+        </motion.figure>
         {ToolsArray.map((item, index) => {
           return (
             <motion.figure

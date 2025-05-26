@@ -1,3 +1,5 @@
+/// Variables
+
 $color-main: #03224c;
 $color-second: rgb(114, 49, 5);
 
@@ -6,6 +8,8 @@ $font-second: "Open Sans", sans-serif;
 $font-quotes: "Skranji", cursive;
 
 $square-rotate: rotate(45deg);
+
+/// Mixins
 
 @mixin size-project {
   width: 200px;
@@ -18,54 +22,69 @@ $square-rotate: rotate(45deg);
   align-items: center;
 }
 
-/////// CSS
+/// Styles
+
 * {
   cursor: none;
-}
-.cursors {
-  background-color: #fff;
-  position: fixed;
-  width: 16px;
-  height: 16px;
-  top: 0;
-  left: 0;
-  z-index: 70;
-  pointer-events: none;
-  opacity: 1;
-}
-.cursor-back {
-  position: fixed;
-  width: 32px;
-  height: 32px;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 1;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   overflow: hidden;
   background-color: $color-main;
+  font-family: $font-main;
 }
+
+body,
+html {
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
 .app {
   width: 100%;
 }
 
-@media screen and (max-width: 900px) {
+/// Cursors
+
+.cursors {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.cursor-back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 1;
+}
+
+@media screen and (max-width: 1028px) {
+  html,
   body {
-    overflow: auto;
-    overflow-x: hidden;
+    overflow-y: auto;
   }
 }
 
-@media screen and (max-width: 499px) {
-  .cursors {
-    display: none;
-  }
+@media screen and (max-width: 900px) {
+}
 
+@media screen and (max-width: 499px) {
+  .cursors,
   .cursor-back {
     display: none;
   }

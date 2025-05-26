@@ -137,7 +137,7 @@
 }
 
 .tools-img.n1 {
-  height: 150px;
+  color: #000;
 }
 
 .cv-link {
@@ -161,11 +161,34 @@
 }
 
 @media screen and (max-width: 1500px) {
+  .skills-tools {
+    width: 100%;
+  }
+
   .skills-section {
     width: 50%;
+    margin-left: 100px;
   }
+
+  .front-img {
+    width: 50px;
+    height: 50px;
+  }
+
   .tools-section {
-    width: 100%;
+    width: 50%;
+    align-items: center;
+  }
+
+  .tools-container {
+    width: 330px;
+    margin: 50px 0px;
+  }
+
+  .tools-img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
   }
 
   .front-container {
@@ -176,7 +199,20 @@
   }
 }
 
-@media screen and (max-width: 1102px) {
+@media screen and (max-width: 1101px) {
+  .skills-tools {
+    height: 1350px;
+    flex-direction: column;
+    overflow-y: hidden;
+    justify-content: center;
+    align-items: center;
+  }
+  .skills-section {
+    width: 100%;
+    margin-left: 0;
+    margin-top: -150px;
+  }
+
   .front-container {
     h3 {
       font-size: 30px;
@@ -187,68 +223,17 @@
     object-fit: cover;
     width: 50px;
     height: 50px;
+    font-size: 12px;
   }
 
-  .front-img-container {
-    font-size: 12px;
+  .front-tech-container {
+    width: 480px;
   }
 
   .back-container {
     h3 {
       font-size: 30px;
     }
-  }
-
-  .tools-article {
-    h2 {
-      font-size: 30px;
-      margin-right: 30px;
-    }
-  }
-
-  .tools-container {
-    width: 90%;
-    min-width: 300px;
-    margin: 10px 0px;
-    justify-content: center;
-  }
-
-  .tools-background {
-    width: auto;
-    height: 100px;
-  }
-
-  .tools-img {
-    object-fit: cover;
-    width: 50px;
-    height: 50px;
-    margin: 0px;
-  }
-
-  .tools-img.n1 {
-    height: 75px;
-  }
-
-  .cv-link {
-    position: relative;
-    top: 50px;
-    right: 30px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .skills-tools {
-    height: 1350px;
-    flex-direction: column;
-    overflow-y: hidden;
-    justify-content: center;
-  }
-  .skills-section {
-    width: 100%;
-  }
-
-  .front-tech-container {
-    width: 480px;
   }
 
   .tools-section {
@@ -265,6 +250,8 @@
   }
 
   .tools-container {
+    justify-content: center;
+    min-width: 300px;
     width: 480px;
     margin: 0px 0px;
   }
@@ -279,13 +266,12 @@
     height: 70px;
     margin: 10px;
   }
-  .tools-img.n1 {
-    height: 105px;
-  }
 
   .cv-link {
+    position: relative;
     top: 30px;
     left: 0px;
+    right: 30px;
     font-size: 26px;
   }
 }

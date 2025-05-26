@@ -36,19 +36,16 @@ const SProgDetails3 = () => {
 export const ArraySites = [
   {
     title: "Meute2Rats",
-    classN: "li-sites",
     path: "https://Meute2Rats.fr/",
     details: <SProgDetails1 />,
   },
   {
     title: "Photogralexphie",
-    classN: "li-sites",
     path: "https://photogralexphie.fr/",
     details: <SProgDetails2 />,
   },
   {
-    title: "Netflix Clone",
-    classN: "li-sites",
+    title: "NetflixClone",
     path: "https://clone-project-n.netlify.app/",
     details: <SProgDetails3 />,
   },
@@ -61,9 +58,10 @@ export const AllSites = ({ variHChild1 }) => {
       {ArraySites.map((item, index) => {
         return (
           <motion.li
+            initial={{ height: 30 }}
             whileHover={{ height: 130 }}
             key={index}
-            className={item.classN}
+            className="li-sites"
             onMouseEnter={() => AnimMouseHover()}
             onMouseLeave={() => AnimMouseOff()}
           >
