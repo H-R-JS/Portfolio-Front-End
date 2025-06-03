@@ -51,7 +51,7 @@
   width: 18vw;
   min-width: 380px;
   height: 400px;
-  margin-left: 0px;
+  margin-left: 20px;
   background-color: #fff;
   border-radius: 20px;
   opacity: 0;
@@ -253,10 +253,10 @@
 
   .info-box {
     min-width: 0;
-    width: 250px;
-    height: 370px;
+    width: 280px;
+    height: 395px;
     margin-top: 10px;
-    margin-left: -5px;
+    margin-left: 0px;
   }
 
   .description.less {
@@ -269,7 +269,16 @@
   .more-details {
     top: 80px;
   }
+
+  .more-details::before {
+    left: 100px;
+  }
+
   .link-web {
     top: 30px;
+  }
+
+  .link-web:before {
+    left: 90px;
   }
 }

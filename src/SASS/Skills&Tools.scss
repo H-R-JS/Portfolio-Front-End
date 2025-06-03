@@ -277,6 +277,10 @@
 }
 
 @media screen and (max-width: 499px) {
+  .front-container {
+    margin-top: 50px;
+  }
+
   .skills-tools {
     height: 1400px;
   }
