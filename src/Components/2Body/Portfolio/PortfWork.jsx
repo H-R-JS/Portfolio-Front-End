@@ -59,6 +59,7 @@ export const PortfWork = () => {
           drag="x"
           ref={refPortf}
           dragConstraints={{ right: 0, left: -width }}
+          key={width}
           className="portf-container-box"
         >
           {PortfArray.map((item, index) => {
