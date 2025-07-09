@@ -12,24 +12,21 @@ export const PortfWork = () => {
   const [width, setWidth] = useState();
 
   useEffect(() => {
-    const resize = () => {
+    const calculateWidth = () => {
       if (refPortf.current) {
-        const newWidth =
-          refPortf.current.scrollWidth - refPortf.current.offsetWidth;
-        setWidth(newWidth);
+        const fullWidth = refPortf.current.scrollWidth;
+        const visibleWidth = refPortf.current.offsetWidth;
+        const maxScroll = Math.max(0, fullWidth - visibleWidth);
+        setWidth(maxScroll);
       }
     };
 
-    // petit délai pour laisser le DOM se stabiliser
-    const timeout = setTimeout(resize, 200);
+    // Appelé dès que le DOM est prêt (après tous les éléments visibles)
+    requestAnimationFrame(calculateWidth);
 
-    // recalcul au resize aussi
-    window.addEventListener("resize", resize);
-
-    return () => {
-      clearTimeout(timeout);
-      window.removeEventListener("resize", resize);
-    };
+    // Recalcul au resize
+    window.addEventListener("resize", calculateWidth);
+    return () => window.removeEventListener("resize", calculateWidth);
   }, []);
 
   const variFade = {
@@ -42,7 +39,7 @@ export const PortfWork = () => {
       <motion.section variants={variFade} initial="hidden" animate="show">
         <motion.div
           drag="x"
-          dragConstraints={{ right: 0, left: -width }}
+          dragConstraints={{ right: 0, left: width ? -width : 0 }}
           className="portf-container-box"
         >
           {PortfArray.map((item, index) => {
