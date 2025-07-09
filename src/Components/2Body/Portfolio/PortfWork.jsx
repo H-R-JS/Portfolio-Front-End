@@ -12,7 +12,26 @@ export const PortfWork = () => {
   const [width, setWidth] = useState();
 
   useEffect(() => {
-    setWidth(refPortf.current.scrollWidth - refPortf.current.offsetWidth);
+    const updateWidth = () => {
+      if (!refPortf.current) return;
+      const fullWidth = refPortf.current.scrollWidth;
+      const visibleWidth = refPortf.current.offsetWidth;
+      const scrollDistance = fullWidth - visibleWidth;
+      setWidth(scrollDistance > 0 ? scrollDistance : 0);
+    };
+
+    updateWidth();
+
+    const resizeObserver = new ResizeObserver(() => updateWidth());
+    if (refPortf.current) {
+      resizeObserver.observe(refPortf.current);
+    }
+
+    return () => {
+      if (refPortf.current) {
+        resizeObserver.unobserve(refPortf.current);
+      }
+    };
   }, []);
 
   const variFade = {
