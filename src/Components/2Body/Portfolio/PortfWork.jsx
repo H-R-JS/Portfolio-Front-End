@@ -12,7 +12,24 @@ export const PortfWork = () => {
   const [width, setWidth] = useState();
 
   useEffect(() => {
-    setWidth(refPortf.current.scrollWidth - refPortf.current.offsetWidth);
+    const resize = () => {
+      if (refPortf.current) {
+        const newWidth =
+          refPortf.current.scrollWidth - refPortf.current.offsetWidth;
+        setWidth(newWidth);
+      }
+    };
+
+    // petit délai pour laisser le DOM se stabiliser
+    const timeout = setTimeout(resize, 200);
+
+    // recalcul au resize aussi
+    window.addEventListener("resize", resize);
+
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("resize", resize);
+    };
   }, []);
 
   const variFade = {

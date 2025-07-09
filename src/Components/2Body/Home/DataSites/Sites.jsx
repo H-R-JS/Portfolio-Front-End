@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CursorStyle } from "../../../OutPage/AnimCursor";
@@ -52,13 +52,31 @@ export const ArraySites = [
 
 export const AllSites = ({ variHChild1 }) => {
   const { AnimMouseHover, AnimMouseOff, AnimMouseOn } = CursorStyle();
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isNowMobile = window.innerWidth <= 700;
+      setIsMobile(isNowMobile);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    console.log("isMobile updated:", isMobile);
+  }, [isMobile]);
+
   return (
     <motion.ul variants={variHChild1} className="ul-sites">
       {ArraySites.map((item, index) => {
         return (
           <motion.li
-            initial={{ height: 30 }}
-            whileHover={{ height: 130 }}
+            animate={{ height: isMobile ? 90 : 30 }}
+            whileHover={!isMobile ? { height: 130 } : undefined}
+            drag={isMobile ? "y" : false}
             key={index}
             className="li-sites"
             onMouseEnter={() => AnimMouseHover()}
