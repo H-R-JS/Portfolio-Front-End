@@ -42,6 +42,19 @@ export const PortfWork = () => {
   return (
     <article ref={refPortf} className="portf-section">
       <motion.section variants={variFade} initial="hidden" animate="show">
+        <p
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            background: "white",
+            zIndex: 9999,
+          }}
+        >
+          width: {width} <br />
+          scrollWidth: {refPortf.current?.scrollWidth} <br />
+          offsetWidth: {refPortf.current?.offsetWidth}
+        </p>
         <motion.div
           drag="x"
           ref={refPortf}
