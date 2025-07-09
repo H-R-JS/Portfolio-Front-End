@@ -76,7 +76,6 @@ export const AllSites = ({ variHChild1 }) => {
           <motion.li
             animate={{ height: isMobile ? 90 : 30 }}
             whileHover={!isMobile ? { height: 130 } : undefined}
-            drag={isMobile ? "y" : false}
             key={index}
             className="li-sites"
             onMouseEnter={() => AnimMouseHover()}

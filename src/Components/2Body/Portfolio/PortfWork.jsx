@@ -21,31 +21,10 @@ export const PortfWork = () => {
       }
     };
 
-    const images = refPortf.current?.querySelectorAll("img") || [];
-    let loaded = 0;
+    // Appelé dès que le DOM est prêt (après tous les éléments visibles)
+    requestAnimationFrame(calculateWidth);
 
-    if (images.length === 0) {
-      requestAnimationFrame(calculateWidth);
-      return;
-    }
-
-    images.forEach((img) => {
-      if (img.complete) {
-        loaded++;
-      } else {
-        img.onload = () => {
-          loaded++;
-          if (loaded === images.length) {
-            requestAnimationFrame(calculateWidth);
-          }
-        };
-      }
-    });
-
-    if (loaded === images.length) {
-      requestAnimationFrame(calculateWidth);
-    }
-
+    // Recalcul au resize
     window.addEventListener("resize", calculateWidth);
     return () => window.removeEventListener("resize", calculateWidth);
   }, []);

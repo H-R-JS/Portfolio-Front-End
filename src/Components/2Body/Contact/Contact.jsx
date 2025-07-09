@@ -14,21 +14,23 @@ export const Contact = () => {
   const controlBoxR = useAnimation();
   const controlBoxE = useAnimation();
 
-  //const variFadeCChildren = getVariFadeCChildren(isMobile);
   const variContactBox = getVariContactBox(isMobile);
 
   useEffect(() => {
-    const paralMove = (e) => {
-      const Move = document.querySelectorAll(".move");
-      Move.forEach((move) => {
-        const speed = move.getAttribute("data-speed");
-        const x = (window.innerWidth - e.pageX * speed) / 100;
-        const y = (window.innerHeight - e.pageY * speed) / 100;
-        move.style.transform = `translateX(${x}px) translateY(${y}px)`;
-      });
-    };
-    document.addEventListener("mousemove", paralMove);
-  }, []); // eslint-disable-next-line react-hooks/exhaustive-deps
+    console.log(isMobile);
+    if (!isMobile) {
+      const paralMove = (e) => {
+        const Move = document.querySelectorAll(".move");
+        Move.forEach((move) => {
+          const speed = move.getAttribute("data-speed");
+          const x = (window.innerWidth - e.pageX * speed) / 100;
+          const y = (window.innerHeight - e.pageY * speed) / 100;
+          move.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        });
+      };
+      document.addEventListener("mousemove", paralMove);
+    }
+  }, []);
 
   useEffect(() => {
     function updateMedia(e) {
