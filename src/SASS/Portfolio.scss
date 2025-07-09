@@ -4,6 +4,7 @@
   overflow: hidden;
   width: auto;
   height: 900px;
+  touch-action: none;
 }
 
 .portf-container-box {
@@ -12,6 +13,9 @@
   height: 800px;
   margin-top: 100px;
   width: fit-content;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+  will-change: transform;
 }
 
 .portf-box {
