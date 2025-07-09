@@ -57,7 +57,7 @@ export const Home = () => {
           {/** TITLES*/}
           <motion.span className="h-title">Jordy Rocacher</motion.span>
           <motion.span className="h-title-two">
-            Developpeur Front-End
+            Developpeur Full Stack Javascript
           </motion.span>
           <motion.button
             onClick={toggleModal}

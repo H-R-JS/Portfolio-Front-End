@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { NavItems } from "../Navbar/NavItems";
 import { Link } from "react-router-dom";
-import { FaAngleDown } from "react-icons/fa";
+import { IoMenuOutline } from "react-icons/io5";
 import { motion, useAnimation } from "framer-motion";
 import { CursorStyle } from "../../../OutPage/AnimCursor";
 
@@ -101,7 +101,7 @@ export const PhoneMenu = () => {
         initial="hidden"
         animate="visible"
       >
-        <FaAngleDown
+        <IoMenuOutline
           className={icon}
           onClick={() => {
             controlUl.start("visible");
