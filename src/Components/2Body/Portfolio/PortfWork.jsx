@@ -1,38 +1,60 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PortfArray } from "./PortfArray";
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import { CursorStyle } from "../../OutPage/AnimCursor";
 import { PortfItem } from "./PortfItem";
 
 export const PortfWork = () => {
   const { AnimMouseHover, AnimMouseOff, AnimMouseOn } = CursorStyle();
 
-  const refPortf = useRef();
+  const containerRef = useRef(); // <- Conteneur visible
+  const dragRef = useRef(); // <- Élément scrollable/draggable
+  const x = useMotionValue(0);
 
-  const [width, setWidth] = useState();
+  const [width, setWidth] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Détecte mobile
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Calcule la largeur scrollable
   useEffect(() => {
     const updateWidth = () => {
-      if (!refPortf.current) return;
-      const fullWidth = refPortf.current.scrollWidth;
-      const visibleWidth = refPortf.current.offsetWidth;
+      if (!containerRef.current || !dragRef.current) return;
+      const fullWidth = dragRef.current.scrollWidth;
+      const visibleWidth = containerRef.current.offsetWidth;
       const scrollDistance = fullWidth - visibleWidth;
       setWidth(scrollDistance > 0 ? scrollDistance : 0);
     };
 
     updateWidth();
 
-    const resizeObserver = new ResizeObserver(() => updateWidth());
-    if (refPortf.current) {
-      resizeObserver.observe(refPortf.current);
-    }
-
-    return () => {
-      if (refPortf.current) {
-        resizeObserver.unobserve(refPortf.current);
-      }
-    };
+    const resizeObserver = new ResizeObserver(updateWidth);
+    if (containerRef.current) resizeObserver.observe(containerRef.current);
+    return () => resizeObserver.disconnect();
   }, []);
+
+  // Support tactile pour mobile
+  let touchStartX = 0;
+  let lastX = 0;
+
+  const handleTouchStart = (e) => {
+    touchStartX = e.touches[0].clientX;
+    lastX = x.get();
+  };
+
+  const handleTouchMove = (e) => {
+    const delta = e.touches[0].clientX - touchStartX;
+    let next = lastX + delta;
+    if (next > 0) next = 0;
+    if (next < -width) next = -width;
+    x.set(next);
+  };
 
   const variFade = {
     hidden: { opacity: 0, display: "flex", x: -500 },
@@ -40,7 +62,7 @@ export const PortfWork = () => {
   };
 
   return (
-    <article ref={refPortf} className="portf-section">
+    <article ref={containerRef} className="portf-section">
       <motion.section variants={variFade} initial="hidden" animate="show">
         <p
           style={{
@@ -49,30 +71,36 @@ export const PortfWork = () => {
             left: 0,
             background: "white",
             zIndex: 9999,
+            fontSize: "12px",
+            padding: "5px",
           }}
         >
           width: {width} <br />
-          scrollWidth: {refPortf.current?.scrollWidth} <br />
-          offsetWidth: {refPortf.current?.offsetWidth}
+          scrollWidth: {dragRef.current?.scrollWidth} <br />
+          offsetWidth: {containerRef.current?.offsetWidth}
         </p>
         <motion.div
-          drag="x"
-          ref={refPortf}
-          dragConstraints={{ right: 0, left: -width }}
-          key={width}
+          ref={dragRef}
           className="portf-container-box"
-        >
-          {PortfArray.map((item, index) => {
-            return (
-              <PortfItem
-                key={index}
-                item={item}
-                AnimMouseHover={AnimMouseHover}
-                AnimMouseOff={AnimMouseOff}
-                AnimMouseOn={AnimMouseOn}
-              />
-            );
+          style={{ x }}
+          {...(!isMobile && {
+            drag: "x",
+            dragConstraints: { left: -width, right: 0 },
           })}
+          {...(isMobile && {
+            onTouchStart: handleTouchStart,
+            onTouchMove: handleTouchMove,
+          })}
+        >
+          {PortfArray.map((item, index) => (
+            <PortfItem
+              key={index}
+              item={item}
+              AnimMouseHover={AnimMouseHover}
+              AnimMouseOff={AnimMouseOff}
+              AnimMouseOn={AnimMouseOn}
+            />
+          ))}
         </motion.div>
       </motion.section>
     </article>
